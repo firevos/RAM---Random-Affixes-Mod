@@ -48,6 +48,7 @@ namespace WeaponBuffMod
 
         private static void SetCraftingActionList_Postfix(XUiC_ItemActionList __instance, XUiC_ItemActionList.ItemActionListTypes _actionListType, XUiController itemController)
         {
+            Log.Out($"SetCraftingActionList_Postfix: Is it run on the server? '{SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer}'");
             try
             {
                 if (_actionListType != XUiC_ItemActionList.ItemActionListTypes.Part) return;
@@ -72,10 +73,11 @@ namespace WeaponBuffMod
         }
 
         // Applies affix mods when items are spawned/looted
-        private static void LootContainer_SpawnItem_Postfix(LootContainer.LootEntry template, ItemValue lootItemValue, ref bool __result, List<ItemStack> spawnedItems)
+        private static void LootContainer_SpawnItem_Postfix(LootContainer.LootEntry template, ItemValue lootItemValue, ref bool __result, List<ItemStack> spawnedItems, EntityPlayer player)
         {
+            Log.Out($"LootContainer_SpawnItem_Postfix: Is it run on the server? '{SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer}'");
             if (spawnedItems == null) return;
-
+            
             foreach (var stack in spawnedItems)
             {
                 try
@@ -91,7 +93,7 @@ namespace WeaponBuffMod
                         )
                         try
                         {
-                            ApplyAffixMods(stack.itemValue);
+                            ApplyAffixMods(stack.itemValue, player);
                         }
                         catch (Exception e)
                         {
@@ -105,7 +107,7 @@ namespace WeaponBuffMod
             }
         }
 
-        private static void ApplyAffixMods(ItemValue itemValue)
+        private static void ApplyAffixMods(ItemValue itemValue, EntityPlayer player)
         {
             if (itemValue == null)
             {
@@ -122,13 +124,13 @@ namespace WeaponBuffMod
             }
 
                 // Check how many mods to add to the weapon
-                int toAdd = CountModsToApply(itemValue);
+                int toAdd = CountModsToApply(itemValue, player);
 
             // Add random mods
             for (int i = 0; i < toAdd; i++)
             {
                 // For each mod to add, first decide on which tier mod to add
-                int selectedTier = AffixUtils.RandomizeTierWithOdds(itemValue);
+                int selectedTier = AffixUtils.RandomizeTierWithOdds(itemValue, player);
                 ItemClassModifier selectedMod = weaponMods[selectedTier][AffixUtils.rng.Next(weaponMods[selectedTier].Count)];
 
                 // Find first empty cosmetic slot
@@ -146,7 +148,7 @@ namespace WeaponBuffMod
             }
         }
 
-        private static int CountModsToApply(ItemValue itemValue)
+        private static int CountModsToApply(ItemValue itemValue, EntityPlayer player)
         {
             if (itemValue == null || itemValue.IsEmpty())
             {
@@ -162,10 +164,9 @@ namespace WeaponBuffMod
             int magicFindLvl = 0;
             try
             {
-                var localPlayer = GameManager.Instance?.myEntityPlayerLocal;
-                if (localPlayer?.Progression != null)
+                if (player?.Progression != null)
                 {
-                    magicFindLvl = localPlayer.Progression.GetProgressionValue("perkMagicFind").level;
+                    magicFindLvl = player.Progression.GetProgressionValue("perkMagicFind").level;
                 }
             }
             catch (Exception e) {
@@ -205,6 +206,7 @@ namespace WeaponBuffMod
         
         public static void OnEntityDeath_Postfix(EntityAlive __instance)
         {
+            Log.Out($"OnEntityDeath_Postfix: Is it run on the server? '{SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer}'");
             Log.Out($"'{__instance.LocalizedEntityName}'");
             if (!__instance.HasAnyTags(FastTags<TagGroup.Global>.GetTag("zombie"))) return;
 
@@ -375,6 +377,7 @@ namespace WeaponBuffMod
 
         public static void CollectedItemList_SetYOffset_Prefix(ref int _yOffset)
         {
+            Log.Out($"CollectedItemList_SetYOffset_Prefix: Is it run on the server? '{SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer}'");
             var lp = GameManager.Instance?.myEntityPlayerLocal;
             if (lp == null) return;
 

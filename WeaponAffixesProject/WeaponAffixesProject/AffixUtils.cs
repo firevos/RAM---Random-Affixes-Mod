@@ -26,7 +26,7 @@ namespace WeaponAffixesProject
             return itemClass != null && itemClass.HasAnyTags(AffixUtils.AffixTag);
         }
 
-        internal static int RandomizeTierWithOdds(ItemValue itemValue)
+        internal static int RandomizeTierWithOdds(ItemValue itemValue, EntityPlayer player)
         {
             //foreach (var group in itemValue.ItemClass.Effects.EffectGroups)
             //{
@@ -63,9 +63,11 @@ namespace WeaponAffixesProject
 
             // Increase rarity randomly based on lucky looter level
             int magicFindLvl = 0;
-            var localPlayer = GameManager.Instance?.myEntityPlayerLocal;
-            if (localPlayer?.Progression != null)
-                magicFindLvl = localPlayer.Progression.GetProgressionValue("perkMagicFind").level;
+            if (player?.Progression == null)
+                Log.Out("Player progression not found");
+            else
+                magicFindLvl = player.Progression.GetProgressionValue("perkMagicFind").level;
+                
 
             bool upgraded = true;
             int maxTier = magicFindLvl < 3 ? tier : 5;

@@ -101,7 +101,7 @@ public class ItemActionEntryRerollAffix : BaseItemActionEntry
             if (oldAffix.Name == mod.Name)
                 index = i;
         }
-        int tier = AffixUtils.RandomizeTierWithOdds(itemValue);
+        int tier = AffixUtils.RandomizeTierWithOdds(itemValue, GameManager.Instance.myEntityPlayerLocal);
         ItemClassModifier selectedMod = modList[tier][AffixUtils.rng.Next(modList[tier].Count)];
 
         if (index < 0) return false;
