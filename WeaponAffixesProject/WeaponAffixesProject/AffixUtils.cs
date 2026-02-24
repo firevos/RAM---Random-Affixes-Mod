@@ -26,7 +26,7 @@ namespace WeaponAffixesProject
             return itemClass != null && itemClass.HasAnyTags(AffixUtils.AffixTag);
         }
 
-        internal static int RandomizeTierWithOdds(ItemValue itemValue)
+        internal static int RandomizeTierWithOdds(ItemValue itemValue, int magicFindLvl = 0)
         {
             //foreach (var group in itemValue.ItemClass.Effects.EffectGroups)
             //{
@@ -43,7 +43,10 @@ namespace WeaponAffixesProject
             //        }
             //    }
             //}
-            int tier = itemValue.Quality;
+            int tier = itemValue?.Quality ?? 1;
+            if (tier < 1 || tier >= baseWeightsByQuality.Length || baseWeightsByQuality[tier] == null)
+                tier = 1;
+
             int roll = rng.Next(0, 100);
             int cumulative = 0;
             int selectedTier = 0;
@@ -59,7 +62,6 @@ namespace WeaponAffixesProject
             }
 
             // Increase rarity randomly based on lucky looter level
-            int magicFindLvl = GameManager.Instance.myEntityPlayerLocal.Progression.GetProgressionValue("perkMagicFind").level;
             bool upgraded = true;
             int maxTier = magicFindLvl < 3 ? tier : 5;
             while (selectedTier < maxTier && upgraded)

@@ -72,9 +72,11 @@ namespace WeaponBuffMod
         }
 
         // Applies affix mods when items are spawned/looted
-        private static void LootContainer_SpawnItem_Postfix(LootContainer.LootEntry template, ItemValue lootItemValue, ref bool __result, List<ItemStack> spawnedItems)
+        private static void LootContainer_SpawnItem_Postfix(LootContainer __instance, LootContainer.LootEntry template, ItemValue lootItemValue, ref bool __result, List<ItemStack> spawnedItems)
         {
             if (spawnedItems == null) return;
+
+            int magicFindLvl = GetMagicFindLevelForLootContext(__instance, template);
 
             foreach (var stack in spawnedItems)
             {
@@ -91,7 +93,7 @@ namespace WeaponBuffMod
                         )
                         try
                         {
-                            ApplyAffixMods(stack.itemValue);
+                            ApplyAffixMods(stack.itemValue, magicFindLvl);
                         }
                         catch (Exception e)
                         {
@@ -105,7 +107,7 @@ namespace WeaponBuffMod
             }
         }
 
-        private static void ApplyAffixMods(ItemValue itemValue)
+        private static void ApplyAffixMods(ItemValue itemValue, int magicFindLvl)
         {
             if (itemValue == null)
             {
@@ -122,13 +124,13 @@ namespace WeaponBuffMod
             }
 
                 // Check how many mods to add to the weapon
-                int toAdd = CountModsToApply(itemValue);
+                int toAdd = CountModsToApply(itemValue, magicFindLvl);
 
             // Add random mods
             for (int i = 0; i < toAdd; i++)
             {
                 // For each mod to add, first decide on which tier mod to add
-                int selectedTier = AffixUtils.RandomizeTierWithOdds(itemValue);
+                int selectedTier = AffixUtils.RandomizeTierWithOdds(itemValue, magicFindLvl);
                 ItemClassModifier selectedMod = weaponMods[selectedTier][AffixUtils.rng.Next(weaponMods[selectedTier].Count)];
 
                 // Find first empty cosmetic slot
@@ -146,7 +148,7 @@ namespace WeaponBuffMod
             }
         }
 
-        private static int CountModsToApply(ItemValue itemValue)
+        private static int CountModsToApply(ItemValue itemValue, int magicFindLvl)
         {
             if (itemValue == null || itemValue.IsEmpty())
             {
@@ -155,22 +157,10 @@ namespace WeaponBuffMod
             }
 
                 // Some server-spawned loot items can have null Modifications arrays.
-                int affixSlots = itemValue.Modifications?.Length ?? 0;
+            int affixSlots = itemValue.Modifications?.Length ?? 0;
             if (affixSlots <= 0)
                 affixSlots = 1;
 
-            int magicFindLvl = 0;
-            try
-            {
-                var localPlayer = GameManager.Instance?.myEntityPlayerLocal;
-                if (localPlayer?.Progression != null)
-                {
-                    magicFindLvl = localPlayer.Progression.GetProgressionValue("perkMagicFind").level;
-                }
-            }
-            catch (Exception e) {
-                Log.Out($"Can't find the magic Find perk. '{e}'");
-            }
             if (magicFindLvl > 4) affixSlots++;
             if (magicFindLvl > 3 && itemValue.Quality == 6) affixSlots++;
 
@@ -188,6 +178,45 @@ namespace WeaponBuffMod
                 if (mod?.ItemClass != null && AffixUtils.IsAffixMod(mod.ItemClass)) currentAffixes++;
 
             return affixSlots - currentAffixes;
+        }
+
+        private static int GetMagicFindLevelForLootContext(LootContainer lootContainer, LootContainer.LootEntry template)
+        {
+            try
+            {
+                EntityPlayer opener = TryGetLootingPlayer(lootContainer) ?? TryGetLootingPlayer(template);
+                if (opener?.Progression != null)
+                    return opener.Progression.GetProgressionValue("perkMagicFind").level;
+            }
+            catch (Exception e)
+            {
+                Log.Out($"Unable to read opener magic find level: '{e}'");
+            }
+
+            return 0;
+        }
+
+        private static EntityPlayer TryGetLootingPlayer(object source)
+        {
+            if (source == null) return null;
+
+            if (source is EntityPlayer player)
+                return player;
+
+            // Keep this intentionally simple: try a few common loot-owner members.
+            object value = Traverse.Create(source).Field("openingPlayer").GetValue();
+            if (value == null) value = Traverse.Create(source).Field("lootingPlayer").GetValue();
+            if (value == null) value = Traverse.Create(source).Field("player").GetValue();
+            if (value == null) value = Traverse.Create(source).Field("playerId").GetValue();
+            if (value == null) value = Traverse.Create(source).Field("entityId").GetValue();
+
+            if (value is EntityPlayer opener)
+                return opener;
+
+            if (value is int entityId)
+                return GameManager.Instance?.World?.GetEntity(entityId) as EntityPlayer;
+
+            return null;
         }
 
         private static bool CanRemove_Prefix(XUiC_ItemCosmeticStack __instance, ref bool __result)
