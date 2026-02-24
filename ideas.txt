@@ -1,0 +1,178 @@
+Next mods:
+horde night recap UI
+storm overhaul - reduce max hp/max stamina instead of just dealing damage
+    - increase loot stage rather than more bags (or mix of both)
+completely random horde nights 
+armor set bonuses small version for 2 piece
+trader overhaul - less items for sale, if items arent sold, price decreases daily.
+    -   quests increase inventory
+    -   no protection area
+    -   better walls, maybe defenses
+    -   sell materials to imrpove defenses
+
+make a mod to make wildspawns gs based, walkersim compatible.
+    - option to increase spawns
+    - add all zombie types to any biome spawngroup
+
+
+Current Features:
+80+ affixes
+only on looted weapons
+put q6 weapons/armors in loot
+lucky looter increases affix rarity
+applies amount of affixes equal to mod slots
+quality determines the max rarity of affix
+
+TODO:
+check quality range for items (make sure its normalized to 1-6 for mods that increase it)
+make a nice looking spreadsheet to show all affixes for weapons and armor, and reworked armor set bonus
+Fix affixes controller to show them separate from cosmetic slots
+check gameevents.xml for ideas for effects
+extraction instead of adding them to loot. using a similar system to reroll, make em pay something (also reroll token?) to extract and permanently remove an affix from an item to be able to install it as a regular mod in another item.
+
+allow a way to 'choose' reroll for higher price
+slow down the reroll a little, so you cant reroll instantly (accidently skipping good ones)
+check Guns and Mods Reborn for incompatabilities
+Challenges for reroll/upgrade tokens.
+
+New Affixes:
+Infection resist
+
+Reroll system for affixes:          DONE
+    use the take(w) button on mods to reroll affix (use the canRemove prefix function). revert all mods back to being attachments rather than mods (so the button works)    DONE
+    add it to a separate button instead         DONE
+    consumes an item upon reroll (reroll token) DONE
+    these tokens can be earned/looted/crafted/bought (if crafted, at least cost a diamond.) DONE
+        -   recipe          DONE 
+        -   looted          DONE
+        -   bought          DONE
+        -   quest reward    DONE
+        -   quest completion DONE
+    fully random rerolls (force change (e.g. can't reroll into the same one))   DONE
+    show consumed item in bottomrighthud (check how its done in repair)     DONE
+    play sound upon succesfull reroll   DONE
+    update UI after a reroll - probably a refreshbindings on the right ui window    DONE
+
+Reworked Full set bonuses:
+lumberjack - 10/20/30/50/75/100% wood harvest, 1/2/3/4/5/6 axe/chainsaw base damage, less stamina (current) for axes, 10/20/30/50/75/100% block damage axes/chainsaw        DONE
+preacher - 5/10/15/20/25/40% crit resist (current), 10/20/30/50/75/100% increased crit healing, 90/60/40/20/10/5s per hp increased passive healing (uses food)              DONE
+rogue - 5/10/15/20/25/40% speed, 5/10/20/35/60/100% chance significant lockpick bonus, 5/10/15/20/25/40% significant sneak effectiveness (larger than outfit bonus), 5/10/15/25/35/50% more dukes and cash (current)    DONE
+athletic - 2/4/6/8/10/20% increases run speed, 3/6/9/15/25/40% stamina regen while running, 5/10/15/20/25/40 max stamina                                                     DONE
+enforcer - 5/10/15/25/35/50% .44 damage increase (current), 5/10/15/25/35/50% reload speed (current), 5/10/15/25/35/50% accuracy, 5/10/15/25/35/50% range, 5/10/15/25/35/50% Firerate (basically fully buff .44's)      DONE
+farmer - 10/20/30/50/75/100% chance for extra crop, 5/10/15/25/35/50% chance for extra seed, 10/20/30/40/55/75% extra hp and stam from food (current, but buffed)           DONE
+biker - 5/10/15/25/35/50% fuel usage (current, but buffed), 5/10/15/20/25/40% crit resist (significant), 5/10/15/20/25/40 max hp                                            DONE
+scavenger - 3/6/9/14/20/30% loot stage (current, but buffed), 2/4/6/8/10/15 carry capacity, 5/10/15/25/35/50% increased resources when salvaging                            DONE
+ranger - bow/crossbow boost (damage, reload, accuracy, projectile velocity, range) 5/10/15/25/35/50% on everything                                                          DONE
+commando - some machine gun boosts (damage, reload speed 5/10/15/20/25/40%) (lower than for ranger/enforcer), max stamina 5/10/15/20/25/40                                  DONE
+assassin - significant sneaking bonus 5/10/15/25/35/50%, 15/30/45/60/75/100% sneak damage bonus, remove noise completely, search duration 15/30/45/60/75/100% (current)     DONE
+miner - 10/20/30/50/75/100% mining harvest, 1/2/3/4/5/6 pickaxe/shovel/auger base damage, 5/10/15/20/25/30% less stamina for mining tools, 10/20/30/50/75/100% block damage mining tools    DONE
+nomad - 2/4/6/8/12/20% stamina regen, 5/10/15/25/35/50% reduced water/food usage for stamina regen, 5/10/15/20/25/40 max hp                                                 DONE
+nerd - 5/10/15/25/35/50% xp bonus, 1/1/1/1/2/2 extra deployed robotic turrets, 10/20/30/50/75/100% robotic turrets damage                                                   DONE
+raider - 5/10/15/20/25/40 max hp, 5/10/15/20/25/40 max stam, 5/10/15/20/25/40% crit resist (current)                                                                        DONE
+
+    Weapon Both Armor Total
+DONE: 48 - 16 - 26 -    90
+
+Armors:
+armorrating (maybe, might be OP) 1/2/3/4/5/6 only on outfit DONE
+harvestcount                                            DONE
+perc entity damage for each weapon class specific       DONE
+    sniper 
+    explosives
+    pistols
+    revolvers
+    bows,crossbows
+    shotgun
+    machine guns
+    robotic turrets
+    spear 
+    knifes
+    clubs
+    sledge
+    knuckles
+    baton
+base entity damage for each weapon class specific
+perc damage vs enemy types (e.g. rad, feral etc)        DONE
+bonus hp                                                DONE
+crit healing
+crit resist                                             DONE
+damage resist 
+loot stage                                              DONE
+stealth bonus (check rogue outfit)
+fall damage
+stun resist                                             DONE
+
+damage%                 DONE 
+damageBase              DONE 
+damage%power            DONE
+damageBasePower         DONE
+dismember%              DONE
+bodyDamageBase          DONE
+bodyDamage%             DONE
+headshotDamageBase      DONE
+headshotDamage%         DONE
+sneakDamage%            DONE
+sneakDamageBase         DONE
+DamageAtNight%          DONE
+DamageAtNightBase       DONE
+SneakDamageAtNight%     DONE
+DamageToKnockedDown%    DONE
+DamageToFullHealth%     DONE
+DamageToLowHealth%      DONE
+durabilityBase          DONE
+durability%             DONE
+sprintPowerAttack% (melee)          DONE
+pelletCount (shotgun)               ON HOLD (might need script)
+attacks/minuteBase (melee)          DONE
+attacks/minute% (melee)             DONE
+rounds/minuteBase (gun, notbow)     DONE
+rounds/minute% (gun, notbow)        DONE
+effectiveRange% (gun)               DONE
+projectilevelocity (bow)            DONE
+blockDamageBase (tool)              DONE
+blockDamage% (tool)                 DONE
+harvestcount (tool)                 DONE
+reduceEnemyArmor%                   DONE
+bonusXp%                            DONE
+staminaCost% (melee)                DONE 
+StaminaCostPower% (melee)           DONE
+StamineCostLight% (melee)           DONE
+slowOnHit                           DONE
+glancinghitsAdd                     DONE
+maxStamBase                         DONE
+maxStam%                            DONE
+MovementSpeed%                      DONE
+SprintingSpeed%                     DONE
+sneakSpeed%                         DONE
+WalkingSpeed%                       DONE
+JumpStrength                        DONE
+reduceStaminaUseWhileSprinting%     DONE
+StaminaRegen                        DONE
+accuracy% (gun)                     DONE
+hipfireAccuracy (gun)               NOTSURE
+reloadSpeed% (gun)                  DONE
+aimSpeed% (gun)                     NOTSURE
+lessStaminaAiming% (gun)            NOTSURE
+magazineSizeBase (gun, notbow)      DONE
+magazineSize% (gun, notbow)         DONE
+cripple                             DONE 
+ragdoll                             DONE 
+bleed, % chance for 1 stack         DONE
+shock%                              DONE
+burn%                               DONE
+stun%                               DONE
+staminaOnKill                       DONE
+lifesteal (melee) (5,6)             DONE
+killstreak (+1 hp/max hp per kill)  DONE
+killstreak (bonus damage)           DONE
+bullet(casing) recovery (gun)       ONHOLD needs scripting
+arrowRecoveryIncrease (bow)         DONE
+fasterRegen (takes food)            DONE
+fasterCritHeal                      ONHOLD
+damageResistOnKill                  ONHOLD (maybe better for armor)
+ChanceToHealCritInjuryOnKill        ONHOLD
+hitStreak (more damage each hit until you miss or 1 minute passes) ONHOLD
+Damage Bonus at max hp player       DONE
+damage bonus at low hp player       DONE
+low % for instakill                 DONE
+explosive bullets                   ONHOLD
