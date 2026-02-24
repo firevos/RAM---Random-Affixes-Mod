@@ -1,0 +1,776 @@
+<configs>
+
+    <insertAfter xpath="/lootcontainers/lootgroup[@name='groupWeaponsAllScaledNoParts']">
+        <lootgroup name="ArmorWeaponsMagicFind">
+            <item group="groupAllArmor"/>
+            <item group="groupWeaponsAllScaledNoParts"/>
+        </lootgroup>
+    </insertAfter>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupReinforcedChestT2']">
+        <item group="ArmorWeaponsMagicFind" count="1">
+            <requirement class="Progression" name="perkMagicFind" operation="GTE" value="2"/>
+        </item>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupInfestedT2']">
+        <item group="ArmorWeaponsMagicFind" count="1">
+            <requirement class="Progression" name="perkMagicFind" operation="GTE" value="2"/>
+        </item>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupReinforcedChestT3']">
+        <item group="ArmorWeaponsMagicFind" count="1">
+            <requirement class="Progression" name="perkMagicFind" operation="GTE" value="2"/>
+        </item>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupInfestedT3']">
+        <item group="ArmorWeaponsMagicFind" count="1">
+            <requirement class="Progression" name="perkMagicFind" operation="GTE" value="2"/>
+        </item>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT4']">
+        <item group="ArmorWeaponsMagicFind" count="1">
+            <requirement class="Progression" name="perkMagicFind" operation="GTE" value="2"/>
+        </item>
+        <item group="ArmorWeaponsMagicFind" count="1">
+            <requirement class="Progression" name="perkMagicFind" operation="GTE" value="5"/>
+        </item>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupInfestedT4']">
+        <item group="ArmorWeaponsMagicFind" count="1">
+            <requirement class="Progression" name="perkMagicFind" operation="GTE" value="2"/>
+        </item>
+        <item group="ArmorWeaponsMagicFind" count="1">
+            <requirement class="Progression" name="perkMagicFind" operation="GTE" value="5"/>
+        </item>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT5']">
+        <item group="ArmorWeaponsMagicFind" count="1">
+            <requirement class="Progression" name="perkMagicFind" operation="GTE" value="2"/>
+        </item>
+        <item group="ArmorWeaponsMagicFind" count="1">
+            <requirement class="Progression" name="perkMagicFind" operation="GTE" value="5"/>
+        </item>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupInfestedT5']">
+        <item group="ArmorWeaponsMagicFind" count="1">
+            <requirement class="Progression" name="perkMagicFind" operation="GTE" value="2"/>
+        </item>
+        <item group="ArmorWeaponsMagicFind" count="1">
+            <requirement class="Progression" name="perkMagicFind" operation="GTE" value="5"/>
+        </item>
+    </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='groupHiddenStash']">
+        <item group="ArmorWeaponsMagicFind" count="1">
+            <requirement class="Progression" name="perkMagicFind" operation="GTE" value="2"/>
+        </item>
+        <item group="ArmorWeaponsMagicFind" count="1">
+            <requirement class="Progression" name="perkMagicFind" operation="GTE" value="5"/>
+        </item>
+    </append>
+
+    <!-- Reroll Tokens -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupShoppingCart02']">
+        <item name="affixRerollToken" count="1" loot_prob_template="low"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupSafeBooks']">
+        <item name="affixRerollToken" count="1" loot_prob_template="low"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupCampingTents02']">
+        <item name="affixRerollToken" count="1" loot_prob_template="veryLowDelayed"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupJunk03']">
+        <item name="affixRerollToken" count="1" loot_prob_template="veryLowDelayed">
+            <requirement class="Progression" name="perkMagicFind" operation="GTE" value="5"/>
+        </item>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupPurse03']">
+        <item name="affixRerollToken" count="1" loot_prob_template="veryLowDelayed"/>
+    </append>
+    <append xpath="/lootcontainers/lootcontainer[@name='cashRegister']">
+        <item name="affixRerollToken" count="1" loot_prob_template="low"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupZpackStrong04']">
+        <item name="affixRerollToken" count="1" loot_prob_template="veryLow"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupZpackBoss04']">
+        <item name="affixRerollToken" count="1" loot_prob_template="low"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupPoliceCarBonus04']">
+        <item name="affixRerollToken" count="1" loot_prob_template="veryLowDelayed"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupHiddenStash02']">
+        <item name="affixRerollToken" count="1" loot_prob_template="veryLowDelayed"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupValuablesExtraLarge']">
+        <item name="affixRerollToken" count="1" loot_prob_template="med"/>
+    </append>
+    <append xpath="/lootcontainers/lootcontainer[@name='atmLoot']">
+        <item name="affixRerollToken" count="1" loot_prob_template="low"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupReinforcedChestT3_05']">
+        <item name="affixRerollToken" count="1" loot_prob_template="veryLowDelayed"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT4_09']">
+        <item name="affixRerollToken" count="1" loot_prob_template="low"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT5_07']">
+        <item name="affixRerollToken" count="1,2" loot_prob_template="med"/>
+    </append>
+
+    <!-- ARMOR QUALITY TEMPLATE-->
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='121,122']/loot[@quality='5']/@prob">0.664</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='121,122']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='123,124']/loot[@quality='5']/@prob">0.660</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='123,124']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='125,127']/loot[@quality='5']/@prob">0.656</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='125,127']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='128,129']/loot[@quality='5']/@prob">0.652</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='128,129']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='130,132']/loot[@quality='5']/@prob">0.648</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='130,132']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='133,134']/loot[@quality='5']/@prob">0.644</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='133,134']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='135,136']/loot[@quality='5']/@prob">0.640</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='135,136']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='137,139']/loot[@quality='5']/@prob">0.636</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='137,139']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='140,141']/loot[@quality='5']/@prob">0.632</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='140,141']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='142,144']/loot[@quality='5']/@prob">0.628</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='142,144']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='145,146']/loot[@quality='5']/@prob">0.624</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='145,146']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='147,148']/loot[@quality='5']/@prob">0.620</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='147,148']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='149,151']/loot[@quality='5']/@prob">0.616</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='149,151']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='152,153']/loot[@quality='5']/@prob">0.612</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='152,153']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='154,156']/loot[@quality='5']/@prob">0.608</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='154,156']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='157,158']/loot[@quality='5']/@prob">0.604</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='157,158']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='159,999999']/loot[@quality='5']/@prob">0.6</set>
+	<append xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='159,999999']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <!-- QUALITY BASE TEMPLATE -->
+
+    <set xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='120,129']/loot[@quality='5']/@prob">0.644</set>
+	<append xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='120,129']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='130,139']/loot[@quality='5']/@prob">0.643</set>
+	<append xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='130,139']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='140,149']/loot[@quality='5']/@prob">0.643</set>
+	<append xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='140,149']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='150,159']/loot[@quality='5']/@prob">0.643</set>
+	<append xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='150,159']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='160,169']/loot[@quality='5']/@prob">0.643</set>
+	<append xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='160,169']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='170,179']/loot[@quality='5']/@prob">0.643</set>
+	<append xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='170,179']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='180,189']/loot[@quality='5']/@prob">0.643</set>
+	<append xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='180,189']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='190,199']/loot[@quality='5']/@prob">0.643</set>
+	<append xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='190,199']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='200,209']/loot[@quality='5']/@prob">0.643</set>
+	<append xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='200,209']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='210,219']/loot[@quality='5']/@prob">0.643</set>
+	<append xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='210,219']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='220,229']/loot[@quality='5']/@prob">0.643</set>
+	<append xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='220,229']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='230,239']/loot[@quality='5']/@prob">0.643</set>
+	<append xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='230,239']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='240,249']/loot[@quality='5']/@prob">0.643</set>
+	<append xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='240,249']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='250,999999']/loot[@quality='5']/@prob">0.6</set>
+	<append xpath="//lootqualitytemplate[@name='qualBaseTemplate']/qualitytemplate[@level='250,999999']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+    <!-- QUALITY PLUS 1 TEMPLATE -->	
+
+    <set xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='120,129']/loot[@quality='5']/@prob">0.603</set>
+	<append xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='120,129']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='130,139']/loot[@quality='5']/@prob">0.602</set>
+	<append xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='130,139']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='140,149']/loot[@quality='5']/@prob">0.601</set>
+	<append xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='140,149']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='150,159']/loot[@quality='5']/@prob">0.6</set>
+	<append xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='150,159']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='160,169']/loot[@quality='5']/@prob">0.599</set>
+	<append xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='160,169']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='170,179']/loot[@quality='5']/@prob">0.598</set>
+	<append xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='170,179']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='180,189']/loot[@quality='5']/@prob">0.597</set>
+	<append xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='180,189']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='190,199']/loot[@quality='5']/@prob">0.597</set>
+	<append xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='190,199']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='200,209']/loot[@quality='5']/@prob">0.597</set>
+	<append xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='200,209']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='210,219']/loot[@quality='5']/@prob">0.596</set>
+	<append xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='210,219']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='220,229']/loot[@quality='5']/@prob">0.596</set>
+	<append xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='220,229']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='230,239']/loot[@quality='5']/@prob">0.596</set>
+	<append xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='230,239']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='240,249']/loot[@quality='5']/@prob">0.595</set>
+	<append xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='240,249']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='250,999999']/loot[@quality='5']/@prob">0.55</set>
+	<append xpath="//lootqualitytemplate[@name='qualPlus1Template']/qualitytemplate[@level='250,999999']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+    <!-- PRIMITIVE QUALITY ITEMS -->
+
+	<set xpath="//lootqualitytemplate[@name='qualPrimitiveItemsTemplate']/qualitytemplate[@level='1,999999']/loot[@quality='5']/@prob">0.58</set>
+	<append xpath="//lootqualitytemplate[@name='qualPrimitiveItemsTemplate']/qualitytemplate[@level='1,999999']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <!-- LOOT QUALITY DISTRIBUTION -->
+
+    <!-- T0 POOL -->
+	
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='61,62']/loot[@quality='5']/@prob">0.407</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='61,62']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='63,64']/loot[@quality='5']/@prob">0.402</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='63,64']">
+        <loot quality="6" prob="1"/>
+    </append>		
+	
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='65,67']/loot[@quality='5']/@prob">0.398</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='65,67']">
+        <loot quality="6" prob="1"/>
+    </append>		
+	
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='68,69']/loot[@quality='5']/@prob">0.395</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='68,69']">
+        <loot quality="6" prob="1"/>
+    </append>		
+	
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='70,72']/loot[@quality='5']/@prob">0.391</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='70,72']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='73,74']/loot[@quality='5']/@prob">0.386</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='73,74']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='75,76']/loot[@quality='5']/@prob">0.381</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='75,76']">
+        <loot quality="6" prob="1"/>
+    </append>		
+	
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='77,79']/loot[@quality='5']/@prob">0.377</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='77,79']">
+        <loot quality="6" prob="1"/>
+    </append>		
+	
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='80,999999']/loot[@quality='5']/@prob">0.35</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT0']/qualitytemplate[@level='80,999999']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+    <!-- T1 POOL -->    
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='121,122']/loot[@quality='5']/@prob">0.586</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='121,122']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='123,124']/loot[@quality='5']/@prob">0.576</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='123,124']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='125,127']/loot[@quality='5']/@prob">0.567</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='125,127']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='128,129']/loot[@quality='5']/@prob">0.556</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='128,129']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='130,132']/loot[@quality='5']/@prob">0.544</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='130,132']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='133,134']/loot[@quality='5']/@prob">0.533</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='133,134']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='135,136']/loot[@quality='5']/@prob">0.522</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='135,136']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='137,139']/loot[@quality='5']/@prob">0.511</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='137,139']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='140,141']/loot[@quality='5']/@prob">0.5</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='140,141']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='142,144']/loot[@quality='5']/@prob">0.489</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='142,144']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='145,146']/loot[@quality='5']/@prob">0.478</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='145,146']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='147,148']/loot[@quality='5']/@prob">0.467</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='147,148']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='149,151']/loot[@quality='5']/@prob">0.456</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='149,151']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='152,153']/loot[@quality='5']/@prob">0.445</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='152,153']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='154,156']/loot[@quality='5']/@prob">0.434</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='154,156']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='157,158']/loot[@quality='5']/@prob">0.433</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='157,158']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='159,160']/loot[@quality='5']/@prob">0.422</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='159,160']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='161,163']/loot[@quality='5']/@prob">0.411</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='161,163']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='164,165']/loot[@quality='5']/@prob">0.4</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='164,165']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='166,168']/loot[@quality='5']/@prob">0.391</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='166,168']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='169,170']/loot[@quality='5']/@prob">0.385</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='169,170']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='171,172']/loot[@quality='5']/@prob">0.380</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='171,172']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='173,175']/loot[@quality='5']/@prob">0.375</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='173,175']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='176,177']/loot[@quality='5']/@prob">0.370</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='176,177']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='178,180']/loot[@quality='5']/@prob">0.365</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='178,180']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='181,182']/loot[@quality='5']/@prob">0.360</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='181,182']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='183,184']/loot[@quality='5']/@prob">0.355</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='183,184']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='185,187']/loot[@quality='5']/@prob">0.350</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='185,187']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='188,189']/loot[@quality='5']/@prob">0.345</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='188,189']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='190,192']/loot[@quality='5']/@prob">0.340</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='190,192']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='193,194']/loot[@quality='5']/@prob">0.335</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='193,194']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+    <remove xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='195,999999']/loot[@quality='4']"/>
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='195,999999']/loot[@quality='5']/@prob">0.33</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT1']/qualitytemplate[@level='195,999999']">
+        <loot quality="6" prob="1"/>
+    </append>	
+	
+	
+<!-- T2 POOL -->
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='181,182']/loot[@quality='5']/@prob">0.561</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='181,182']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='183,184']/loot[@quality='5']/@prob">0.558</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='183,184']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='185,187']/loot[@quality='5']/@prob">0.554</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='185,187']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='188,189']/loot[@quality='5']/@prob">0.55</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='188,189']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='190,192']/loot[@quality='5']/@prob">0.548</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='190,192']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='193,194']/loot[@quality='5']/@prob">0.545</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='193,194']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='195,196']/loot[@quality='5']/@prob">0.542</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='195,196']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='197,199']/loot[@quality='5']/@prob">0.541</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='197,199']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='200,201']/loot[@quality='5']/@prob">0.536</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='200,201']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='202,204']/loot[@quality='5']/@prob">0.531</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='202,204']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='205,206']/loot[@quality='5']/@prob">0.527</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='205,206']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='207,208']/loot[@quality='5']/@prob">0.522</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='207,208']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='209,211']/loot[@quality='5']/@prob">0.517</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='209,211']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='212,213']/loot[@quality='5']/@prob">0.510</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='212,213']">
+        <loot quality="6" prob="1"/>
+    </append>		
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='214,999999']/loot[@quality='5']/@prob">0.5</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT2']/qualitytemplate[@level='214,999999']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+<!-- T3 POOL -->
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='200,201']/loot[@quality='5']/@prob">0.589</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='200,201']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='202,204']/loot[@quality='5']/@prob">0.583</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='202,204']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='205,206']/loot[@quality='5']/@prob">0.577</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='205,206']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='207,208']/loot[@quality='5']/@prob">0.57</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='207,208']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='209,211']/loot[@quality='5']/@prob">0.565</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='209,211']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='212,213']/loot[@quality='5']/@prob">0.56</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='212,213']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='214,216']/loot[@quality='5']/@prob">0.5</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='214,216']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='217,218']/loot[@quality='5']/@prob">0.495</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='217,218']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='219,220']/loot[@quality='5']/@prob">0.490</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='219,220']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='221,223']/loot[@quality='5']/@prob">0.486</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='221,223']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='224,225']/loot[@quality='5']/@prob">0.48</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='224,225']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='224,225']/loot[@quality='5']/@prob">0.475</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='224,225']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='226,228']/loot[@quality='5']/@prob">0.47</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='226,228']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='229,230']/loot[@quality='5']/@prob">0.465</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='229,230']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='231,232']/loot[@quality='5']/@prob">0.46</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='231,232']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='233,235']/loot[@quality='5']/@prob">0.455</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='233,235']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='236,237']/loot[@quality='5']/@prob">0.45</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='236,237']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='238,240']/loot[@quality='5']/@prob">0.445</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='238,240']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='241,242']/loot[@quality='5']/@prob">0.44</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='241,242']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='243,244']/loot[@quality='5']/@prob">0.435</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='243,244']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='245,247']/loot[@quality='5']/@prob">0.43</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='245,247']">
+        <loot quality="6" prob="1"/>
+    </append>
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='248,249']/loot[@quality='5']/@prob">0.425</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='248,249']">
+        <loot quality="6" prob="1"/>
+    </append>	
+
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='250,252']/loot[@quality='5']/@prob">0.42</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='250,252']">
+        <loot quality="6" prob="1"/>
+    </append>
+	
+	<set xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='253,999999']/loot[@quality='5']/@prob">0.4</set>
+	<append xpath="//lootqualitytemplate[@name='QLTemplateT3']/qualitytemplate[@level='253,999999']">
+        <loot quality="6" prob="1"/>
+    </append>	
+</configs>

@@ -1,0 +1,29 @@
+<configs>
+    <append xpath="/quests/quest[contains(@id,'tier4') and not(contains(@id,'complete'))]">
+        <reward type="Item" id="affixRerollToken" ischosen="true" value="1"/>
+    </append>
+
+    <append xpath="/quests/quest[contains(@id,'tier5') and not(contains(@id,'complete'))]">
+        <reward type="Item" id="affixRerollToken" ischosen="true" value="2"/>
+    </append>
+
+    <append xpath="/quests/quest[contains(@id,'tier6') and not(contains(@id,'complete'))]">
+        <reward type="Item" id="affixRerollToken" ischosen="true" value="3"/>
+    </append>
+
+    <append xpath="/quests/quest[@id='quest_tier3complete']">
+        <reward type="Item" id="affixRerollToken" ischosen="true" value="2"/>
+    </append>
+
+    <append xpath="/quests/quest[@id='quest_tier4complete']">
+        <reward type="Item" id="affixRerollToken" ischosen="true" value="3"/>
+    </append>
+
+    <append xpath="/quests/quest[@id='quest_tier5complete']">
+        <reward type="Item" id="affixRerollToken" ischosen="true" value="5"/>
+    </append>
+
+    <append xpath="/quests/quest[@id='quest_tier6complete']">
+        <reward type="Item" id="affixRerollToken" ischosen="true" value="10"/>
+    </append>
+</configs>

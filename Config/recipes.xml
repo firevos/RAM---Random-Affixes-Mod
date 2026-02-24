@@ -1,0 +1,10 @@
+<configs>
+    <insertAfter xpath="/recipes/recipe[@name='resourceCoalBundle']">
+        <recipe name="affixRerollToken" count="1" craft_time="30" craft_exp_gain="0" craft_area="workbench" tags="workbenchCrafting">
+            <ingredient name="resourceRawDiamond" count="1"/>
+            <ingredient name="resourceScrapBrass" count="200"/>
+            <ingredient name="resourceForgedSteel" count="25"/>
+            <ingredient name="resourceMechanicalParts" count="10"/>
+        </recipe>
+    </insertAfter>
+</configs>

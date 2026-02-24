@@ -1,0 +1,139 @@
+<configs>
+    <!-- Remove mod and tier bonus damage -->
+    <set xpath="/items/item[property[@name='Tags' and contains(@value,'weapon')]]/effect_group/passive_effect[@name='ModPowerBonus']/@value">
+        0
+    </set>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'weapon')]]/effect_group/passive_effect[@tier and @name='EntityDamage']" />
+
+    <!-- For some reason spears extend base stonespear and therefore something fucks up, so lets do them manually -->
+    <set xpath="/items/item[@name='meleeWpnSpearT1IronSpear' or @name='meleeWpnSpearT3SteelSpear']/effect_group/passive_effect[@name='ModPowerBonus']/@value">
+        0
+    </set>
+    <remove xpath="/items/item[@name='meleeWpnSpearT1IronSpear' or @name='meleeWpnSpearT3SteelSpear']/effect_group/passive_effect[@tier and @name='EntityDamage']" />
+
+    <!-- Remove all bonuses from armors -->
+    <remove xpath="/items/item[not(@name='armorSkillMagazine')][property[@name='Tags' and contains(@value,'armor')]]/effect_group[not(@name) or @name='']"/>
+
+    <!-- Add enforcer vol 2 back into enforcer outfit -->
+    <append xpath="/items/item[@name='armorEnforcerOutfit']">
+        <effect_group>
+            <passive_effect name="GeneralDamageResist" operation="base_add" value="0.05">
+                <requirement name="ProgressionLevel" progression_name="perkEnforcerApparel" operation="Equals" value="1"/>
+            </passive_effect>
+        </effect_group>
+    </append>
+
+    <!-- Every specific effect to remove from helmets -->
+    <remove xpath="/items/item[@name='armorAssassinHelmet']/effect_group[@name='sneak damage bonus']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dBartering']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dLootStage']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/passive_effect[@name='LootStage']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dFitnessBartering']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/passive_effect[@name='LootProb']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dLootProb']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dStunResist']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/passive_effect[@name='BuffResistance']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/passive_effect[@name='PlayerExpGain']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dPlayerExpGain']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dHarvestCount']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dFoodWaterUse']"/>
+
+    <!-- Remove outfit specific effects -->
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dDamageResist']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/triggered_effect[@cvar='$enforcerBuffResistance']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dCritResist']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dCarryCapacity']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/passive_effect[@name='CarryCapacity']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/triggered_effect[@cvar='$commandoCritNaturalHealing']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dNaturalCritHealing']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dSneakEffectiveness']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dStaminaLoss']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dAttributeLevel']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/triggered_effect[@cvar='$raiderCritNaturalHealing']"/>
+
+    <!-- Remove glove specific effects -->
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dEntityDamage']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dLockpickSpeed']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dLockpickSuccess']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dFuelUsage']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dRifleDamage']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dHarvestSalvage']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dRangerDamage']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dAttackSpeed']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dBlockDamage']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dNerdDamage']"/>
+
+    <!-- Remove boots specific effects-->
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/triggered_effect[@cvar='$treatedPreacher']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dTreatedCritHealing']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dFallDamage']"/>
+    <remove xpath="/items/item[property[@name='Tags' and contains(@value,'armor')]]/effect_group/display_value[@name='dNoiseMultiplier']"/>
+
+
+    <!-- Kill tracker-->
+    <append xpath="/items/item[property[@name='Tags' and contains(@value,'ranged') and not(contains(@value,'ammo'))]]">
+        <effect_group name="increase kill count">
+            <!-- Setup kill counter if this item does not have it yet. -->
+            <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="kills"/>
+            <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="upgrades"/>
+            <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="nextUpgrade"/>
+            <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="lastUpgrade"/>
+
+            <!-- Increase counter for every kill -->
+            <!-- <triggered_effect trigger="onSelfKilledOther" action="SetItemMetaFloat" change="1" relative="true" key="kills">
+                <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+            </triggered_effect> -->
+
+        </effect_group>
+    </append>
+
+    <append xpath="/items/item[property[@name='Tags' and contains(@value,'melee') and not(contains(@value,'noMods'))] and not(@name='meleeHandMaster') and not(@name='meleeHandPlayer')]">
+        <effect_group name="increase kill count">
+            <!-- Setup kill counter if this item does not have it yet. -->
+            <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="kills"/>
+            <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="upgrades"/>
+            <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="nextUpgrade"/>
+            <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="lastUpgrade"/>
+
+            <!-- Increase counter for every kill -->
+            <!-- <triggered_effect trigger="onSelfKilledOther" action="SetItemMetaFloat" change="1" relative="true" key="kills">
+                <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+            </triggered_effect> -->
+
+        </effect_group>
+    </append>
+
+    <append xpath="/items/item[@name='meleeWpnSpearT1IronSpear' or @name='meleeWpnSpearT3SteelSpear' or @name='meleeToolShovelT2SteelShovel' or @name='meleeToolPickT2SteelPickaxe' or @name='meleeToolAxeT2SteelAxe']">
+        <effect_group name="increase kill count">
+            <!-- Setup kill counter if this item does not have it yet. -->
+            <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="kills"/>
+            <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="upgrades"/>
+            <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="nextUpgrade"/>
+            <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="lastUpgrade"/>
+
+            <!-- Increase counter for every kill -->
+            <!-- <triggered_effect trigger="onSelfKilledOther" action="SetItemMetaFloat" change="1" relative="true" key="kills">
+                <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+            </triggered_effect> -->
+
+        </effect_group>
+    </append>
+
+    <insertBefore xpath="/items/item[@name='casinoCoin']">
+        <item name="affixRerollToken">
+            <property name="Tags" value="reroll"/>
+            <property name="HoldType" value="45"/>
+            <property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="MresourceScrapBrassSmall"/>
+            <property name="MeltTimePerUnit" value=".4"/>
+            <property name="Weight" value="100"/>
+            <property name="Stacknumber" value="10"/> <!-- STK resource -->
+            <property name="EconomicValue" value="2000"/>
+            <property name="EconomicBundleSize" value="1"/>
+            <property name="SellableToTrader" value="false"/>
+            <property name="SoundPickup" value="coins_grab"/>
+            <property name="SoundPlace" value="coins_place"/>
+        </item>
+    </insertBefore>
+</configs>

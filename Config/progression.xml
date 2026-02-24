@@ -1,0 +1,34 @@
+<configs>
+    <insertAfter xpath="/progression/perks/perk[@name='perkLuckyLooter']">
+        <!-- *** MAGIC_FIND -->
+        <perk name="perkMagicFind" max_level="5" parent="skillGeneralPerks" name_key="perkMagicFindName" desc_key="perkMagicFindDesc" icon="ui_magic_find_icon" override_cost="1,1,2,2,3">
+            <!-- May put level requirements for each level -->
+            <!-- <level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="1" desc_key="reqPerceptionLevel01"/></level_requirements> -->
+            <!-- <level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="2" desc_key="reqPerceptionLevel02"/></level_requirements> -->
+            <!-- <level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="3" desc_key="reqPerceptionLevel03"/></level_requirements> -->
+            <!-- <level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="5" desc_key="reqPerceptionLevel05"/></level_requirements> -->
+            <!-- <level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="7" desc_key="reqPerceptionLevel07"/></level_requirements> -->
+
+            <!-- Effects of the skill are handled in the c# script -->
+            <effect_group>
+                <effect_description level="1" desc_key="perkMagicFindRank1Desc" long_desc_key="perkMagicFindRank1LongDesc"/>
+                <effect_description level="2" desc_key="perkMagicFindRank2Desc" long_desc_key="perkMagicFindRank2LongDesc"/>
+                <effect_description level="3" desc_key="perkMagicFindRank3Desc" long_desc_key="perkMagicFindRank3LongDesc"/>
+                <effect_description level="4" desc_key="perkMagicFindRank4Desc" long_desc_key="perkMagicFindRank4LongDesc"/>
+                <effect_description level="5" desc_key="perkMagicFindRank5Desc" long_desc_key="perkMagicFindRank5LongDesc"/>
+            </effect_group>
+        </perk>
+
+        <!-- MAGIC_SLAYER -->
+         <perk name="perkMagicSlayer" max_level="5" parent="skillGeneralPerks" name_key="perkMagicSlayerName" desc_key="perkMagicSlayerDesc" icon="ui_magic_slayer_icon" override_cost="1,1,2,2,3">
+            <!-- Effects of the skill are handled in the c# script -->
+            <effect_group>
+                <effect_description level="1" desc_key="perkMagicSlayerRank1Desc" long_desc_key="perkMagicSlayerRank1LongDesc"/>
+                <effect_description level="2" desc_key="perkMagicSlayerRank2Desc" long_desc_key="perkMagicSlayerRank2LongDesc"/>
+                <effect_description level="3" desc_key="perkMagicSlayerRank3Desc" long_desc_key="perkMagicSlayerRank3LongDesc"/>
+                <effect_description level="4" desc_key="perkMagicSlayerRank4Desc" long_desc_key="perkMagicSlayerRank4LongDesc"/>
+                <effect_description level="5" desc_key="perkMagicSlayerRank5Desc" long_desc_key="perkMagicSlayerRank5LongDesc"/>
+            </effect_group>
+        </perk>
+    </insertAfter>
+</configs>
