@@ -107,14 +107,22 @@ namespace WeaponBuffMod
 
         private static void ApplyAffixMods(ItemValue itemValue)
         {
-            if (itemValue == null) return;
+            if (itemValue == null)
+            {
+                Log.Out("ItemValue is null");
+                return;
+            }
 
-            // Parse the modlist to see which mods can be added
-            List<List<ItemClassModifier>> weaponMods = AffixUtils.GetCorrectModList(itemValue);
-            if (weaponMods.Count <= 0) return;
+                // Parse the modlist to see which mods can be added
+                List<List<ItemClassModifier>> weaponMods = AffixUtils.GetCorrectModList(itemValue);
+            if (weaponMods.Count <= 0)
+            {
+                Log.Out("No affixes found to apply");
+                return;
+            }
 
-            // Check how many mods to add to the weapon
-            int toAdd = CountModsToApply(itemValue);
+                // Check how many mods to add to the weapon
+                int toAdd = CountModsToApply(itemValue);
 
             // Add random mods
             for (int i = 0; i < toAdd; i++)
@@ -140,11 +148,25 @@ namespace WeaponBuffMod
 
         private static int CountModsToApply(ItemValue itemValue)
         {
-            int affixSlots = itemValue.Modifications.Length;
+            if (itemValue == null || itemValue.IsEmpty())
+            {
+                Log.Out("ItemValue is null in countmodstoapply");
+                return 0;
+            }
+
+                // Some server-spawned loot items can have null Modifications arrays.
+                int affixSlots = itemValue.Modifications?.Length ?? 0;
+            if (affixSlots <= 0)
+                affixSlots = 1;
+
             int magicFindLvl = 0;
             try
             {
-                magicFindLvl = GameManager.Instance.myEntityPlayerLocal.Progression.GetProgressionValue("perkMagicFind").level;
+                var localPlayer = GameManager.Instance?.myEntityPlayerLocal;
+                if (localPlayer?.Progression != null)
+                {
+                    magicFindLvl = localPlayer.Progression.GetProgressionValue("perkMagicFind").level;
+                }
             }
             catch (Exception e) {
                 Log.Out($"Can't find the magic Find perk. '{e}'");

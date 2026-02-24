@@ -28,21 +28,21 @@ namespace WeaponAffixesProject
 
         internal static int RandomizeTierWithOdds(ItemValue itemValue)
         {
-            foreach (var group in itemValue.ItemClass.Effects.EffectGroups)
-            {
-                if (!group.OwnerTiered)
-                    continue;
+            //foreach (var group in itemValue.ItemClass.Effects.EffectGroups)
+            //{
+            //    if (!group.OwnerTiered)
+            //        continue;
 
-                foreach (var passive in group.PassiveEffects)
-                {
-                    if (passive.Values != null && passive.Values.Length > 0)
-                    {
-                        float[] tierValues = passive.Values;
+            //    foreach (var passive in group.PassiveEffects)
+            //    {
+            //        if (passive.Values != null && passive.Values.Length > 0)
+            //        {
+            //            float[] tierValues = passive.Values;
 
-                        Log.Out($"Tier count: {tierValues.Length}");
-                    }
-                }
-            }
+            //            Log.Out($"Tier count: {tierValues.Length}");
+            //        }
+            //    }
+            //}
             int tier = itemValue.Quality;
             int roll = rng.Next(0, 100);
             int cumulative = 0;
