@@ -48,7 +48,6 @@ namespace WeaponBuffMod
 
         private static void SetCraftingActionList_Postfix(XUiC_ItemActionList __instance, XUiC_ItemActionList.ItemActionListTypes _actionListType, XUiController itemController)
         {
-            Log.Out($"SetCraftingActionList_Postfix: Is it run on the server? '{SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer}'");
             try
             {
                 if (_actionListType != XUiC_ItemActionList.ItemActionListTypes.Part) return;
@@ -75,7 +74,6 @@ namespace WeaponBuffMod
         // Applies affix mods when items are spawned/looted
         private static void LootContainer_SpawnItem_Postfix(LootContainer.LootEntry template, ItemValue lootItemValue, ref bool __result, List<ItemStack> spawnedItems, EntityPlayer player)
         {
-            Log.Out($"LootContainer_SpawnItem_Postfix: Is it run on the server? '{SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer}'");
             if (spawnedItems == null) return;
             
             foreach (var stack in spawnedItems)
@@ -206,7 +204,6 @@ namespace WeaponBuffMod
         
         public static void OnEntityDeath_Postfix(EntityAlive __instance)
         {
-            Log.Out($"OnEntityDeath_Postfix: Is it run on the server? '{SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer}'");
             Log.Out($"'{__instance.LocalizedEntityName}'");
             if (!__instance.HasAnyTags(FastTags<TagGroup.Global>.GetTag("zombie"))) return;
 
@@ -377,7 +374,6 @@ namespace WeaponBuffMod
 
         public static void CollectedItemList_SetYOffset_Prefix(ref int _yOffset)
         {
-            Log.Out($"CollectedItemList_SetYOffset_Prefix: Is it run on the server? '{SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer}'");
             var lp = GameManager.Instance?.myEntityPlayerLocal;
             if (lp == null) return;
 

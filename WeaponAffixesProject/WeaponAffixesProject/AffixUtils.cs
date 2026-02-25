@@ -44,8 +44,10 @@ namespace WeaponAffixesProject
             //    }
             //}
             int tier = itemValue?.Quality ?? 1;
-            if (tier < 1 || tier >= baseWeightsByQuality.Length || baseWeightsByQuality[tier] == null)
+            if (tier < 1 || baseWeightsByQuality[tier] == null)
                 tier = 1;
+            if (tier > 6)
+                tier = 6;
 
             int roll = rng.Next(0, 100);
             int cumulative = 0;
