@@ -14,15 +14,6 @@ make a mod to make wildspawns gs based, walkersim compatible.
     - option to increase spawns
     - add all zombie types to any biome spawngroup
 
-
-Current Features:
-80+ affixes
-only on looted weapons
-put q6 weapons/armors in loot
-lucky looter increases affix rarity
-applies amount of affixes equal to mod slots
-quality determines the max rarity of affix
-
 TODO:
 check quality range for items (make sure its normalized to 1-6 for mods that increase it)
 make a nice looking spreadsheet to show all affixes for weapons and armor, and reworked armor set bonus
@@ -35,8 +26,13 @@ slow down the reroll a little, so you cant reroll instantly (accidently skipping
 check Guns and Mods Reborn for incompatabilities
 Challenges for reroll/upgrade tokens.
 
+Fixed few localizations
+changed certain filenames to match naming conventions for server sided mods
+added a harmony check, you get a big error message when harmony is missing when using the mod
+
 New Affixes:
 Infection resist
+more advanced: Spawn friendly bees that attack zombies
 
 Reroll system for affixes:          DONE
     use the take(w) button on mods to reroll affix (use the canRemove prefix function). revert all mods back to being attachments rather than mods (so the button works)    DONE
