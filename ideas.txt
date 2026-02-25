@@ -25,6 +25,7 @@ allow a way to 'choose' reroll for higher price
 slow down the reroll a little, so you cant reroll instantly (accidently skipping good ones)
 check Guns and Mods Reborn for incompatabilities
 Challenges for reroll/upgrade tokens.
+add color to icon ingame rather than separate pngs
 
 Fixed few localizations
 changed certain filenames to match naming conventions for server sided mods
