@@ -12,7 +12,7 @@
     <remove xpath="/items/item[@name='meleeWpnSpearT1IronSpear' or @name='meleeWpnSpearT3SteelSpear']/effect_group/passive_effect[@tier and @name='EntityDamage']" />
 
     <!-- Remove all bonuses from armors -->
-    <remove xpath="/items/item[not(@name='armorSkillMagazine')][property[@name='Tags' and contains(@value,'armor')]]/effect_group[not(@name) or @name='']"/>
+    <remove xpath="/items/item[not(@name='armorSkillMagazine') and not(@name='resourceSewingKit')][property[@name='Tags' and contains(@value,'armor')]]/effect_group[not(@name) or @name='']"/>
 
     <!-- Add enforcer vol 2 back into enforcer outfit -->
     <append xpath="/items/item[@name='armorEnforcerOutfit']">

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <Name value="RAMLBDRpatch"/>
+    <DisplayName value="Random Affixes Mod patch for Learn by Doing Returns"/>
+    <Version value="1.0"/>
+    <Description value="Makes RAM compatible with Learn by Doing mod by IzPrebuilt."/>
+    <Author value="Firevos"/>
+    <Website value="."/>
+</xml>

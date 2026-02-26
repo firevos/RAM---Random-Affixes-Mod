@@ -27,6 +27,7 @@ check Guns and Mods Reborn for incompatabilities
 Challenges for reroll/upgrade tokens.
 add color to icon ingame rather than separate pngs
 
+Fixed sewing kit effect
 Fixed few localizations
 changed certain filenames to match naming conventions for server sided mods
 added a harmony check, you get a big error message when harmony is missing when using the mod
