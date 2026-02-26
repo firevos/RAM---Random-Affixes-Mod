@@ -6,5 +6,13 @@
             <ingredient name="resourceForgedSteel" count="25"/>
             <ingredient name="resourceMechanicalParts" count="10"/>
         </recipe>
+
+        <recipe name="affixExtractionToken" count="1" craft_time="60" craft_exp_gain="0" craft_area="workbench" tags="workbenchCrafting">
+            <ingredient name="affixRerollToken" count="1"/>
+            <ingredient name="resourceGoldNugget" count="3"/>
+            <ingredient name="foodHoney" count="2"/>
+            <ingredient name="resourceForgedSteel" count="50"/>
+            <ingredient name="resourceElectricParts" count="25"/>
+        </recipe>
     </insertAfter>
 </configs>

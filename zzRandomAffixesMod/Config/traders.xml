@@ -1,5 +1,6 @@
 <configs>
     <append xpath="/traders/trader_item_groups/trader_item_group[@name='traderAlways']">
         <item name="affixRerollToken" count="1,5"/>
+        <item name="affixExtractionToken" count="1,3"/>
     </append>
 </configs>

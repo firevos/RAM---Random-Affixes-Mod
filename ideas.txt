@@ -19,7 +19,6 @@ check quality range for items (make sure its normalized to 1-6 for mods that inc
 make a nice looking spreadsheet to show all affixes for weapons and armor, and reworked armor set bonus
 Fix affixes controller to show them separate from cosmetic slots
 check gameevents.xml for ideas for effects
-extraction instead of adding them to loot. using a similar system to reroll, make em pay something (also reroll token?) to extract and permanently remove an affix from an item to be able to install it as a regular mod in another item.
 
 allow a way to 'choose' reroll for higher price
 slow down the reroll a little, so you cant reroll instantly (accidently skipping good ones)
@@ -27,10 +26,23 @@ check Guns and Mods Reborn for incompatabilities
 Challenges for reroll/upgrade tokens.
 add color to icon ingame rather than separate pngs
 
-Fixed sewing kit effect
-Fixed few localizations
-changed certain filenames to match naming conventions for server sided mods
-added a harmony check, you get a big error message when harmony is missing when using the mod
+extraction system added     DONE
+make affixes display in item preview (overwrite mod slots or add a new row) DONE
+nerf killstreak damage (cap damage, reduce either damage or seconds)    DONE
+
+Uniques: make a custom affix set for each specific weapon and add that weapon to loot
+    -   needs a custom name 
+    -   very rare 
+    -   affix list is set, but might be able to roll rarities
+    -   each unique might contain a joke/meme affix
+
+Joke/unique affixes for uniques:
+poop knife adds smell
+chance to fall down when powerattacking
+chance to apply bleed to player (or any other injury)
+only allows headshot damage
+lucky 7, all stats are sevens (desert vulture)
+sprain arm chance when firing through scope on m60
 
 New Affixes:
 Infection resist

@@ -2276,15 +2276,17 @@
 
      <!-- Kill Streak Bonus Damage Buff -->
     <append xpath="/buffs">
-        <buff name="buffaffixModKillStreakDamage1" name_key="buffaffixModKillStreakDamage1Name" description_key="buffaffixModKillStreakDamage1Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="0,255,0" icon_blink="true">
+        <buff name="buffaffixModKillStreakDamage1" name_key="buffaffixModKillStreakDamage1Name" description_key="buffaffixModKillStreakDamage1Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="255,255,255" icon_blink="true">
             <stack_type value="replace"/>
             <duration value="7"/>
             <display_value value=".killStreakDamageDisplay"/>
 		    <display_value_key value="+{0:0}%"/>
 
             <effect_group>
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage" operation="set" value=".1"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage" operation="add" value=".1"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage" operation="set" value=".07"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage" operation="add" value=".07">
+                    <requirement name="CVarCompare" cvar=".killStreakDamage" operation="LT" value="1.75"/>
+                </triggered_effect>
                 <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage"/>
                 <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage"/>
                 <!-- Setup/update display -->
@@ -2295,99 +2297,109 @@
             </effect_group>
         </buff>
 
-        <buff name="buffaffixModKillStreakDamage2" name_key="buffaffixModKillStreakDamage2Name" description_key="buffaffixModKillStreakDamage2Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="0,255,0" icon_blink="true">
+        <buff name="buffaffixModKillStreakDamage2" name_key="buffaffixModKillStreakDamage2Name" description_key="buffaffixModKillStreakDamage2Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="104,249,104" icon_blink="true">
             <stack_type value="replace"/>
             <duration value="14"/>
-            <display_value value=".killStreakDamageDisplay"/>
+            <display_value value=".killStreakDamageDisplay2"/>
 		    <display_value_key value="+{0:0}%"/>
 
             <effect_group>
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage" operation="set" value=".1"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage" operation="add" value=".1"/>
-                <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage2" operation="set" value=".07"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage2" operation="add" value=".07">
+                    <requirement name="CVarCompare" cvar=".killStreakDamage2" operation="LT" value="1.75"/>
+                </triggered_effect>
+                <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage2"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage2"/>
                 <!-- Setup/update display -->
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="set" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="multiply" value="100"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="set" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="multiply" value="100"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay2" operation="set" value="@.killStreakDamage2"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay2" operation="multiply" value="100"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay2" operation="set" value="@.killStreakDamage2"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay2" operation="multiply" value="100"/>
             </effect_group>
         </buff>
 
-        <buff name="buffaffixModKillStreakDamage3" name_key="buffaffixModKillStreakDamage3Name" description_key="buffaffixModKillStreakDamage3Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="0,255,0" icon_blink="true">
+        <buff name="buffaffixModKillStreakDamage3" name_key="buffaffixModKillStreakDamage3Name" description_key="buffaffixModKillStreakDamage3Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="56,166,246" icon_blink="true">
             <stack_type value="replace"/>
             <duration value="21"/>
-            <display_value value=".killStreakDamageDisplay"/>
+            <display_value value=".killStreakDamageDisplay3"/>
 		    <display_value_key value="+{0:0}%"/>
 
             <effect_group>
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage" operation="set" value=".1"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage" operation="add" value=".1"/>
-                <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage3" operation="set" value=".07"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage3" operation="add" value=".07">
+                    <requirement name="CVarCompare" cvar=".killStreakDamage3" operation="LT" value="1.75"/>
+                </triggered_effect>
+                <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage3"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage3"/>
                 <!-- Setup/update display -->
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="set" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="multiply" value="100"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="set" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="multiply" value="100"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay3" operation="set" value="@.killStreakDamage3"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay3" operation="multiply" value="100"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay3" operation="set" value="@.killStreakDamage3"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay3" operation="multiply" value="100"/>
             </effect_group>
         </buff>
 
-        <buff name="buffaffixModKillStreakDamage4" name_key="buffaffixModKillStreakDamage4Name" description_key="buffaffixModKillStreakDamage4Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="0,255,0" icon_blink="true">
+        <buff name="buffaffixModKillStreakDamage4" name_key="buffaffixModKillStreakDamage4Name" description_key="buffaffixModKillStreakDamage4Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="133,46,200" icon_blink="true">
             <stack_type value="replace"/>
             <duration value="28"/>
-            <display_value value=".killStreakDamageDisplay"/>
+            <display_value value=".killStreakDamageDisplay4"/>
 		    <display_value_key value="+{0:0}%"/>
 
             <effect_group>
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage" operation="set" value=".1"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage" operation="add" value=".1"/>
-                <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage4" operation="set" value=".07"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage4" operation="add" value=".07">
+                    <requirement name="CVarCompare" cvar=".killStreakDamage4" operation="LT" value="1.75"/>
+                </triggered_effect>
+                <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage4"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage4"/>
                 <!-- Setup/update display -->
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="set" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="multiply" value="100"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="set" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="multiply" value="100"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay4" operation="set" value="@.killStreakDamage4"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay4" operation="multiply" value="100"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay4" operation="set" value="@.killStreakDamage4"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay4" operation="multiply" value="100"/>
             </effect_group>
         </buff>
 
-        <buff name="buffaffixModKillStreakDamage5" name_key="buffaffixModKillStreakDamage5Name" description_key="buffaffixModKillStreakDamage5Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="0,255,0" icon_blink="true">
+        <buff name="buffaffixModKillStreakDamage5" name_key="buffaffixModKillStreakDamage5Name" description_key="buffaffixModKillStreakDamage5Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="214,209,98" icon_blink="true">
             <stack_type value="replace"/>
             <duration value="35"/>
-            <display_value value=".killStreakDamageDisplay"/>
+            <display_value value=".killStreakDamageDisplay5"/>
 		    <display_value_key value="+{0:0}%"/>
 
             <effect_group>
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage" operation="set" value=".1"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage" operation="add" value=".1"/>
-                <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage5" operation="set" value=".07"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage5" operation="add" value=".07">
+                    <requirement name="CVarCompare" cvar=".killStreakDamage5" operation="LT" value="1.75"/>
+                </triggered_effect>
+                <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage5"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage5"/>
                 <!-- Setup/update display -->
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="set" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="multiply" value="100"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="set" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="multiply" value="100"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay5" operation="set" value="@.killStreakDamage5"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay5" operation="multiply" value="100"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay5" operation="set" value="@.killStreakDamage5"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay5" operation="multiply" value="100"/>
             </effect_group>
         </buff>
 
-        <buff name="buffaffixModKillStreakDamage6" name_key="buffaffixModKillStreakDamage6Name" description_key="buffaffixModKillStreakDamage6Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="0,255,0" icon_blink="true">
+        <buff name="buffaffixModKillStreakDamage6" name_key="buffaffixModKillStreakDamage6Name" description_key="buffaffixModKillStreakDamage6Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="255,54,70" icon_blink="true">
             <stack_type value="replace"/>
             <duration value="42"/>
-            <display_value value=".killStreakDamageDisplay"/>
+            <display_value value=".killStreakDamageDisplay6"/>
 		    <display_value_key value="+{0:0}%"/>
 
             <effect_group>
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage" operation="set" value=".1"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage" operation="add" value=".1"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage6" operation="set" value=".07"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage6" operation="add" value=".07">
+                    <requirement name="CVarCompare" cvar=".killStreakDamage6" operation="LT" value="1.75"/>
+                </triggered_effect>
 
-                <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage6"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage6"/>
                 <!-- Setup/update display -->
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="set" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="multiply" value="100"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="set" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="multiply" value="100"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay6" operation="set" value="@.killStreakDamage6"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay6" operation="multiply" value="100"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay6" operation="set" value="@.killStreakDamage6"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay6" operation="multiply" value="100"/>
             </effect_group>
         </buff>
     </append>

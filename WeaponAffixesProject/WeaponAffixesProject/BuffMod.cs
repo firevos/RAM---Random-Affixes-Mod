@@ -27,7 +27,12 @@ namespace WeaponBuffMod
 
             harmony.Patch(
                 original: AccessTools.Method(typeof(XUiC_ItemCosmeticStack), nameof(XUiC_ItemCosmeticStack.CanRemove)),
-                prefix: new HarmonyMethod(typeof(BuffMod), nameof(CanRemove_Prefix))
+                prefix: new HarmonyMethod(typeof(BuffMod), nameof(CanRemove_PrefixCosmetic))
+            );
+
+            harmony.Patch(
+                original: AccessTools.Method(typeof(XUiC_ItemPartStack), nameof(XUiC_ItemPartStack.CanRemove)),
+                prefix: new HarmonyMethod(typeof(BuffMod), nameof(CanRemove_PrefixPart))
             );
 
             harmony.Patch(
@@ -44,6 +49,40 @@ namespace WeaponBuffMod
                 original: AccessTools.Method(typeof(XUiC_ItemActionList), nameof(XUiC_ItemActionList.SetCraftingActionList)),
                 postfix: new HarmonyMethod(typeof(BuffMod), nameof(SetCraftingActionList_Postfix))
             );
+
+            harmony.Patch(
+                original: AccessTools.Method(typeof(XUiC_ItemInfoWindow), nameof(XUiC_ItemInfoWindow.SetInfo)),
+                postfix: new HarmonyMethod(typeof(BuffMod), nameof(SetInfo_Postfix))
+            );
+        }
+
+        private static void SetInfo_Postfix(XUiC_ItemInfoWindow __instance, ItemStack stack, XUiController controller, XUiC_ItemActionList.ItemActionListTypes actionListType)
+        {
+            bool flag = stack.itemValue.type == __instance.itemStack.itemValue.type && stack.count == __instance.itemStack.count;
+            __instance.itemStack = stack.Clone();
+            bool flag2 = __instance.itemStack != null && !__instance.itemStack.IsEmpty();
+            if (__instance.itemPreview == null)
+            {
+                return;
+            }
+            if (!flag || !stack.itemValue.Equals(__instance.itemStack.itemValue))
+            {
+                __instance.compareStack = ItemStack.Empty.Clone();
+            }
+            if (flag2 && __instance.itemStack.itemValue.Modifications != null)
+            {
+                __instance.partList.SetMainItem(__instance.itemStack);
+                if (__instance.itemStack.itemValue.CosmeticMods != null && __instance.itemStack.itemValue.CosmeticMods.Length != 0 && __instance.itemStack.itemValue.CosmeticMods[0] != null && !__instance.itemStack.itemValue.CosmeticMods[0].IsEmpty())
+                {
+                    __instance.partList.SetSlots(__instance.itemStack.itemValue.CosmeticMods, 0);
+                    __instance.partList.SetSlots(__instance.itemStack.itemValue.Modifications, __instance.itemStack.itemValue.CosmeticMods.Length);
+                }
+                else
+                {
+                    __instance.partList.SetSlots(__instance.itemStack.itemValue.Modifications, 0);
+                }
+                __instance.partList.ViewComponent.IsVisible = true;
+            }
         }
 
         private static void SetCraftingActionList_Postfix(XUiC_ItemActionList __instance, XUiC_ItemActionList.ItemActionListTypes _actionListType, XUiController itemController)
@@ -51,23 +90,37 @@ namespace WeaponBuffMod
             try
             {
                 if (_actionListType != XUiC_ItemActionList.ItemActionListTypes.Part) return;
-                if (!(itemController is XUiC_ItemCosmeticStack)) return;
+                if (!(itemController is XUiC_ItemCosmeticStack) && !(itemController is XUiC_ItemPartStack)) return;
 
                 var xui = __instance.xui;
                 var parent = xui?.AssembleItem?.CurrentItem;
                 if (parent == null || parent.IsEmpty() || parent.itemValue == null || parent.itemValue.IsEmpty()) return;
 
                 // Get the selected cosmetic mod stack (the slot you clicked)
-                var cosmeticController = (XUiC_ItemCosmeticStack)itemController;
-                var selectedClass = cosmeticController.ItemStack?.itemValue?.ItemClass;
+                if (itemController is XUiC_ItemCosmeticStack)
+                {
+                    var cosmeticController = (XUiC_ItemCosmeticStack)itemController;
+                    var selectedClass = cosmeticController.ItemStack?.itemValue?.ItemClass;
 
-                if (selectedClass == null || !selectedClass.HasAnyTags(AffixUtils.AffixTag)) return;
+                    if (selectedClass == null || !selectedClass.HasAnyTags(AffixUtils.AffixTag)) return;
 
-                MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryRerollAffix(itemController) });
+                    MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryRerollAffix(itemController) });
+                    MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryExtractAffix(itemController) });
+                }
+                else
+                {
+                    var partController = (XUiC_ItemPartStack)itemController;
+                    var selectedClass2 = partController.ItemStack?.itemValue?.ItemClass;
+
+                    if (selectedClass2 == null || !selectedClass2.HasAnyTags(AffixUtils.AffixTag)) return;
+
+                    MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryExtractAffix(itemController) });
+                }
+
             }
             catch (Exception e)
             {
-                Log.Out($"[REROLL DEBUG] Failed adding reroll action: {e}");
+                Log.Out($"[REROLL DEBUG] Failed adding reroll/extract action: {e}");
             }
         }
 
@@ -154,8 +207,8 @@ namespace WeaponBuffMod
                 return 0;
             }
 
-                // Some server-spawned loot items can have null Modifications arrays.
-                int affixSlots = itemValue.Modifications?.Length ?? 0;
+            // Some server-spawned loot items can have null Modifications arrays.
+            int affixSlots = itemValue.Modifications?.Length ?? 0;
             if (affixSlots <= 0)
                 affixSlots = 1;
 
@@ -189,10 +242,11 @@ namespace WeaponBuffMod
             return affixSlots - currentAffixes;
         }
 
-        private static bool CanRemove_Prefix(XUiC_ItemCosmeticStack __instance, ref bool __result)
+        private static bool CanRemove_PrefixPart(XUiC_ItemPartStack __instance, ref bool __result)
         {
             try
             {
+                if (IsCalledFromExtractAffix()) return true;
                 if (AffixUtils.IsAffixMod(__instance.ItemClass)) return __result = false;
             }
             catch (Exception ex)
@@ -201,7 +255,36 @@ namespace WeaponBuffMod
             }
             return true;
         }
-        
+
+        private static bool CanRemove_PrefixCosmetic(XUiC_ItemCosmeticStack __instance, ref bool __result)
+        {
+            try
+            {
+                if (IsCalledFromExtractAffix()) return true;
+                if (AffixUtils.IsAffixMod(__instance.ItemClass)) return __result = false;
+            }
+            catch (Exception ex)
+            {
+                Log.Out($"[WeaponBuffMod] Error in CanRemove_Prefix: '{ex}'");
+            }
+            return true;
+        }
+
+        private static bool IsCalledFromExtractAffix()
+        {
+            var trace = new StackTrace(false);
+            var frames = trace.GetFrames();
+            if (frames == null) return false;
+
+            for (int i = 0; i < frames.Length; i++)
+            {
+                var method = frames[i].GetMethod();
+                var type = method?.DeclaringType;
+                if (type?.Name == "ItemActionEntryExtractAffix" && method.Name == "OnActivated") return true;
+            }
+            return false;
+        }
+
         public static void OnEntityDeath_Postfix(EntityAlive __instance)
         {
             Log.Out($"'{__instance.LocalizedEntityName}'");
