@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using HarmonyLib;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using UnityEngine.Scripting;
 using WeaponAffixesProject;
 
@@ -7,23 +10,31 @@ using WeaponAffixesProject;
 public class ItemActionEntryRerollAffix : BaseItemActionEntry
 {
     public ItemActionEntryRerollAffix(XUiController controller) : base(controller, "lblContextActionRerollAffix", "ui_game_symbol_reroll", BaseItemActionEntry.GamepadShortCut.None, "crafting/craft_click_craft", "ui/ui_denied") {}
+    private static float lastRerollTime = -999f;
+    private const float CooldownSeconds = 1f;
 
     public override void RefreshEnabled()
     {
         // default enabled; you can disable if missing reagent etc
-        base.Enabled = true;
+        base.RefreshEnabled();
     }
 
     public override void OnActivated()
     {
         Log.Out("[Affix] Reroll button clicked");
-
+        
         XUiC_BasePartStack affixMod = this.ItemController as XUiC_BasePartStack;
         if (affixMod == null) return;
         if (!affixMod.ItemClass.HasAnyTags(FastTags<TagGroup.Global>.GetTag("affix_mod"))) return;
         var player = GameManager.Instance.myEntityPlayerLocal;
         if (player == null) return;
         XUiM_PlayerInventory playerInventory = this.ItemController.xui.PlayerInventory;
+
+        if (Time.time - lastRerollTime < CooldownSeconds)
+        {
+            GameManager.ShowTooltip(player, string.Format(Localization.Get("ttWaitToReroll")), string.Empty, "ui_denied");
+            return;
+        }
 
         var xui = this.ItemController?.xui;
         if (xui == null) return;
@@ -73,6 +84,7 @@ public class ItemActionEntryRerollAffix : BaseItemActionEntry
                 }
                 playerInventory.RemoveItems(ingredients, 1, null);
                 cil?.RemoveItemStack(new ItemStack(requiredValue, 1));
+                lastRerollTime = Time.time;
                 GameManager.ShowTooltip(player, string.Format(Localization.Get("ttRerollAffixSucces")), string.Empty, "recipe_unlocked");
             }
         }

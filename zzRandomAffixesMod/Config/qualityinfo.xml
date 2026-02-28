@@ -1,0 +1,6 @@
+<configs>
+    <insertAfter xpath="/qualityinfo/quality[@key='6']">
+        <!--Mythical-->
+        <quality key="7" color="FF3646"/>
+    </insertAfter>
+</configs>

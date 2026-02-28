@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <Name value="RAMRemoveVanillaBonuses"/>
+    <DisplayName value="RAM Remove Vanilla Bonuses"/>
+    <Version value="1.0"/>
+    <Description value="Add on to RAM to remove armor bonuses and damage increase from quality and mod count (the way the mod is intended to be played)."/>
+    <Author value="Firevos"/>
+    <Website value="https://www.nexusmods.com/7daystodie/mods/9567"/>
+</xml>

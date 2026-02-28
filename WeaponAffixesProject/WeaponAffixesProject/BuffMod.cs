@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using UnityEngine;
 using WeaponAffixesProject;
 
 namespace WeaponBuffMod
@@ -54,6 +55,17 @@ namespace WeaponBuffMod
                 original: AccessTools.Method(typeof(XUiC_ItemInfoWindow), nameof(XUiC_ItemInfoWindow.SetInfo)),
                 postfix: new HarmonyMethod(typeof(BuffMod), nameof(SetInfo_Postfix))
             );
+
+            harmony.Patch(
+                original: AccessTools.Method(typeof(QualityInfo), nameof(QualityInfo.Cleanup)),
+                prefix: new HarmonyMethod(typeof(BuffMod), nameof(CleanupOverride))
+            );
+        }
+        private static bool CleanupOverride()
+        {
+            QualityInfo.qualityColors = new Color[8];
+            QualityInfo.hexColors = new string[8];
+            return false;
         }
 
         private static void SetInfo_Postfix(XUiC_ItemInfoWindow __instance, ItemStack stack, XUiController controller, XUiC_ItemActionList.ItemActionListTypes actionListType)
@@ -97,7 +109,7 @@ namespace WeaponBuffMod
                 if (parent == null || parent.IsEmpty() || parent.itemValue == null || parent.itemValue.IsEmpty()) return;
 
                 // Get the selected cosmetic mod stack (the slot you clicked)
-                if (itemController is XUiC_ItemCosmeticStack)
+                if (itemController is XUiC_ItemCosmeticStack && !parent.itemValue.ItemClass.HasAnyTags(AffixUtils.UniqueAffixTag))
                 {
                     var cosmeticController = (XUiC_ItemCosmeticStack)itemController;
                     var selectedClass = cosmeticController.ItemStack?.itemValue?.ItemClass;
@@ -107,7 +119,7 @@ namespace WeaponBuffMod
                     MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryRerollAffix(itemController) });
                     MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryExtractAffix(itemController) });
                 }
-                else
+                else if (itemController is XUiC_ItemPartStack)
                 {
                     var partController = (XUiC_ItemPartStack)itemController;
                     var selectedClass2 = partController.ItemStack?.itemValue?.ItemClass;
@@ -158,6 +170,26 @@ namespace WeaponBuffMod
             }
         }
 
+        private static void ApplyUniqueAffixes(ItemValue itemValue, EntityPlayer player)
+        {
+            int count = 0;
+            List<string> tags = itemValue.ItemClass.ItemTags.GetTagNames();
+            List<string> modsToApply = new List<string>();
+            for (int i = 0; i < tags.Count; i++)
+            {
+                if (tags[i].Contains("affixMod"))
+                {
+                    modsToApply.Add(tags[i]);
+                    count++;
+                }
+            }
+
+            var newCosmeticModsList = new ItemValue[count];
+            for (int i = 0; i < count; i++)
+                newCosmeticModsList[i] = ItemClassModifier.GetItem(modsToApply[i]);
+            itemValue.CosmeticMods = newCosmeticModsList;
+        }
+
         private static void ApplyAffixMods(ItemValue itemValue, EntityPlayer player)
         {
             if (itemValue == null)
@@ -166,16 +198,22 @@ namespace WeaponBuffMod
                 return;
             }
 
-                // Parse the modlist to see which mods can be added
-                List<List<ItemClassModifier>> weaponMods = AffixUtils.GetCorrectModList(itemValue);
+            if (itemValue.ItemClass.HasAnyTags(AffixUtils.UniqueAffixTag))
+            {
+                ApplyUniqueAffixes(itemValue, player);
+                return;
+            }
+
+            // Parse the modlist to see which mods can be added
+            List<List<ItemClassModifier>> weaponMods = AffixUtils.GetCorrectModList(itemValue);
             if (weaponMods.Count <= 0)
             {
                 Log.Out("No affixes found to apply");
                 return;
             }
 
-                // Check how many mods to add to the weapon
-                int toAdd = CountModsToApply(itemValue, player);
+            // Check how many mods to add to the weapon
+            int toAdd = CountModsToApply(itemValue, player);
 
             // Add random mods
             for (int i = 0; i < toAdd; i++)

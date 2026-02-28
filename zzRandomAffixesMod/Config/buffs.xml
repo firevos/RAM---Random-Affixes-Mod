@@ -2276,27 +2276,6 @@
 
      <!-- Kill Streak Bonus Damage Buff -->
     <append xpath="/buffs">
-        <buff name="buffaffixModKillStreakDamage1" name_key="buffaffixModKillStreakDamage1Name" description_key="buffaffixModKillStreakDamage1Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="255,255,255" icon_blink="true">
-            <stack_type value="replace"/>
-            <duration value="7"/>
-            <display_value value=".killStreakDamageDisplay"/>
-		    <display_value_key value="+{0:0}%"/>
-
-            <effect_group>
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage" operation="set" value=".07"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage" operation="add" value=".07">
-                    <requirement name="CVarCompare" cvar=".killStreakDamage" operation="LT" value="1.75"/>
-                </triggered_effect>
-                <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage"/>
-                <!-- Setup/update display -->
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="set" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="multiply" value="100"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="set" value="@.killStreakDamage"/>
-                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay" operation="multiply" value="100"/>
-            </effect_group>
-        </buff>
-
         <buff name="buffaffixModKillStreakDamage2" name_key="buffaffixModKillStreakDamage2Name" description_key="buffaffixModKillStreakDamage2Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="104,249,104" icon_blink="true">
             <stack_type value="replace"/>
             <duration value="14"/>

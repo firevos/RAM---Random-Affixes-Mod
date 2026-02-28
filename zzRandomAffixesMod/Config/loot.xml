@@ -136,6 +136,38 @@
         <item name="affixExtractionToken" count="1" loot_prob_template="med"/>
     </append>
 
+    <!-- Templates for Uniques -->
+    <insertBefore xpath="/lootcontainers/lootprobtemplates/lootprobtemplate[@name='veryLowDelayed']">
+        <lootprobtemplate name="uniqueT0">
+            <loot level="0,999999" prob=".01"/>
+        </lootprobtemplate>
+        <lootprobtemplate name="uniqueT1">
+            <loot level="0,28" prob="0"/>
+            <loot level="29,999999" prob=".01"/>
+        </lootprobtemplate>
+        <lootprobtemplate name="uniqueT2">
+            <loot level="0,68" prob="0"/>
+            <loot level="69,999999" prob=".01"/>
+        </lootprobtemplate>
+        <lootprobtemplate name="uniqueT3">
+            <loot level="0,98" prob="0"/>
+            <loot level="99,999999" prob=".01"/>
+        </lootprobtemplate>
+    </insertBefore>
+
+    <insertAfter xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate[@name='qualQ1Template']">
+        <lootqualitytemplate name="qualQ7Template">
+            <qualitytemplate level="1,999999" default_quality="7">
+                <loot quality="7" prob="1"/>
+            </qualitytemplate>
+        </lootqualitytemplate>
+    </insertAfter>
+
+    <!-- Uniques -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupToilet02']">
+        <item name="meleeWpnBladeT1HuntingKnifeUnique" count="1" loot_prob_template="uniqueT0"/>
+    </append>
+
     <!-- ARMOR QUALITY TEMPLATE-->
 
     <set xpath="//lootqualitytemplate[@name='armorQualityTemplate']/qualitytemplate[@level='121,122']/loot[@quality='5']/@prob">0.664</set>

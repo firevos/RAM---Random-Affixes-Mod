@@ -10,6 +10,7 @@ namespace WeaponAffixesProject
     {
         internal static readonly System.Random rng = new System.Random();
         internal static readonly FastTags<TagGroup.Global> AffixTag = FastTags<TagGroup.Global>.GetTag("affix_mod");
+        internal static readonly FastTags<TagGroup.Global> UniqueAffixTag = FastTags<TagGroup.Global>.GetTag("unique_affix_mod");
         internal static readonly int[][] baseWeightsByQuality =
                 {
                 null,                          // 0 unused
@@ -23,7 +24,7 @@ namespace WeaponAffixesProject
 
         internal static bool IsAffixMod(ItemClass itemClass)
         {
-            return itemClass != null && itemClass.HasAnyTags(AffixUtils.AffixTag);
+            return itemClass != null && (itemClass.HasAnyTags(AffixTag) || itemClass.HasAnyTags(UniqueAffixTag));
         }
 
         internal static int RandomizeTierWithOdds(ItemValue itemValue, EntityPlayer player)

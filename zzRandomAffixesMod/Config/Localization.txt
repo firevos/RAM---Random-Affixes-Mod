@@ -10,6 +10,7 @@ ttRerollAffixSucces,UI,Tooltip,,,Affix has been rerolled!,,
 lblContextActionExtractAffix,UI,Item Context Menu,,,Extract,,
 ttExtractionAffixSucces,UI,Tooltip,,,Affix has been succesfully extracted!,,
 ttExtractionAffixRequiresItem,UI,Tooltip,,,You need an {0} in order to extract an affix.,,
+ttWaitToReroll,UI,Tooltip,,,Wait at least 1 second to reroll again.,,
 
 affixRerollToken,items,Item,,,Affix Reroll Token,,
 affixRerollTokenDesc,items,Item,,,"This token grants you the ability to reroll one affix into a fully random other one. Change is guaranteed, e.g. can't reroll into the same affix or one already applied on the item. Rerolling also rerolls the rarity (based on item quality and perk level)"
@@ -41,6 +42,9 @@ perkMagicSlayerRank4Desc,progression,perk Per,,,Mythical Instincts,,
 perkMagicSlayerRank4LongDesc,progression,perk Per,,,Additional kills required per upgrade reduced to 60. You can now upgrade your affixes up to [FF3646]Mythic[-] quality.,,
 perkMagicSlayerRank5Desc,progression,perk Per,,,True Slayer
 perkMagicSlayerRank5LongDesc,progression,perk Per,,,Additional kills required per upgrade reduced to 50. You can now unlock up to 7 affixes total.
+
+meleeWpnBladeT1HuntingKnifeUnique,item,Melee,,,Jonah's Poop Knife,,
+meleeWpnBladeT1HuntingKnifeUniqueDesc,item,Melee,,,Did you really just pull this from a dirty old toilet? You do you I guess...
 
 buffLumberjackSetBonusDesc,buffs,Buff,,,"With the proper gear, a Lumberjack can go all day.\nWhile using axes and chainsaws:\nIncrease wood harvest by {cvar(.armorLumberjackFSBDisplay02:0)}%.\nUse {cvar(.armorLumberjackFSBDisplay01:0)}% less stamina.\nIncrease base entity damage by {cvar(.armorLumberjackFSBDisplay03:0)}.\nIncrease block damage by {cvar(.armorLumberjackFSBDisplay04:0)}%.",,
 armorLumberjackBootsDesc,items,Clothes,,,"Light Armor\nFull Set Bonus: Use less stamina when using axes. Increase wood harvest, base entity damage and block damage when using axes and chainsaws.",,
@@ -842,13 +846,11 @@ affixModLifesteal6Desc,item_modifiers,mod,,,You're a vampire... I think. Heal 1 
 affixModKillStreakMaxHP6,item_modifiers,mod,,,[FF3646]Mythic[-] Kill Streak HP,,
 affixModKillStreakMaxHP6Desc,item_modifiers,mod,,,Increases your max HP by 1 for every kill as long as you keep killing. Having multiple of this affix does not provide additional benefits,,
 
-affixModInstalKill5,item_modifiers,mod,,,[D6D162]Legendary[-] Instakill,,
-affixModInstalKill5Desc,item_modifiers,mod,,,You have a 1% chance to instakill with every hit,,
-affixModInstalKill6,item_modifiers,mod,,,[FF3646]Mythic[-] Instakill,,
-affixModInstalKill6Desc,item_modifiers,mod,,,You have a 2% chance to instakill with every hit,,
+affixModInstaKill5,item_modifiers,mod,,,[D6D162]Legendary[-] Instakill,,
+affixModInstaKill5Desc,item_modifiers,mod,,,You have a 1% chance to instakill with every hit,,
+affixModInstaKill6,item_modifiers,mod,,,[FF3646]Mythic[-] Instakill,,
+affixModInstaKill6Desc,item_modifiers,mod,,,You have a 2% chance to instakill with every hit,,
 
-affixModKillStreakDamage1,item_modifiers,mod,,,Common Killstreak Damage,,
-affixModKillStreakDamage1Desc,item_modifiers,mod,,,Increases weapon damage by 7% for each kill as long as you keep killing within 7 seconds. Capped at 175%.,,
 affixModKillStreakDamage2,item_modifiers,mod,,,[68F968]Uncommon[-] Killstreak Damage,,
 affixModKillStreakDamage2Desc,item_modifiers,mod,,,Increases weapon damage by 7% for each kill as long as you keep killing within 14 seconds. Capped at 175%.,,
 affixModKillStreakDamage3,item_modifiers,mod,,,[38A6F6]Rare[-] Killstreak Damage,,
@@ -860,8 +862,6 @@ affixModKillStreakDamage5Desc,item_modifiers,mod,,,Increases weapon damage by 7%
 affixModKillStreakDamage6,item_modifiers,mod,,,[FF3646]Mythic[-] Killstreak Damage,,
 affixModKillStreakDamage6Desc,item_modifiers,mod,,,Increases weapon damage by 7% for each kill as long as you keep killing within 42 seconds. Capped at 175%.,,
 
-buffaffixModKillStreakDamage1Name,buffs,Buff,,,Common Killstreak Damage,,
-buffaffixModKillStreakDamage1Desc,buff,Buff,,,Increases weapon damage by 7% for each kill as long as you keep killing within 7 seconds. Capped at 175%.,,
 buffaffixModKillStreakDamage2Name,buffs,Buff,,,[68F968]Uncommon[-] Killstreak Damage,,
 buffaffixModKillStreakDamage2Desc,buff,Buff,,,Increases weapon damage by 7% for each kill as long as you keep killing within 14 seconds. Capped at 175%.,,
 buffaffixModKillStreakDamage3Name,buffs,Buff,,,[38A6F6]Rare[-] Killstreak Damage,,
@@ -1291,13 +1291,32 @@ affixModLootstageBase6Desc,item_modifiers,mod,,,Increases your lootstage by 36.,
 
 affixModBartering1,item_modifiers,mod,,,Common Bartering,,
 affixModBartering1Desc,item_modifiers,mod,,,Improves buying and selling prices by 5%.,,
-affixModBartering2,item_modifiers,mod,,,Common Bartering,,
+affixModBartering2,item_modifiers,mod,,,[68F968]Uncommon[-] Bartering,,
 affixModBartering2Desc,item_modifiers,mod,,,Improves buying and selling prices by 10%.,,
-affixModBartering3,item_modifiers,mod,,,Common Bartering,,
+affixModBartering3,item_modifiers,mod,,,[38A6F6]Rare[-] Bartering,,
 affixModBartering3Desc,item_modifiers,mod,,,Improves buying and selling prices by 15%.,,
-affixModBartering4,item_modifiers,mod,,,Common Bartering,,
+affixModBartering4,item_modifiers,mod,,,[852EC8]Epic[-] Bartering,,
 affixModBartering4Desc,item_modifiers,mod,,,Improves buying and selling prices by 20%.,,
-affixModBartering5,item_modifiers,mod,,,Common Bartering,,
+affixModBartering5,item_modifiers,mod,,,[D6D162]Legendary[-] Bartering,,
 affixModBartering5Desc,item_modifiers,mod,,,Improves buying and selling prices by 25%.,,
-affixModBartering6,item_modifiers,mod,,,Common Bartering,,
+affixModBartering6,item_modifiers,mod,,,[FF3646]Mythic[-] Bartering,,
 affixModBartering6Desc,item_modifiers,mod,,,Improves buying and selling prices by 30%.,,
+
+affixModInfectionResist1,item_modifiers,mod,,,Common Infection Resist,,
+affixModInfectionResist1Desc,item_modifiers,mod,,,Increases resistance to infections by 17%.,,
+affixModInfectionResist2,item_modifiers,mod,,,[68F968]Uncommon[-] Infection Resist,,
+affixModInfectionResist2Desc,item_modifiers,mod,,,Increases resistance to infections by 33%.,,
+affixModInfectionResist3,item_modifiers,mod,,,[38A6F6]Rare[-] Infection Resist,,
+affixModInfectionResist3Desc,item_modifiers,mod,,,Increases resistance to infections by 50%.,,
+affixModInfectionResist4,item_modifiers,mod,,,[852EC8]Epic[-] Infection Resist,,
+affixModInfectionResist4Desc,item_modifiers,mod,,,Increases resistance to infections by 67%.,,
+affixModInfectionResist5,item_modifiers,mod,,,[D6D162]Legendary[-] Infection Resist,,
+affixModInfectionResist5Desc,item_modifiers,mod,,,Increases resistance to infections by 83%.,,
+affixModInfectionResist6,item_modifiers,mod,,,[FF3646]Mythic[-] Infection Resist,,
+affixModInfectionResist6Desc,item_modifiers,mod,,,Increases resistance to infections by 100%.,,
+
+affixModSmell,item_modifiers,mod,,,[5B441D]Poopy[-] Smell,,
+affixModSmellDesc,item_modifiers,mod,,,"I guess this was inevitable huh, a knife pulled from the toilet ought to smell a bit. Adds a constant 40 Meter smell debuff."
+
+affixModGoldenTouch5,item_modifiers,mod,,,Common Golden Touch,,
+affixModGoldenTouch5Desc,item_modifiers,mod,,,You gain a gold nugget on every kill.,,

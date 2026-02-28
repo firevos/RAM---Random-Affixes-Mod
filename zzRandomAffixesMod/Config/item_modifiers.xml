@@ -3917,7 +3917,7 @@
         </item_modifier>
     </append>
 
-    <!-- Stamina on kill % -->
+    <!-- Stamina on kill -->
     <append xpath="/item_modifiers">
         <item_modifier name="affixModStamKill1" type="attachment" installable_tags="tool,weapon" blocked_tags="noMods">
             <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
@@ -4039,7 +4039,7 @@
 
     <!-- Instakill -->
     <append xpath="/item_modifiers">
-        <item_modifier name="affixModInstalKill5" type="attachment" installable_tags="tool,weapon" blocked_tags="noMods">
+        <item_modifier name="affixModInstaKill5" type="attachment" installable_tags="tool,weapon" blocked_tags="noMods">
             <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
             <property name="CustomIcon" value="ui_instakill_icon_5"/>
             <property name="Group" value="Weapon Mods"/>
@@ -4051,7 +4051,7 @@
             </effect_group>
         </item_modifier>
 
-        <item_modifier name="affixModInstalKill6" type="attachment" installable_tags="tool,weapon" blocked_tags="noMods">
+        <item_modifier name="affixModInstaKill6" type="attachment" installable_tags="tool,weapon" blocked_tags="noMods">
             <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
             <property name="CustomIcon" value="ui_instakill_icon_6"/>
             <property name="Group" value="Weapon Mods"/>
@@ -4066,17 +4066,6 @@
 
     <!-- Kill Streak Bonus Damage -->
     <append xpath="/item_modifiers">
-        <item_modifier name="affixModKillStreakDamage1" type="attachment" installable_tags="tool,weapon" blocked_tags="noMods">
-            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
-            <property name="CustomIcon" value="ui_killstreak_damage_icon_1"/>
-            <property name="Group" value="Weapon Mods"/>
-            <property name="Tags" value="affix_mod"/>
-            <property name="MaxModsAllowed" value="6"/>
-            <effect_group>
-                <triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffaffixModKillStreakDamage1"/>
-            </effect_group>
-        </item_modifier>
-
         <item_modifier name="affixModKillStreakDamage2" type="attachment" installable_tags="tool,weapon" blocked_tags="noMods">
             <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
             <property name="CustomIcon" value="ui_killstreak_damage_icon_2"/>
@@ -6531,5 +6520,102 @@
             </effect_group>
         </item_modifier>
     </append>
+
+    <!-- Smell -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModSmell" type="attachment" installable_tags="weapon" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_smell_icon"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="unique_affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <property name="Smell" value="20"/>
+        </item_modifier>
+    </append>
+
+    <!-- Infection Resist -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModInfectionResist1" type="attachment" installable_tags="armorChest,armorHands" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_infection_resist_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="BuffResistance" operation="base_add" value=".17" tags="buffInfectionCatch"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModInfectionResist2" type="attachment" installable_tags="armorChest,armorHands" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_infection_resist_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="BuffResistance" operation="base_add" value=".33" tags="buffInfectionCatch"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModInfectionResist3" type="attachment" installable_tags="armorChest,armorHands" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_infection_resist_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="BuffResistance" operation="base_add" value=".5" tags="buffInfectionCatch"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModInfectionResist4" type="attachment" installable_tags="armorChest,armorHands" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_infection_resist_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="BuffResistance" operation="base_add" value=".67" tags="buffInfectionCatch"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModInfectionResist5" type="attachment" installable_tags="armorChest,armorHands" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_infection_resist_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="BuffResistance" operation="base_add" value=".83" tags="buffInfectionCatch"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModInfectionResist6" type="attachment" installable_tags="armorChest,armorHands" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_infection_resist_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInfectionCatch"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Golden touch -->
+    <!-- <append xpath="/item_modifiers">
+        <item_modifier name="affixModGoldenTouch5" type="attachment" installable_tags="weapon,tool" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_golden_touch_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfKilledOther" action="GameEvent" event="action_give_gold">
+                    <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+                </triggered_effect>
+            </effect_group>
+        </item_modifier>
+    </append> -->
 
 </configs>

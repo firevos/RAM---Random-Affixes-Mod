@@ -16,37 +16,27 @@ make a mod to make wildspawns gs based, walkersim compatible.
 
 TODO:
 check quality range for items (make sure its normalized to 1-6 for mods that increase it)
-make a nice looking spreadsheet to show all affixes for weapons and armor, and reworked armor set bonus
-Fix affixes controller to show them separate from cosmetic slots
 check gameevents.xml for ideas for effects
-
 allow a way to 'choose' reroll for higher price
-slow down the reroll a little, so you cant reroll instantly (accidently skipping good ones)
-check Guns and Mods Reborn for incompatabilities
-Challenges for reroll/upgrade tokens.
-add color to icon ingame rather than separate pngs
-
-extraction system added     DONE
-make affixes display in item preview (overwrite mod slots or add a new row) DONE
-nerf killstreak damage (cap damage, reduce either damage or seconds)    DONE
+Challenges for reroll/upgrade/extraction tokens.
 
 Uniques: make a custom affix set for each specific weapon and add that weapon to loot
     -   needs a custom name 
     -   very rare 
-    -   affix list is set, but might be able to roll rarities
+    -   affix list is set
     -   each unique might contain a joke/meme affix
 
 Joke/unique affixes for uniques:
-poop knife adds smell
-chance to fall down when powerattacking
-chance to apply bleed to player (or any other injury)
-only allows headshot damage
-lucky 7, all stats are sevens (desert vulture)
-sprain arm chance when firing through scope on m60
+    poop knife adds smell DONE
+    chance to fall down when powerattacking
+    chance to apply bleed to player (or any other injury)
+    only allows headshot damage
+    lucky 7, all stats are sevens (desert vulture)
+    sprain arm chance when firing through scope on m60
 
 New Affixes:
-Infection resist
 more advanced: Spawn friendly bees that attack zombies
+golden touch - very small chance to gain gold nugget (action_give_gold in gameevents)
 
 Reroll system for affixes:          DONE
     use the take(w) button on mods to reroll affix (use the canRemove prefix function). revert all mods back to being attachments rather than mods (so the button works)    DONE
@@ -81,7 +71,7 @@ nerd - 5/10/15/25/35/50% xp bonus, 1/1/1/1/2/2 extra deployed robotic turrets, 1
 raider - 5/10/15/20/25/40 max hp, 5/10/15/20/25/40 max stam, 5/10/15/20/25/40% crit resist (current)                                                                        DONE
 
     Weapon Both Armor Total
-DONE: 48 - 16 - 26 -    90
+DONE: 48 - 16 - 27 -    91
 
 Armors:
 armorrating (maybe, might be OP) 1/2/3/4/5/6 only on outfit DONE
