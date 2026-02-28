@@ -6521,18 +6521,6 @@
         </item_modifier>
     </append>
 
-    <!-- Smell -->
-    <append xpath="/item_modifiers">
-        <item_modifier name="affixModSmell" type="attachment" installable_tags="weapon" blocked_tags="noMods">
-            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
-            <property name="CustomIcon" value="ui_smell_icon"/>
-            <property name="Group" value="Weapon Mods"/>
-            <property name="Tags" value="unique_affix_mod"/>
-            <property name="MaxModsAllowed" value="6"/>
-            <property name="Smell" value="20"/>
-        </item_modifier>
-    </append>
-
     <!-- Infection Resist -->
     <append xpath="/item_modifiers">
         <item_modifier name="affixModInfectionResist1" type="attachment" installable_tags="armorChest,armorHands" blocked_tags="noMods">
@@ -6617,5 +6605,245 @@
             </effect_group>
         </item_modifier>
     </append> -->
+
+    <!-- Cold Resist -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModHypothermalResist1" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_hypothermal_resistance_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HypothermalResist" operation="base_add" value="1.5"/>
+            </effect_group>
+        </item_modifier>
+
+        <item_modifier name="affixModHypothermalResist2" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_hypothermal_resistance_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HypothermalResist" operation="base_add" value="3"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModHypothermalResist3" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_hypothermal_resistance_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HypothermalResist" operation="base_add" value="4.5"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModHypothermalResist4" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_hypothermal_resistance_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModHypothermalResist5" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_hypothermal_resistance_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HypothermalResist" operation="base_add" value="7.5"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModHypothermalResist6" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_hypothermal_resistance_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HypothermalResist" operation="base_add" value="9"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Heat Resist -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModHyperthermalResist1" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_hyperthermal_resistance_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HyperthermalResist" operation="base_add" value="1.5"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModHyperthermalResist2" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_hyperthermal_resistance_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HyperthermalResist" operation="base_add" value="3"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModHyperthermalResist3" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_hyperthermal_resistance_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HyperthermalResist" operation="base_add" value="4.5"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModHyperthermalResist4" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_hyperthermal_resistance_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HyperthermalResist" operation="base_add" value="6"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModHyperthermalResist5" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_hyperthermal_resistance_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HyperthermalResist" operation="base_add" value="7.5"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModHyperthermalResist6" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_hyperthermal_resistance_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HyperthermalResist" operation="base_add" value="9"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Heat Resist -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModThermalResist1" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_thermal_resistance_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HyperthermalResist" operation="base_add" value="1"/>
+                <passive_effect name="HypothermalResist" operation="base_add" value="1"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModThermalResist2" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_thermal_resistance_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HyperthermalResist" operation="base_add" value="2"/>
+                <passive_effect name="HypothermalResist" operation="base_add" value="2"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModThermalResist3" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_thermal_resistance_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HyperthermalResist" operation="base_add" value="3"/>
+                <passive_effect name="HypothermalResist" operation="base_add" value="3"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModThermalResist4" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_thermal_resistance_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HyperthermalResist" operation="base_add" value="4"/>
+                <passive_effect name="HypothermalResist" operation="base_add" value="4"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModThermalResist5" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_thermal_resistance_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HyperthermalResist" operation="base_add" value="5"/>
+                <passive_effect name="HypothermalResist" operation="base_add" value="5"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModThermalResist6" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_thermal_resistance_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="HyperthermalResist" operation="base_add" value="6"/>
+                <passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- NEGATIVE affixes -->
+    <!-- Smell -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModSmell" type="attachment" installable_tags="weapon" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_smell_icon"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="unique_affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <property name="Smell" value="20"/>
+        </item_modifier>
+    </append>
+
+    <!-- Reload Speed % -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModReloadSpeedDouble" type="attachment" installable_tags="ranged" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_reload_speed_icon_7"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="unique_affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-0.5"/>
+            </effect_group>
+        </item_modifier>
+    </append>
 
 </configs>

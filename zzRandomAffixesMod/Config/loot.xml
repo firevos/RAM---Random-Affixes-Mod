@@ -167,6 +167,10 @@
     <append xpath="/lootcontainers/lootgroup[@name='groupToilet02']">
         <item name="meleeWpnBladeT1HuntingKnifeUnique" count="1" loot_prob_template="uniqueT0"/>
     </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupZpackPlague']">
+        <item name="gunRifleT1HuntingRifleUnique" count="1" loot_prob_template="uniqueT1"/>
+    </append>
+
 
     <!-- ARMOR QUALITY TEMPLATE-->
 

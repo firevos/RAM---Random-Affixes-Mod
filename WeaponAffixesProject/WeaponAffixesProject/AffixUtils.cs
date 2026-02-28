@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WeaponAffixesProject
 {
@@ -21,6 +19,8 @@ namespace WeaponAffixesProject
                 new[] {30, 25, 20, 15, 10},    // Q5: 30% common 25% uncommon 20% rare 15% epic 10% legendary
                 new[] {25, 23, 19, 15, 11, 7}, // Q6: 25% common 23% uncommon 19% rare 15% epic 11% legendary 7% mythic
             };
+        internal static readonly int requiredKills = 100;
+        internal static readonly int unlockNewAffixChance = 67; // actual chance is 100 - unlockNewAffixChance %
 
         internal static bool IsAffixMod(ItemClass itemClass)
         {
@@ -115,8 +115,23 @@ namespace WeaponAffixesProject
                 // Check if any tags match between mod and weapon and does not have any blocked tags, if yes, that mod can be added, if no, discard it.
                 if (itemClassModifier.InstallableTags.Test_AnySet(itemValue.ItemClass.ItemTags) && !itemClassModifier.DisallowedTags.Test_AnySet(itemValue.ItemClass.ItemTags))
                     correctMods[itemClassModifier.Name[itemClassModifier.Name.Length - 1] - '1'].Add(itemClassModifier);
-
             return correctMods;
         }
+
+        internal static bool IsCalledFromExtractAffix()
+        {
+            var trace = new StackTrace(false);
+            var frames = trace.GetFrames();
+            if (frames == null) return false;
+
+            for (int i = 0; i < frames.Length; i++)
+            {
+                var method = frames[i].GetMethod();
+                var type = method?.DeclaringType;
+                if (type?.Name == "ItemActionEntryExtractAffix" && method.Name == "OnActivated") return true;
+            }
+            return false;
+        }
+
     }
 }

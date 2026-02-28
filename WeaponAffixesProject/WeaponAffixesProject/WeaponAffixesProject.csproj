@@ -60,13 +60,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AffixSystem.cs" />
     <Compile Include="AffixUtils.cs" />
     <Compile Include="BuffMod.cs" />
+    <Compile Include="EntityAliveOnEntityDeath.cs" />
+    <Compile Include="XUiC_ItemCosmeticStackCanRemove.cs" />
+    <Compile Include="XUiC_ItemPartStackCanRemove.cs" />
     <Compile Include="ItemActionEntryExtractAffix.cs" />
+    <Compile Include="LootContainerPatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ItemActionEntryRerollAffix.cs" />
+    <Compile Include="QualityInfoCleanupPrefix.cs" />
     <Compile Include="XUiC_ActiveItemKillsUpgrades.cs" />
-    <Compile Include="XUiC_ItemCosmeticStackGridOffset.cs" />
+    <Compile Include="XUiC_CollectedItemListSetYOffset.cs" />
+    <Compile Include="XUiC_ItemActionListSetCraftingActionList.cs" />
+    <Compile Include="XUiC_ItemInfoWindowSetInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
