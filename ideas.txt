@@ -20,10 +20,11 @@ check gameevents.xml for ideas for effects
 allow a way to 'choose' reroll for higher price
 Challenges for reroll/upgrade/extraction tokens.
 Some TI commands
-upgrade token. so armor and tools can be upgraded too. when used on a weapon/tool, also increases kill requirement for next upgrade.
+turn amount of affixes on weapons found in gamesettings, can also add how much it takes to upgrade.
+upgrade token. so armor and tools can be upgraded too. when used on a weapon/tool, also increases kill requirement for next upgrade.    DONE
 3 new affixes added, heat and cold based DONE
 hunting rifle unique added DONE
-
+challenges framework added and figure out DONE
 
 Uniques: make a custom affix set for each specific weapon and add that weapon to loot
     -   needs a custom name 
@@ -33,6 +34,8 @@ Uniques: make a custom affix set for each specific weapon and add that weapon to
 
 Joke/unique affixes for uniques:
     poop knife adds smell DONE
+    hunting rifle with slow reload DONE 
+    baseball bat The DOT with all dots and applies bleed to self DONE
     chance to fall down when powerattacking
     chance to apply bleed to player (or any other injury)
     only allows headshot damage
@@ -44,7 +47,8 @@ chuck lootbag should have a unique
 hunting rifle unique from rancher lootbag
 
 New Affixes:
-cold/heat resist
+cold/heat resist DONE
+reduce sound of gun (silencer esq) (More advanced, there is no such thing as a noise level on a weapon)
 reduce kill requirement (magic slayer)
 more advanced: Spawn friendly bees that attack zombies
 golden touch - very small chance to gain gold nugget (action_give_gold in gameevents)

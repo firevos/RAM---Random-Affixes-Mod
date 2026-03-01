@@ -64,6 +64,7 @@
     <Compile Include="AffixUtils.cs" />
     <Compile Include="BuffMod.cs" />
     <Compile Include="EntityAliveOnEntityDeath.cs" />
+    <Compile Include="ItemActionEntryUpgradeItem.cs" />
     <Compile Include="XUiC_ItemCosmeticStackCanRemove.cs" />
     <Compile Include="XUiC_ItemPartStackCanRemove.cs" />
     <Compile Include="ItemActionEntryExtractAffix.cs" />

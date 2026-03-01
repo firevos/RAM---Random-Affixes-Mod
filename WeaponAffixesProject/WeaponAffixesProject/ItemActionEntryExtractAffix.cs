@@ -21,7 +21,7 @@ public class ItemActionEntryExtractAffix : BaseItemActionEntry
 
         XUiC_BasePartStack affixMod = this.ItemController as XUiC_BasePartStack;
         if (affixMod == null) return;
-        if (!affixMod.ItemClass.HasAnyTags(FastTags<TagGroup.Global>.GetTag("affix_mod"))) return;
+        if (!affixMod.ItemClass.HasAnyTags(AffixUtils.AffixTag)) return;
         var player = GameManager.Instance.myEntityPlayerLocal;
         if (player == null) return;
         XUiM_PlayerInventory playerInventory = this.ItemController.xui.PlayerInventory;
@@ -88,7 +88,7 @@ public class ItemActionEntryExtractAffix : BaseItemActionEntry
             cil?.AddItemStack(new ItemStack(requiredValue, 0), false);
 
             // Show tooltip popup
-            GameManager.ShowTooltip(player, string.Format(Localization.Get("ttExtractionAffixRequiresItem"), requiredItem.localizedName), string.Empty);
+            GameManager.ShowTooltip(player, string.Format(Localization.Get("ttExtractionAffixRequiresItem"), requiredItem.localizedName), string.Empty, "ui_denied");
         }
 
         return;

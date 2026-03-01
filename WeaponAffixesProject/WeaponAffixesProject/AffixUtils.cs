@@ -9,6 +9,9 @@ namespace WeaponAffixesProject
         internal static readonly System.Random rng = new System.Random();
         internal static readonly FastTags<TagGroup.Global> AffixTag = FastTags<TagGroup.Global>.GetTag("affix_mod");
         internal static readonly FastTags<TagGroup.Global> UniqueAffixTag = FastTags<TagGroup.Global>.GetTag("unique_affix_mod");
+        internal static readonly FastTags<TagGroup.Global> WeaponTag = FastTags<TagGroup.Global>.GetTag("weapon");
+        internal static readonly FastTags<TagGroup.Global> ArmorTag = FastTags<TagGroup.Global>.GetTag("armor");
+        internal static readonly FastTags<TagGroup.Global> ToolTag = FastTags<TagGroup.Global>.GetTag("tool");
         internal static readonly int[][] baseWeightsByQuality =
                 {
                 null,                          // 0 unused

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using static Prefab;
 
 namespace WeaponAffixesProject
 {
@@ -221,7 +220,7 @@ namespace WeaponAffixesProject
                 if (canUpgradeSlots.Count == 0)
                 {
                     if (itemValue.CosmeticMods.Length < totalAffixes) didUpgrade = AffixSystem.AddNewAffix(itemValue, ref affixName);
-                    else return false;
+                    else return didUpgrade;
                 }
                 else didUpgrade = AffixSystem.UpgradeAffix(itemValue, canUpgradeSlots, ref affixName);
             }

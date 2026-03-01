@@ -32,6 +32,7 @@ namespace WeaponAffixesProject
 
                     MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryRerollAffix(itemController) });
                     MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryExtractAffix(itemController) });
+                    MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryUpgradeItem(itemController) });
                 }
                 else if (itemController is XUiC_ItemPartStack)
                 {

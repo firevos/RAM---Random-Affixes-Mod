@@ -12,10 +12,40 @@ ttExtractionAffixSucces,UI,Tooltip,,,Affix has been succesfully extracted!,,
 ttExtractionAffixRequiresItem,UI,Tooltip,,,You need an {0} in order to extract an affix.,,
 ttWaitToReroll,UI,Tooltip,,,Wait at least 1 second to reroll again.,,
 
+lblContextActionUpgradeAffix,UI,Item Context Menu,,,Upgrade,,
+ttUpgradeAffixRequiresItem,UI,Tooltip,,,You need an {0} in order to upgrade an affix.,,
+ttFailedToUpgrade,UI,Tooltip,,,This affix can't be upgraded any further.,,
+ttUpgradeAffixSucces,UI,Tooltip,,,You succesfully upgraded an affix.,,
+
 affixRerollToken,items,Item,,,Affix Reroll Token,,
 affixRerollTokenDesc,items,Item,,,"This token grants you the ability to reroll one affix into a fully random other one. Change is guaranteed, e.g. can't reroll into the same affix or one already applied on the item. Rerolling also rerolls the rarity (based on item quality and perk level)"
 affixExtractionToken,items,Item,,,Affix Extraction Token,,
-affixExtractionTokenDesc,items,Item,,,"This token grants you the ability to extract one affix from an item. This lets you install it into a regular mod slot of any compatible item. Be careful! Once you install it anywhere else, it's locked in place unless you use another extraction token. The affix will no longer upgrade after extraction.",,
+affixExtractionTokenDesc,items,Item,,,"This token grants you the ability to extract one affix from an item. This lets you install it into a regular mod slot of any compatible item. Be careful! Once you install it anywhere else, it's locked in place unless you use another extraction token. The affix will can no longer be upgraded after extraction.",,
+affixUpgradeToken,items,Item,,,Affix Upgrade Token,,
+affixUpgradeTokenDesc,items,Item,,,"This token grants you the ability to upgrade one specific affix on an item. Using this on a weapon/tool will increase the kill count required for the next upgrade as if you would've just upgraded normally."
+affixBlankToken,items,Item,,,Blank Affix Token,,
+affixBlankTokenDesc,items,Item,,,"This blank affix token is required to craft any of the actually useful affix tokens. It does nothing in this form."
+
+questRewardTokenBundle,items,Item,,,Affix Token bundle,,
+questRewardTokenBundleDesc,items,Item,,,A bundle containing 10 random affix Tokens.,,
+
+xuiRAM,UI,XUI,,,RAM,,
+challengeGroupRAMReroll,Challenges,Challenge Group,,,Reroll Tokens,,
+challengeRewardBonusRAMReroll,Challenges,Challenge Objective,,,Reroll Tokens Reward,,
+
+challengeGetRerollTokens,Challenges,Challenge,,,Gather Reroll Tokens,,
+challengeGetRerollTokensShort,Challenges,Challenge,,,Gather 10 reroll tokens.,,
+challengeGetRerollTokensDesc,Challenges,Challenge,,,"Reroll tokens are crucial to get rid of unwanted affixes or to try to get that one specific affix you've been dying to get. In order to do so, gather 10 reroll tokens.",,
+
+challengeUseRerollTokens,Challenges,Challenge,,,Use Rerol Tokens,,
+challengeUseRerollTokensShort,Challenges,Challenge,,,Use 10 reroll tokens.,,
+challengeUseRerollTokensDesc,Challenges,Challenge,,,"Letting these valuable tokens waste away in a chest would be a pity. Use 10 Affix Reroll Tokens.",,
+
+reward_reroll_token_name,Challenges,Challenge,,,Reroll Tokens,,
+reward_reroll_token_subtitle,Challenges,Challenge,,,Reroll Tokens,,
+challengeGetRerollTokensReward,Challenges,Reward,,,2000 XP and 5 Reroll Tokens,,
+reroll_token_desc,Quests,Quest Info,,,Good job survivor! You've completed all of the Reroll Token Challenges.\n\nGo to any trader to collect your reward.,,
+reroll_token_completion,Quests,Quest Info,,,"Great work, survivor! By completing the reroll token challenges, you've made the first steps towards creating your own GOD weapon. Accept this reward to further your journey.",,
 
 perkMagicFindName,progression,perk Per,,,Magic Find,,
 perkMagicFindDesc,progression,perk Per,,,Increases your chances of higher rarity affixes and even the amount of affixes.,,
@@ -47,6 +77,8 @@ meleeWpnBladeT1HuntingKnifeUnique,items,Melee,,,Jonah's Poop Knife,,
 meleeWpnBladeT1HuntingKnifeUniqueDesc,items,Melee,,,Did you really just pull this from a dirty old toilet? You do you I guess...,,
 gunRifleT1HuntingRifleUnique,items,Gun,,,The Last Warning,,
 gunRifleT1HuntingRifleUniqueDesc,items,Gun,,,"This rancher clearly wanted to keep those pesky trespassers out, guess he always hit em in the head and didn't bother oiling the reload mechanisms, making it rather slow to reload.",,
+meleeWpnClubT1BaseballBatUnique,items,Melee,,,The DOT,,
+meleeWpnClubT1BaseballBatUniqueDesc,items,Melee,,,"You've played games before right? So we all know what DOT means. Anyway, enjoy the dots.",,
 
 buffLumberjackSetBonusDesc,buffs,Buff,,,"With the proper gear, a Lumberjack can go all day.\nWhile using axes and chainsaws:\nIncrease wood harvest by {cvar(.armorLumberjackFSBDisplay02:0)}%.\nUse {cvar(.armorLumberjackFSBDisplay01:0)}% less stamina.\nIncrease base entity damage by {cvar(.armorLumberjackFSBDisplay03:0)}.\nIncrease block damage by {cvar(.armorLumberjackFSBDisplay04:0)}%.",,
 armorLumberjackBootsDesc,items,Clothes,,,"Light Armor\nFull Set Bonus: Use less stamina when using axes. Increase wood harvest, base entity damage and block damage when using axes and chainsaws.",,
@@ -1364,3 +1396,6 @@ affixModThermalResist6Desc,item_modifiers,mod,,,Increases your resistance agains
 
 affixModReloadSpeedDouble,item_modifiers,mod,,,Why you reloading?,,
 affixModReloadSpeedDoubleDesc,item_modifiers,mod,,,"Why are you reloading, just kill in one shot right? Doubles your reloading time.",,
+
+affixModBleedOnSelf,item_modifiers,mod,,,Bleed on self,,
+affixModBleedOnSelfDesc,item_modifiers,mod,,,Did you really think you got away with it without a scratch? Every kill has a 1% chance to apply bleed on yourself.,,

@@ -22,7 +22,7 @@ public class ItemActionEntryRerollAffix : BaseItemActionEntry
         
         XUiC_BasePartStack affixMod = this.ItemController as XUiC_BasePartStack;
         if (affixMod == null) return;
-        if (!affixMod.ItemClass.HasAnyTags(FastTags<TagGroup.Global>.GetTag("affix_mod"))) return;
+        if (!affixMod.ItemClass.HasAnyTags(AffixUtils.AffixTag)) return;
         var player = GameManager.Instance.myEntityPlayerLocal;
         if (player == null) return;
         XUiM_PlayerInventory playerInventory = this.ItemController.xui.PlayerInventory;
@@ -64,7 +64,8 @@ public class ItemActionEntryRerollAffix : BaseItemActionEntry
                 {
                     var cosmeticGrid = assembleWg.GetChildByType<XUiC_ItemCosmeticStackGrid>();
                     var assembleWindow = assembleWg.GetChildByType<XUiC_AssembleWindow>();
-
+                    QuestEventManager.Current?.UsedItem(requiredValue);
+                    
                     if (cosmeticGrid != null && assembleWindow != null)
                     {
                         // This is what HandleSlotChangedEvent does when a user changes a slot:

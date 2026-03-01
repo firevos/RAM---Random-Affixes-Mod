@@ -1,33 +1,40 @@
 <configs>
     <append xpath="/quests/quest[contains(@id,'tier4') and not(contains(@id,'complete'))]">
-        <reward type="Item" id="affixRerollToken" ischosen="true" value="1"/>
+        <reward type="LootItem" id="groupQuestT3Token" ischosen="true" value="1"/>
     </append>
 
     <append xpath="/quests/quest[contains(@id,'tier5') and not(contains(@id,'complete'))]">
-        <reward type="Item" id="affixRerollToken" ischosen="true" value="2"/>
-        <reward type="Item" id="affixExtractionToken" ischosen="true" value="1"/>
+        <reward type="LootItem" id="groupQuestT3Token,groupQuestT4Token,groupQuestT5Token" ischosen="true" value="1"/>
     </append>
 
     <append xpath="/quests/quest[contains(@id,'tier6') and not(contains(@id,'complete'))]">
-        <reward type="Item" id="affixRerollToken" ischosen="true" value="3"/>
-        <reward type="Item" id="affixExtractionToken" ischosen="true" value="1"/>
+        <reward type="LootItem" id="groupQuestT3Token,groupQuestT4Token,groupQuestT5Token" ischosen="true" value="1"/>
     </append>
 
     <append xpath="/quests/quest[@id='quest_tier3complete']">
-        <reward type="Item" id="affixRerollToken" ischosen="true" value="2"/>
+        <reward type="LootItem" id="groupQuestT3Token" ischosen="true" value="2"/>
     </append>
 
     <append xpath="/quests/quest[@id='quest_tier4complete']">
-        <reward type="Item" id="affixRerollToken" ischosen="true" value="3"/>
+        <reward type="LootItem" id="groupQuestT3Token,groupQuestT4Token,groupQuestT5Token" ischosen="true" value="3"/>
     </append>
 
     <append xpath="/quests/quest[@id='quest_tier5complete']">
-        <reward type="Item" id="affixRerollToken" ischosen="true" value="5"/>
-        <reward type="Item" id="affixExtractionToken" ischosen="true" value="3"/>
+        <reward type="LootItem" id="groupQuestT5TokenBundle" ischosen="true" value="1"/>
     </append>
 
     <append xpath="/quests/quest[@id='quest_tier6complete']">
-        <reward type="Item" id="affixRerollToken" ischosen="true" value="10"/>
-        <reward type="Item" id="affixExtractionToken" ischosen="true" value="5"/>
+        <reward type="LootItem" id="groupQuestT5TokenBundle" ischosen="true" value="1"/>
     </append>
+
+    <insertAfter xpath="/quests/quest[@id='quest_reward_demolition_zombie_slayer']">
+        <quest id="challengegroup_reward_reroll_token" template="challengegroup_reward_homesteading">
+            <variable name="name" value="reward_reroll_token_name"/>
+            <variable name="subtitle" value="reward_reroll_token_subtitle"/>
+            <variable name="description" value="reroll_token_desc"/>
+            <variable name="completion" value="reroll_token_completion"/>
+            <reward type="Exp" value="2000"/>
+            <reward type="Item" id="affixRerollToken" ischosen="true" isfixed="true" value="5"/>
+        </quest>
+    </insertAfter>
 </configs>

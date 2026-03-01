@@ -1,0 +1,26 @@
+<configs>
+    <insertAfter xpath="/challenges/challenge_category[@name='Biome Progression']">
+        <challenge_category name="RAM" title_key="xuiRAM" icon="ui_game_symbol_extract"/>
+    </insertAfter>
+
+    <insertAfter xpath="/challenges/challenge_group[@name='Wasteland Survival']">
+        <challenge_group category="RAM" name="Reroll Tokens" title_key="challengeGroupRAMReroll"
+            reward_text_key="challengeRewardBonusRAMReroll" reward_event="challenge_group_reroll_tokens" hidden_by="Basics"/>
+    </insertAfter>
+
+    <insertAfter xpath="/challenges/challenge[@name='killDemolitions']">
+        <challenge name="GetRerollTokens" title_key="challengeGetRerollTokens" icon="ui_game_symbol_reroll" group="Reroll Tokens"
+            short_description_key="challengeGetRerollTokensShort" description_key="challengeGetRerollTokensDesc"
+            reward_text_key="challenge_reward_2000xp" reward_event="challenge_reward_2000">
+            <objective type="Gather" item="affixRerollToken" count="10"/>
+        </challenge>
+
+        <challenge name="UseRerollTokens" title_key="challengeUseRerollTokens" icon="ui_game_symbol_reroll" group="Reroll Tokens"
+            short_description_key="challengeUseRerollTokensShort" description_key="challengeUseRerollTokensDesc"
+            reward_text_key="challenge_reward_2000xp" reward_event="challenge_reward_2000">
+            <objective type="UseItem" item="affixRerollToken" count="10"/>
+        </challenge>
+    </insertAfter>
+</configs>
+
+<!-- reward_text_key="challengeGetRerollTokensReward" reward_event="reward_reroll_token"> -->

@@ -1,0 +1,16 @@
+<configs>
+    <insertAfter xpath="/gameevents/action_sequence[@name='reward_demolition_zombie_slayer']">
+        <action_sequence name="challenge_group_reroll_tokens" template="challenge_group_reward_homesteading">
+            <variable name="quest" value="challengegroup_reward_reroll_token" />
+        </action_sequence>
+        
+        <!-- <action_sequence name="reward_reroll_token">
+            <property name="action_type" value="Game" />
+
+            <action class="AddQuest">
+                <property name="quest" value="quest_reward_reroll_token" param1="quest" />
+                <property name="notify" value="false" />
+            </action>
+        </action_sequence> -->
+    </insertAfter>
+</configs>

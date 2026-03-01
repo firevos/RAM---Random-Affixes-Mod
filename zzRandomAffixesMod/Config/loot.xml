@@ -76,14 +76,20 @@
         </item>
     </append>
 
-    <!-- Reroll Tokens -->
+    <insertAfter xpath="/lootcontainers/lootgroup[@name='groupAmmoRocket']">
+        <lootgroup name="groupAffixTokens">
+            <item name="affixRerollToken" count="1" loot_prob_template="high"/>
+            <item name="affixExtractionToken" count="1" loot_prob_template="med"/>
+            <item name="affixUpgradeToken" count="1" loot_prob_template="low"/>
+        </lootgroup>
+    </insertAfter>
+
+    <!-- Affix Tokens -->
     <append xpath="/lootcontainers/lootgroup[@name='groupShoppingCart02']">
-        <item name="affixRerollToken" count="1" loot_prob_template="low"/>
-        <item name="affixExtractionToken" count="1" loot_prob_template="veryLowDelayed"/>
+        <item group="groupAffixTokens" loot_prob_template="veryLowDelayed" force_prob="true"/>
     </append>
     <append xpath="/lootcontainers/lootgroup[@name='groupSafeBooks']">
-        <item name="affixRerollToken" count="1" loot_prob_template="low"/>
-        <item name="affixExtractionToken" count="1" loot_prob_template="veryLowDelayed"/>
+        <item group="groupAffixTokens" oot_prob_template="veryLowDelayed" force_prob="true"/>
     </append>
     <append xpath="/lootcontainers/lootgroup[@name='groupCampingTents02']">
         <item name="affixRerollToken" count="1" loot_prob_template="veryLowDelayed"/>
@@ -97,44 +103,52 @@
         <item name="affixRerollToken" count="1" loot_prob_template="veryLowDelayed"/>
     </append>
     <append xpath="/lootcontainers/lootcontainer[@name='cashRegister']">
-        <item name="affixRerollToken" count="1" loot_prob_template="low"/>
-        <item name="affixExtractionToken" count="1" loot_prob_template="veryLowDelayed"/>
+        <item group="groupAffixTokens" loot_prob_template="veryLowDelayed" force_prob="true"/>
     </append>
-    <append xpath="/lootcontainers/lootgroup[@name='groupZpackStrong04']">
-        <item name="affixRerollToken" count="1" loot_prob_template="veryLow"/>
-        <item name="affixExtractionToken" count="1" loot_prob_template="veryLowDelayed"/>
+    <append xpath="/lootcontainers/lootgroup[@name='groupZpackStrong']">
+        <item group="groupAffixTokens" loot_prob_template="veryLow" force_prob="true"/>
     </append>
-    <append xpath="/lootcontainers/lootgroup[@name='groupZpackBoss04']">
-        <item name="affixRerollToken" count="1" loot_prob_template="low"/>
-        <item name="affixExtractionToken" count="1" loot_prob_template="low"/>
+    <append xpath="/lootcontainers/lootgroup[@name='groupZpackBoss']">
+        <item group="groupAffixTokens" loot_prob_template="low" force_prob="true"/>
     </append>
-    <append xpath="/lootcontainers/lootgroup[@name='groupPoliceCarBonus04']">
+    <append xpath="/lootcontainers/lootgroup[@name='groupPoliceCarBonus']">
         <item name="affixRerollToken" count="1" loot_prob_template="veryLowDelayed"/>
     </append>
     <append xpath="/lootcontainers/lootgroup[@name='groupHiddenStash02']">
-        <item name="affixRerollToken" count="1" loot_prob_template="veryLowDelayed"/>
-        <item name="affixExtractionToken" count="1" loot_prob_template="veryLowDelayed"/>
+        <item group="groupAffixTokens" loot_prob_template="veryLowDelayed" force_prob="true"/>
     </append>
     <append xpath="/lootcontainers/lootgroup[@name='groupValuablesExtraLarge']">
-        <item name="affixRerollToken" count="1" loot_prob_template="med"/>
-        <item name="affixExtractionToken" count="1" loot_prob_template="low"/>
+        <item group="groupAffixTokens" loot_prob_template="low" force_prob="true"/>
     </append>
     <append xpath="/lootcontainers/lootcontainer[@name='atmLoot']">
-        <item name="affixRerollToken" count="1" loot_prob_template="low"/>
-        <item name="affixExtractionToken" count="1" loot_prob_template="veryLowDelayed"/>
+        <item group="groupAffixTokens" loot_prob_template="veryLowDelayed" force_prob="true"/>
     </append>
     <append xpath="/lootcontainers/lootgroup[@name='groupReinforcedChestT3_05']">
         <item name="affixRerollToken" count="1" loot_prob_template="veryLowDelayed"/>
     </append>
     <append xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT4_09']">
-        <item name="affixRerollToken" count="1" loot_prob_template="low"/>
-        <item name="affixExtractionToken" count="1" loot_prob_template="veryLowDelayed"/>
-        
+        <item group="groupAffixTokens" loot_prob_template="low" force_prob="true"/>
     </append>
     <append xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT5_07']">
-        <item name="affixRerollToken" count="1,2" loot_prob_template="high"/>
-        <item name="affixExtractionToken" count="1" loot_prob_template="med"/>
+        <item group="groupAffixTokens" loot_prob_template="med" force_prob="true"/>
     </append>
+
+    <!-- For Quest rewards -->
+    <insertAfter xpath="/lootcontainers/lootgroup[@name='groupQuestT3MeleeMods']">
+        <lootgroup name="groupQuestT5TokenBundle" count="all">
+            <item name="questRewardTokenBundle"/>
+        </lootgroup>
+
+        <lootgroup name="groupQuestT3Token" count="all">
+            <item name="affixRerollToken"/>
+        </lootgroup>
+        <lootgroup name="groupQuestT4Token" count="all">
+            <item name="affixExtractionToken"/>
+        </lootgroup>
+        <lootgroup name="groupQuestT5Token" count="all">
+            <item name="affixUpgradeToken"/>
+        </lootgroup>
+    </insertAfter>
 
     <!-- Templates for Uniques -->
     <insertBefore xpath="/lootcontainers/lootprobtemplates/lootprobtemplate[@name='veryLowDelayed']">
@@ -169,6 +183,9 @@
     </append>
     <append xpath="/lootcontainers/lootgroup[@name='groupZpackPlague']">
         <item name="gunRifleT1HuntingRifleUnique" count="1" loot_prob_template="uniqueT1"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupDesks02']">
+        <item name="meleeWpnClubT1BaseballBatUnique" count="1" loot_prob_template="uniqueT1"/>
     </append>
 
 

@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using System;
 using System.Collections.Generic;
+using static Prefab;
 
 namespace WeaponAffixesProject
 {
@@ -20,9 +21,9 @@ namespace WeaponAffixesProject
                             stack?.itemValue.Quality == 0 ||
                             stack.itemValue.ItemClass.HasAnyTags(FastTags<TagGroup.Global>.GetTag("noMods"))
                         ) continue;
-                    if (stack.itemValue.ItemClass.HasAnyTags(FastTags<TagGroup.Global>.GetTag("weapon")) ||
-                            stack.itemValue.ItemClass.HasAnyTags(FastTags<TagGroup.Global>.GetTag("tool")) ||
-                            stack.itemValue.ItemClass.HasAnyTags(FastTags<TagGroup.Global>.GetTag("armor"))
+                    if (stack.itemValue.ItemClass.HasAnyTags(AffixUtils.WeaponTag) ||
+                            stack.itemValue.ItemClass.HasAnyTags(AffixUtils.ToolTag) ||
+                            stack.itemValue.ItemClass.HasAnyTags(AffixUtils.ArmorTag)
                         )
                         try
                         {

@@ -6599,8 +6599,11 @@
             <property name="Tags" value="affix_mod"/>
             <property name="MaxModsAllowed" value="6"/>
             <effect_group>
-                <triggered_effect trigger="onSelfKilledOther" action="GameEvent" event="action_give_gold">
+                <triggered_effect trigger="onSelfKilledOther" action="AddItems">
                     <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+
+                    <property name="added_items" value="resourceGoldNugget"/>
+                    <property name="added_item_counts" value="1"/>
                 </triggered_effect>
             </effect_group>
         </item_modifier>
@@ -6842,6 +6845,22 @@
             <property name="MaxModsAllowed" value="6"/>
             <effect_group>
                 <passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-0.5"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Bleed on self % -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModBleedOnSelf" type="attachment" installable_tags="ranged" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_bleed_self_icon"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="unique_affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffInjuryBleedingTwo">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="1"/>
+                </triggered_effect>
             </effect_group>
         </item_modifier>
     </append>
