@@ -76,6 +76,7 @@
     <Compile Include="XUiC_CollectedItemListSetYOffset.cs" />
     <Compile Include="XUiC_ItemActionListSetCraftingActionList.cs" />
     <Compile Include="XUiC_ItemInfoWindowSetInfo.cs" />
+    <Compile Include="XUiC_ItemPartStackSwapItemPrefix.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

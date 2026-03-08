@@ -21,10 +21,6 @@ allow a way to 'choose' reroll for higher price
 Challenges for reroll/upgrade/extraction tokens.
 Some TI commands
 turn amount of affixes on weapons found in gamesettings, can also add how much it takes to upgrade.
-upgrade token. so armor and tools can be upgraded too. when used on a weapon/tool, also increases kill requirement for next upgrade.    DONE
-3 new affixes added, heat and cold based DONE
-hunting rifle unique added DONE
-challenges framework added and figure out DONE
 
 Uniques: make a custom affix set for each specific weapon and add that weapon to loot
     -   needs a custom name 
@@ -47,7 +43,7 @@ chuck lootbag should have a unique
 hunting rifle unique from rancher lootbag
 
 New Affixes:
-cold/heat resist DONE
+higher reach for melee
 reduce sound of gun (silencer esq) (More advanced, there is no such thing as a noise level on a weapon)
 reduce kill requirement (magic slayer)
 more advanced: Spawn friendly bees that attack zombies
@@ -86,7 +82,7 @@ nerd - 5/10/15/25/35/50% xp bonus, 1/1/1/1/2/2 extra deployed robotic turrets, 1
 raider - 5/10/15/20/25/40 max hp, 5/10/15/20/25/40 max stam, 5/10/15/20/25/40% crit resist (current)                                                                        DONE
 
     Weapon Both Armor Total
-DONE: 48 - 16 - 30 -    94
+DONE: 49 - 16 - 32 -    97
 
 Armors:
 armorrating (maybe, might be OP) 1/2/3/4/5/6 only on outfit DONE

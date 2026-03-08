@@ -601,7 +601,7 @@
             <property name="Tags" value="affix_mod"/>
             <property name="MaxModsAllowed" value="6"/>
             <effect_group tiered="false">
-                <passive_effect name="DismemberChance" operation="base_add" value="0.2"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0.1"/>
             </effect_group>
         </item_modifier>
 
@@ -612,7 +612,7 @@
             <property name="Tags" value="affix_mod"/>
             <property name="MaxModsAllowed" value="6"/>
             <effect_group tiered="false">
-                <passive_effect name="DismemberChance" operation="base_add" value="0.4"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0.2"/>
             </effect_group>
         </item_modifier>
 
@@ -623,7 +623,7 @@
             <property name="Tags" value="affix_mod"/>
             <property name="MaxModsAllowed" value="6"/>
             <effect_group tiered="false">
-                <passive_effect name="DismemberChance" operation="base_add" value="0.6"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0.3"/>
             </effect_group>
         </item_modifier>
 
@@ -634,7 +634,7 @@
             <property name="Tags" value="affix_mod"/>
             <property name="MaxModsAllowed" value="6"/>
             <effect_group tiered="false">
-                <passive_effect name="DismemberChance" operation="base_add" value="0.8"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0.4"/>
             </effect_group>
         </item_modifier>
 
@@ -645,7 +645,7 @@
             <property name="Tags" value="affix_mod"/>
             <property name="MaxModsAllowed" value="6"/>
             <effect_group tiered="false">
-                <passive_effect name="DismemberChance" operation="base_add" value="1"/>
+                <passive_effect name="DismemberChance" operation="base_add" value=".5"/>
             </effect_group>
         </item_modifier>
 
@@ -656,7 +656,7 @@
             <property name="Tags" value="affix_mod"/>
             <property name="MaxModsAllowed" value="6"/>
             <effect_group tiered="false">
-                <passive_effect name="DismemberChance" operation="base_add" value="1.2"/>
+                <passive_effect name="DismemberChance" operation="base_add" value=".6"/>
             </effect_group>
         </item_modifier>
     </append>
@@ -6818,6 +6818,255 @@
             <effect_group>
                 <passive_effect name="HyperthermalResist" operation="base_add" value="6"/>
                 <passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Dodge Chance -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModDodgeChance1" type="attachment" installable_tags="armorChest" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_dodge_chance_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="2"/>
+                <requirement name="IsAlive" target="self"/>
+                <requirement name="!IsAttachedToEntity"/>
+                <requirement name="!HasBuff" buff="buffInjuryBleeding,buffInternalBleeding,buffIsOnFire,buffDrowning03,buffShocked,buffRadiationPool"/>
+                <requirement name="!HasBuff" buff="buffTwitchBurn,buffTwitchShocked,buffTwitchRadiation"/>
+                    <triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_in_head="true"/>
+                    <triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffPackMuleDisplay"/>
+                    <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModDodgeChance2" type="attachment" installable_tags="armorChest" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_dodge_chance_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="4"/>
+                <requirement name="IsAlive" target="self"/>
+                <requirement name="!IsAttachedToEntity"/>
+                <requirement name="!HasBuff" buff="buffInjuryBleeding,buffInternalBleeding,buffIsOnFire,buffDrowning03,buffShocked,buffRadiationPool"/>
+                <requirement name="!HasBuff" buff="buffTwitchBurn,buffTwitchShocked,buffTwitchRadiation"/>
+                    <triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_in_head="true"/>
+                    <triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffPackMuleDisplay"/>
+                    <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModDodgeChance3" type="attachment" installable_tags="armorChest" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_dodge_chance_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="6"/>
+                <requirement name="IsAlive" target="self"/>
+                <requirement name="!IsAttachedToEntity"/>
+                <requirement name="!HasBuff" buff="buffInjuryBleeding,buffInternalBleeding,buffIsOnFire,buffDrowning03,buffShocked,buffRadiationPool"/>
+                <requirement name="!HasBuff" buff="buffTwitchBurn,buffTwitchShocked,buffTwitchRadiation"/>
+                    <triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_in_head="true"/>
+                    <triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffPackMuleDisplay"/>
+                    <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModDodgeChance4" type="attachment" installable_tags="armorChest" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_dodge_chance_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="8"/>
+                <requirement name="IsAlive" target="self"/>
+                <requirement name="!IsAttachedToEntity"/>
+                <requirement name="!HasBuff" buff="buffInjuryBleeding,buffInternalBleeding,buffIsOnFire,buffDrowning03,buffShocked,buffRadiationPool"/>
+                <requirement name="!HasBuff" buff="buffTwitchBurn,buffTwitchShocked,buffTwitchRadiation"/>
+                    <triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_in_head="true"/>
+                    <triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffPackMuleDisplay"/>
+                    <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModDodgeChance5" type="attachment" installable_tags="armorChest" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_dodge_chance_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+                <requirement name="IsAlive" target="self"/>
+                <requirement name="!IsAttachedToEntity"/>
+                <requirement name="!HasBuff" buff="buffInjuryBleeding,buffInternalBleeding,buffIsOnFire,buffDrowning03,buffShocked,buffRadiationPool"/>
+                <requirement name="!HasBuff" buff="buffTwitchBurn,buffTwitchShocked,buffTwitchRadiation"/>
+                    <triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_in_head="true"/>
+                    <triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffPackMuleDisplay"/>
+                    <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModDodgeChance6" type="attachment" installable_tags="armorChest" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_dodge_chance_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="12"/>
+                <requirement name="IsAlive" target="self"/>
+                <requirement name="!IsAttachedToEntity"/>
+                <requirement name="!HasBuff" buff="buffInjuryBleeding,buffInternalBleeding,buffIsOnFire,buffDrowning03,buffShocked,buffRadiationPool"/>
+                <requirement name="!HasBuff" buff="buffTwitchBurn,buffTwitchShocked,buffTwitchRadiation"/>
+                    <triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_in_head="true"/>
+                    <triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffPackMuleDisplay"/>
+                    <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Inventory Capacity -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModInventoryCapacity1" type="attachment" installable_tags="armorChest,armorHands" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_carry_capacity_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="CarryCapacity" operation="base_add" value="1"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModInventoryCapacity2" type="attachment" installable_tags="armorChest,armorHands" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_carry_capacity_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="CarryCapacity" operation="base_add" value="2"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModInventoryCapacity3" type="attachment" installable_tags="armorChest,armorHands" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_carry_capacity_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="CarryCapacity" operation="base_add" value="3"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModInventoryCapacity4" type="attachment" installable_tags="armorChest,armorHands" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_carry_capacity_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="CarryCapacity" operation="base_add" value="4"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModInventoryCapacity5" type="attachment" installable_tags="armorChest,armorHands" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_carry_capacity_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="CarryCapacity" operation="base_add" value="5"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModInventoryCapacity6" type="attachment" installable_tags="armorChest,armorHands" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_carry_capacity_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="CarryCapacity" operation="base_add" value="6"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Lootbag Chance -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModLootbagChance1" type="attachment" installable_tags="weapon" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_lootbag_chance_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="LootDropProb" operation="perc_add" value=".1"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModLootbagChance2" type="attachment" installable_tags="weapon" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_lootbag_chance_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="LootDropProb" operation="perc_add" value=".2"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModLootbagChance3" type="attachment" installable_tags="weapon" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_lootbag_chance_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="LootDropProb" operation="perc_add" value=".3"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModLootbagChance4" type="attachment" installable_tags="weapon" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_lootbag_chance_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="LootDropProb" operation="perc_add" value=".4"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModLootbagChance5" type="attachment" installable_tags="weapon" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_lootbag_chance_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="LootDropProb" operation="perc_add" value=".5"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModLootbagChance6" type="attachment" installable_tags="weapon" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_lootbag_chance_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="LootDropProb" operation="perc_add" value=".6"/>
             </effect_group>
         </item_modifier>
     </append>
