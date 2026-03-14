@@ -89,7 +89,7 @@
         <item group="groupAffixTokens" loot_prob_template="veryLowDelayed" force_prob="true"/>
     </append>
     <append xpath="/lootcontainers/lootgroup[@name='groupSafeBooks']">
-        <item group="groupAffixTokens" oot_prob_template="veryLowDelayed" force_prob="true"/>
+        <item group="groupAffixTokens" loot_prob_template="veryLowDelayed" force_prob="true"/>
     </append>
     <append xpath="/lootcontainers/lootgroup[@name='groupCampingTents02']">
         <item name="affixRerollToken" count="1" loot_prob_template="veryLowDelayed"/>
@@ -112,7 +112,7 @@
         <item group="groupAffixTokens" loot_prob_template="low" force_prob="true"/>
     </append>
     <append xpath="/lootcontainers/lootgroup[@name='groupPoliceCarBonus']">
-        <item name="affixRerollToken" count="1" loot_prob_template="veryLowDelayed"/>
+        <item name="affixRerollToken" loot_prob_template="veryLowDelayed" force_prob="true"/>
     </append>
     <append xpath="/lootcontainers/lootgroup[@name='groupHiddenStash02']">
         <item group="groupAffixTokens" loot_prob_template="veryLowDelayed" force_prob="true"/>

@@ -9,4 +9,8 @@
             </append>
         </if>
     </conditional>
+
+    <!-- <InsertAfter xpath="windows/window[@name='newContinueGame']/rect/rect/rect/rect/grid/gameoption[@name='LootAbundance']">
+        <gameoption name="AffixAbundance" title="goAffixAbundance" value_wrap="false" value_type="int" values="25, 33, 50, 67, 75, 100" display_names="" value_localization_prefix="goAffixAbundanceValue" />
+    </InsertAfter> -->
 </configs>

@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Challenges;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace WeaponAffixesProject
 {
@@ -32,21 +34,6 @@ namespace WeaponAffixesProject
 
         internal static int RandomizeTierWithOdds(ItemValue itemValue, EntityPlayer player)
         {
-            //foreach (var group in itemValue.ItemClass.Effects.EffectGroups)
-            //{
-            //    if (!group.OwnerTiered)
-            //        continue;
-
-            //    foreach (var passive in group.PassiveEffects)
-            //    {
-            //        if (passive.Values != null && passive.Values.Length > 0)
-            //        {
-            //            float[] tierValues = passive.Values;
-
-            //            Log.Out($"Tier count: {tierValues.Length}");
-            //        }
-            //    }
-            //}
             int tier = itemValue?.Quality ?? 1;
             if (tier < 1)
                 tier = 1;
@@ -134,6 +121,36 @@ namespace WeaponAffixesProject
                 if (type?.Name == "ItemActionEntryExtractAffix" && method.Name == "OnActivated") return true;
             }
             return false;
+        }
+
+        internal static bool ChallengeGroupIsCompleted(EntityPlayer player, string groupName)
+        {
+            foreach (var group in player.challengeJournal.CompleteChallengeGroupsForMinEvents)
+            {
+                if (group.Name == groupName)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        internal static void ApplyQuestEventManagerUseItem(string name)
+        {
+            Log.Out("Applying check.");
+            ItemClass requiredClass = ItemClass.GetItemClass(name, false);
+            if (requiredClass != null)
+            {
+                ItemValue requiredValue = new ItemValue(requiredClass.Id, false);
+                Log.Out($"{name} == {requiredValue.ItemClass.Name}");
+                var quester = QuestEventManager.Current;
+                if (quester != null)
+                    quester.UsedItem(requiredValue);
+                else
+                {
+                    Log.Out("Questmanager is null");
+                }
+            }
         }
 
     }

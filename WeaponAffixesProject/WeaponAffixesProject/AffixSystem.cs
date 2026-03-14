@@ -51,7 +51,6 @@ namespace WeaponAffixesProject
 
             // Check how many mods to add to the weapon
             int toAdd = CountModsToApply(itemValue, player);
-
             // Add random mods
             for (int i = 0; i < toAdd; i++)
             {
@@ -66,7 +65,7 @@ namespace WeaponAffixesProject
                     {
                         // Install affix mod into cosmetic slot
                         itemValue.CosmeticMods[j] = new ItemValue(selectedMod.Id);
-                        weaponMods = AffixUtils.RemoveSimilarMods(weaponMods, selectedMod);
+                        weaponMods = AffixUtils.RemoveSimilarMods(weaponMods, selectedMod);                        
                         break;
                     }
                 }
@@ -82,10 +81,12 @@ namespace WeaponAffixesProject
                 return 0;
             }
 
-            // Some server-spawned loot items can have null Modifications arrays.
+            // Find some other way to determine the amount of affixes to apply
             int affixSlots = itemValue.Modifications?.Length ?? 0;
             if (affixSlots <= 0)
                 affixSlots = 1;
+            if (affixSlots > 5)
+                affixSlots = 5;
 
             int magicFindLvl = 0;
             try
@@ -99,7 +100,8 @@ namespace WeaponAffixesProject
             {
                 Log.Out($"Can't find the magic Find perk. '{e}'");
             }
-            if (magicFindLvl > 4) affixSlots++;
+            if (AffixUtils.ChallengeGroupIsCompleted(player, "ram advanced"))
+                affixSlots++;
             if (magicFindLvl > 3 && itemValue.Quality == 6) affixSlots++;
 
             if (itemValue.CosmeticMods == null || itemValue.CosmeticMods.Length < affixSlots)
@@ -146,6 +148,16 @@ namespace WeaponAffixesProject
 
             // then apply the upgrade
             itemValue.CosmeticMods[randomIndex] = new ItemValue(newAffix.Id);
+
+            // Upgrade an affix
+            AffixUtils.ApplyQuestEventManagerUseItem("affixModEntityDamagePerc2");
+
+            if (oldTier >= 3)
+                AffixUtils.ApplyQuestEventManagerUseItem("affixModEntityDamagePerc6");
+            
+            if (oldTier == 5)
+                AffixUtils.ApplyQuestEventManagerUseItem("affixModEntityDamageBase1");
+
             return true;
         }
 
@@ -185,6 +197,9 @@ namespace WeaponAffixesProject
                 {
                     // Install affix mod into cosmetic slot
                     itemValue.CosmeticMods[j] = new ItemValue(selectedMod.Id);
+
+                    // Unlock an affix
+                    AffixUtils.ApplyQuestEventManagerUseItem("affixModEntityDamagePerc3");
                     return true;
                 }
             }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Scripting;
 using WeaponAffixesProject;
@@ -64,7 +65,6 @@ public class ItemActionEntryRerollAffix : BaseItemActionEntry
                 {
                     var cosmeticGrid = assembleWg.GetChildByType<XUiC_ItemCosmeticStackGrid>();
                     var assembleWindow = assembleWg.GetChildByType<XUiC_AssembleWindow>();
-                    QuestEventManager.Current?.UsedItem(requiredValue);
                     
                     if (cosmeticGrid != null && assembleWindow != null)
                     {
@@ -83,6 +83,7 @@ public class ItemActionEntryRerollAffix : BaseItemActionEntry
                 playerInventory.RemoveItems(ingredients, 1, null);
                 cil?.RemoveItemStack(new ItemStack(requiredValue, 1));
                 lastRerollTime = Time.time;
+                AffixUtils.ApplyQuestEventManagerUseItem("affixRerollToken");
                 GameManager.ShowTooltip(player, string.Format(Localization.Get("ttRerollAffixSucces")), string.Empty, "recipe_unlocked");
             }
         }
@@ -111,7 +112,21 @@ public class ItemActionEntryRerollAffix : BaseItemActionEntry
             if (oldAffix.Name == mod.Name)
                 index = i;
         }
-        int tier = AffixUtils.RandomizeTierWithOdds(itemValue, GameManager.Instance.myEntityPlayerLocal);
+        int oldTier = int.Parse(oldAffix.Name.Substring(oldAffix.Name.Length - 1));
+        int random = AffixUtils.rng.Next(0, 100);
+        int tier = 1;
+        if (oldTier > 1 && random < 35)
+        {
+            tier = oldTier - 2;
+        }
+        else if (oldTier != 6 && random < 60 && random >= 35)
+        {
+            tier = oldTier;
+        }
+        else
+        {
+            tier = oldTier - 1;
+        }
         ItemClassModifier selectedMod = modList[tier][AffixUtils.rng.Next(modList[tier].Count)];
 
         if (index < 0) return false;

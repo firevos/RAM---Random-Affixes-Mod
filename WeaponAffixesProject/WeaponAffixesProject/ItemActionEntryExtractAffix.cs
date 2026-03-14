@@ -80,6 +80,7 @@ public class ItemActionEntryExtractAffix : BaseItemActionEntry
                 playerInventory.RemoveItems(ingredients, 1, null);
                 cil?.RemoveItemStack(new ItemStack(requiredValue, 1));
                 GameManager.ShowTooltip(player, string.Format(Localization.Get("ttExtractionAffixSucces")), string.Empty, "recipe_unlocked");
+                AffixUtils.ApplyQuestEventManagerUseItem("affixExtractionToken");
             }
         }
         else

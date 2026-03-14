@@ -1,4 +1,15 @@
 <configs>
+    <!-- Added Back in to main mod to balance, still keeping vanilla armor bonuses in, need optional mod to remove that-->
+    <!-- Remove mod bonus damage -->
+    <set xpath="/items/item[property[@name='Tags' and contains(@value,'weapon')]]/effect_group/passive_effect[@name='ModPowerBonus']/@value">
+        0
+    </set>
+
+    <!-- For some reason spears extend base stonespear and therefore something fucks up, so lets do them manually -->
+    <set xpath="/items/item[@name='meleeWpnSpearT1IronSpear' or @name='meleeWpnSpearT3SteelSpear']/effect_group/passive_effect[@name='ModPowerBonus']/@value">
+        0
+    </set>
+
     <!-- Kill tracker-->
     <append xpath="/items/item[property[@name='Tags' and contains(@value,'ranged') and not(contains(@value,'ammo'))]]">
         <effect_group name="increase kill count">
@@ -7,12 +18,6 @@
             <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="upgrades"/>
             <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="nextUpgrade"/>
             <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="lastUpgrade"/>
-
-            <!-- Increase counter for every kill -->
-            <!-- <triggered_effect trigger="onSelfKilledOther" action="SetItemMetaFloat" change="1" relative="true" key="kills">
-                <requirement name="EntityTagCompare" target="other" tags="zombie"/>
-            </triggered_effect> -->
-
         </effect_group>
     </append>
 
@@ -23,12 +28,6 @@
             <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="upgrades"/>
             <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="nextUpgrade"/>
             <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="lastUpgrade"/>
-
-            <!-- Increase counter for every kill -->
-            <!-- <triggered_effect trigger="onSelfKilledOther" action="SetItemMetaFloat" change="1" relative="true" key="kills">
-                <requirement name="EntityTagCompare" target="other" tags="zombie"/>
-            </triggered_effect> -->
-
         </effect_group>
     </append>
 
@@ -39,12 +38,6 @@
             <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="upgrades"/>
             <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="nextUpgrade"/>
             <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="lastUpgrade"/>
-
-            <!-- Increase counter for every kill -->
-            <!-- <triggered_effect trigger="onSelfKilledOther" action="SetItemMetaFloat" change="1" relative="true" key="kills">
-                <requirement name="EntityTagCompare" target="other" tags="zombie"/>
-            </triggered_effect> -->
-
         </effect_group>
     </append>
 
@@ -135,7 +128,7 @@
 	        <property name="Extends" value="meleeWpnBladeT1HuntingKnife"/>
             <property name="Tags" value="unique_affix_mod,affixModSmell,affixModBleed6,affixModDurabilityBase6,affixModInstaKill5,affixModLifesteal5,affixModStamKill3,knife,melee,grunting,light,perkFlurryOfAgility,weapon,meleeWeapon,attAgility,perkDeepCuts,perkTheHuntsman,canHaveCosmetic,bladeSkill,corpseRemoval"/>
             <property name="TintColor" value="91,68,29"/>
-            <property name="Smell" value="20"/>
+            <property name="Smell" value="35"/>
             <property name="EconomicValue" value="4000"/>
             
             <property class="Action0">

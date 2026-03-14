@@ -2,14 +2,14 @@
     <insertAfter xpath="/recipes/recipe[@name='resourceCoalBundle']">
         <recipe name="affixBlankToken" count="1" craft_time="10" craft_exp_gain="0" craft_area="workbench" tags="workbenchCrafting">
             <ingredient name="resourceScrapBrass" count="200"/>
-            <ingredient name="resourceScrapPolymers" count="200"/>
+            <ingredient name="resourceScrapPolymers" count="150"/>
             <ingredient name="resourcePaper" count="50"/>
             <ingredient name="resourceForgedIron" count="25"/>
         </recipe>
 
         <recipe name="affixRerollToken" count="1" craft_time="30" craft_exp_gain="0" craft_area="workbench" tags="workbenchCrafting">
             <ingredient name="affixBlankToken" count="1"/>
-            <ingredient name="resourceSilverNugget" count="2"/>
+            <ingredient name="resourceSilverNugget" count="1"/>
             <ingredient name="resourceAnimalFat" count="10"/>
             <ingredient name="resourceMechanicalParts" count="10"/>
             <ingredient name="resourceForgedSteel" count="25"/>
@@ -17,7 +17,7 @@
 
         <recipe name="affixExtractionToken" count="1" craft_time="60" craft_exp_gain="0" craft_area="workbench" tags="workbenchCrafting">
             <ingredient name="affixBlankToken" count="1"/>
-            <ingredient name="resourceGoldNugget" count="2"/>
+            <ingredient name="resourceGoldNugget" count="1"/>
             <ingredient name="foodHoney" count="2"/>
             <ingredient name="resourceElectricParts" count="25"/>
             <ingredient name="resourceForgedSteel" count="50"/>

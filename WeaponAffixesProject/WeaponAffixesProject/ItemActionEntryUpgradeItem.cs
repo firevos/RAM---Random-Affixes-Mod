@@ -107,7 +107,6 @@ namespace WeaponAffixesProject
                             parentItemValue.TryGetMetadata("nextUpgrade", out float nextUpgrade) &&
                             parentItemValue.TryGetMetadata("lastUpgrade", out float lastUpgrade))
                         {
-                            Log.Out("We're in the business/");
                             int magicSlayerLvl = 0;
                             try
                             {
@@ -125,6 +124,7 @@ namespace WeaponAffixesProject
                         playerInventory.RemoveItems(ingredients, 1, null);
                         cil?.RemoveItemStack(new ItemStack(requiredValue, 1));
                         GameManager.ShowTooltip(player, string.Format(Localization.Get("ttUpgradeAffixSucces")), string.Empty, "recipe_unlocked");
+                        AffixUtils.ApplyQuestEventManagerUseItem("affixUpgradeToken");
                         return;
                     }
                 }

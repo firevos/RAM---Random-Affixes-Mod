@@ -1,25 +1,155 @@
 <configs>
     <insertAfter xpath="/challenges/challenge_category[@name='Biome Progression']">
-        <challenge_category name="RAM" title_key="xuiRAM" icon="ui_game_symbol_extract"/>
+        <challenge_category name="RAM" title_key="xuiRAM" icon="ui_game_symbol_extract" display_key="weather"/>
     </insertAfter>
 
     <insertAfter xpath="/challenges/challenge_group[@name='Wasteland Survival']">
-        <challenge_group category="RAM" name="Reroll Tokens" title_key="challengeGroupRAMReroll"
-            reward_text_key="challengeRewardBonusRAMReroll" reward_event="challenge_group_reroll_tokens" hidden_by="Basics"/>
+        <challenge_group category="RAM" name="RAM Basics" title_key="challengeGroupRAMBasics"
+            reward_text_key="challengeRewardBonusRAMBasics" objective_text_key="challengeObjectiveBonusRAMBasics" reward_event="challenge_reward_500" hidden_by="Basics"/>
+
+        <challenge_group category="RAM" name="RAM Intermediate" title_key="challengeGroupRAMIntermediate"
+            reward_text_key="challengeRewardBonusRAMIntermediate" objective_text_key="challengeObjectiveBonusRAMIntermediate" reward_event="challenge_reward_1000" hidden_by="Basics"/>
+
+        <challenge_group category="RAM" name="RAM Advanced" title_key="challengeGroupRAMAdvanced"
+            reward_text_key="challengeRewardBonusRAMAdvanced" objective_text_key="challengeObjectiveBonusRAMAdvanced" reward_event="challenge_reward_2000" hidden_by="Basics"/>
+
+        <challenge_group category="RAM" name="RAM Legendary" title_key="challengeGroupRAMLegendary"
+            reward_text_key="challengeRewardBonusRAMLegendary" objective_text_key="challengeObjectiveBonusRAMLegendary" reward_event="challenge_group_legendary" hidden_by="Basics"/>
     </insertAfter>
 
     <insertAfter xpath="/challenges/challenge[@name='killDemolitions']">
-        <challenge name="GetRerollTokens" title_key="challengeGetRerollTokens" icon="ui_game_symbol_reroll" group="Reroll Tokens"
-            short_description_key="challengeGetRerollTokensShort" description_key="challengeGetRerollTokensDesc"
-            reward_text_key="challenge_reward_2000xp" reward_event="challenge_reward_2000">
-            <objective type="Gather" item="affixRerollToken" count="10"/>
+        <!-- Basic -->
+        <challenge name="GetOneAffix" title_key="challengeGetOneAffix" icon="ui_affixes_icon" group="RAM Basics"
+            short_description_key="challengeGetOneAffixShort" description_key="challengeGetOneAffixDesc"
+            reward_text_key="challenge_reward_500xp" reward_event="challenge_reward_500">
+            <objective type="UseItem" item="affixModEntityDamagePerc1" count="1"/>
         </challenge>
 
-        <challenge name="UseRerollTokens" title_key="challengeUseRerollTokens" icon="ui_game_symbol_reroll" group="Reroll Tokens"
+        <challenge name="UpgradeOneAffix" title_key="challengeUpgradeOneAffix" icon="ui_upgrade_icon" group="RAM Basics"
+            short_description_key="challengeUpgradeOneAffixShort" description_key="challengeUpgradeOneAffixDesc"
+            reward_text_key="challenge_reward_500xp" reward_event="challenge_reward_500">
+            <objective type="UseItem" item="affixModEntityDamagePerc2" count="1"/>
+        </challenge>
+
+        <challenge name="UnlockOneAffix" title_key="challengeUnlockOneAffix" icon="ui_upgrade_icon" group="RAM Basics"
+            short_description_key="challengeUnlockOneAffixShort" description_key="challengeUnlockOneAffixDesc"
+            reward_text_key="challenge_reward_500xp" reward_event="challenge_reward_500">
+            <objective type="UseItem" item="affixModEntityDamagePerc3" count="1"/>
+        </challenge>
+
+        <challenge name="GetOneAffixRare" title_key="challengeGetOneAffixRare" icon="ui_affixes_icon" group="RAM Basics"
+            short_description_key="challengeGetOneAffixRareShort" description_key="challengeGetOneAffixRareDesc"
+            reward_text_key="challenge_reward_500xp" reward_event="challenge_reward_500">
+            <objective type="UseItem" item="affixModEntityDamagePerc4" count="1"/>
+        </challenge>
+
+        <challenge name="GetThreeAffixes" title_key="challengeGetThreeAffixes" icon="ui_affixes_icon" group="RAM Basics"
+            short_description_key="challengeGetThreeAffixesShort" description_key="challengeGetThreeAffixesDesc"
+            reward_text_key="challenge_reward_500xp" reward_event="challenge_reward_500">
+            <objective type="UseItem" item="affixModEntityDamagePerc5" count="1"/>
+        </challenge>
+
+        <challenge name="UpgradeEpicAffix" title_key="challengeUpgradeEpicAffix" icon="ui_upgrade_icon" group="RAM Basics"
+            short_description_key="challengeUpgradeEpicAffixShort" description_key="challengeUpgradeEpicAffixDesc"
+            reward_text_key="challenge_reward_500xp" reward_event="challenge_reward_500">
+            <objective type="UseItem" item="affixModEntityDamagePerc6" count="1"/>
+        </challenge>
+
+        <challenge name="GetBlankToken" title_key="challengeGetBlankToken" icon="ui_blank_token_icon" group="RAM Basics"
+            short_description_key="challengeGetBlankTokenShort" description_key="challengeGetBlankTokenDesc"
+            reward_text_key="challenge_reward_500xp" reward_event="challenge_reward_500">
+            <objective type="Gather" item="affixBlankToken" count="1"/>
+        </challenge>
+
+        <!-- Intermediate -->
+
+        <challenge name="GetRerollToken" title_key="challengeGetRerollToken" icon="ui_reroll_token_icon" group="RAM Intermediate"
+            short_description_key="challengeGetRerollTokenShort" description_key="challengeGetRerollTokenDesc"
+            reward_text_key="challenge_reward_1000xp" reward_event="challenge_reward_1000">
+            <objective type="Gather" item="affixRerollToken" count="1"/>
+        </challenge>
+
+        <challenge name="GetExtractionToken" title_key="challengeGetExtractionToken" icon="ui_extraction_token_icon" group="RAM Intermediate"
+            short_description_key="challengeGetExtractionTokenShort" description_key="challengeGetExtractionTokenDesc"
+            reward_text_key="challenge_reward_1000xp" reward_event="challenge_reward_1000">
+            <objective type="Gather" item="affixExtractionToken" count="1"/>
+        </challenge>
+
+        <challenge name="GetUpgradeToken" title_key="challengeGetUpgradeToken" icon="ui_upgrade_token_icon" group="RAM Intermediate"
+            short_description_key="challengeGetUpgradeTokenShort" description_key="challengeGetUpgradeTokenDesc"
+            reward_text_key="challenge_reward_1000xp" reward_event="challenge_reward_1000">
+            <objective type="Gather" item="affixUpgradeToken" count="1"/>
+        </challenge>
+
+        <challenge name="UseRerollToken" title_key="challengeUseRerollToken" icon="ui_reroll_token_icon" group="RAM Intermediate"
+            short_description_key="challengeUseRerollTokenShort" description_key="challengeUseRerollTokenDesc"
+            reward_text_key="challenge_reward_1000xp" reward_event="challenge_reward_1000">
+            <objective type="UseItem" item="affixRerollToken" count="1"/>
+        </challenge>
+
+        <challenge name="UpgradeMythicAffix" title_key="challengeUpgradeMythicAffix" icon="ui_mythic_affix_icon" group="RAM Intermediate"
+            short_description_key="challengeUpgradeMythicAffixShort" description_key="challengeUpgradeMythicAffixDesc"
+            reward_text_key="challenge_reward_1000xp" reward_event="challenge_reward_1000">
+            <objective type="UseItem" item="affixModEntityDamageBase1" count="1"/>
+        </challenge>
+
+        <challenge name="GetFiveAffixes" title_key="challengeGetFiveAffixes" icon="ui_five_affixes_icon" group="RAM Intermediate"
+            short_description_key="challengeGetFiveAffixesShort" description_key="challengeGetFiveAffixesDesc"
+            reward_text_key="challenge_reward_1000xp" reward_event="challenge_reward_1000">
+            <objective type="UseItem" item="affixModEntityDamageBase2" count="1"/>
+        </challenge>
+
+        <challenge name="UpgradeFifteenAffixes" title_key="challengeUpgradeFifteenAffixes" icon="ui_upgrade_icon" group="RAM Intermediate"
+            short_description_key="challengeUpgradeFifteenAffixesShort" description_key="challengeUpgradeFifteenAffixesDesc"
+            reward_text_key="challenge_reward_1000xp" reward_event="challenge_reward_1000">
+            <objective type="UseItem" item="affixModEntityDamagePerc2" count="15"/>
+        </challenge>
+
+        <!-- Advanced -->
+
+        <challenge name="UseRerollTokens" title_key="challengeUseRerollTokens" icon="ui_reroll_token_icon" group="RAM Advanced"
             short_description_key="challengeUseRerollTokensShort" description_key="challengeUseRerollTokensDesc"
             reward_text_key="challenge_reward_2000xp" reward_event="challenge_reward_2000">
             <objective type="UseItem" item="affixRerollToken" count="10"/>
         </challenge>
+
+        <challenge name="UseExtractionTokens" title_key="challengeUseExtractionTokens" icon="ui_extraction_token_icon" group="RAM Advanced"
+            short_description_key="challengeUseExtractionTokensShort" description_key="challengeUseExtractionTokensDesc"
+            reward_text_key="challenge_reward_2000xp" reward_event="challenge_reward_2000">
+            <objective type="UseItem" item="affixExtractionToken" count="5"/>
+        </challenge>
+        
+        <challenge name="UseUpgradeTokens" title_key="challengeUseUpgradeTokens" icon="ui_upgrade_token_icon" group="RAM Advanced"
+            short_description_key="challengeUseUpgradeTokensShort" description_key="challengeUseUpgradeTokensDesc"
+            reward_text_key="challenge_reward_2000xp" reward_event="challenge_reward_2000">
+            <objective type="UseItem" item="affixUpgradeToken" count="5"/>
+        </challenge>
+        
+        <challenge name="UpgradeFifteenTimes" title_key="challengeUpgradeFifteenTimes" icon="ui_fifteen_affixes_icon" group="RAM Advanced"
+            short_description_key="challengeUpgradeFifteenTimesShort" description_key="challengeUpgradeFifteenTimesDesc"
+            reward_text_key="challenge_reward_2000xp" reward_event="challenge_reward_2000">
+            <objective type="UseItem" item="affixModEntityDamageBase3" count="1"/>
+        </challenge>
+
+        <challenge name="GetFiveMythicAffixes" title_key="challengeGetFiveMythicAffixes" icon="ui_five_mythics_icon" group="RAM Advanced"
+            short_description_key="challengeGetFiveMythicAffixesShort" description_key="challengeGetFiveMythicAffixesDesc"
+            reward_text_key="challenge_reward_2000xp" reward_event="challenge_reward_2000">
+            <objective type="UseItem" item="affixModEntityDamageBase4" count="1"/>
+        </challenge>
+
+        <challenge name="UpgradeTenMythicAffix" title_key="challengeUpgradeTenMythicAffix" icon="ui_mythic_affix_icon" group="RAM Advanced"
+            short_description_key="challengeUpgradeTenMythicAffixShort" description_key="challengeUpgradeTenMythicAffixDesc"
+            reward_text_key="challenge_reward_2000xp" reward_event="challenge_reward_2000">
+            <objective type="UseItem" item="affixModEntityDamageBase1" count="10"/>
+        </challenge>
+
+        <challenge name="GetElevenAffixes" title_key="challengeGetElevenAffixes" icon="ui_eleven_affixes_icon" group="RAM Advanced"
+            short_description_key="challengeGetElevenAffixesShort" description_key="challengeGetElevenAffixesDesc"
+            reward_text_key="challenge_reward_2000xp" reward_event="challenge_reward_2000">
+            <objective type="UseItem" item="affixModEntityDamageBase5" count="1"/>
+        </challenge>
+
+        <!-- Legendary -->
     </insertAfter>
 </configs>
 
