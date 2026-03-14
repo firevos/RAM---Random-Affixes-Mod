@@ -1,66 +1,67 @@
 Affix Name,Installable In,Effect Description,Common,Uncommon,Rare,Epic,Legendary,Mythic
-Armor Penetration,"tool,weapon",Reduces enemy armor by {x},15%,30%,45%,60%,75%,90%
+Armor Penetration,"tool,weapon",Reduces enemy armor by {x},5%,10%,15%,20%,30%,40%
 Arrow Recovery,"bow,crossbow",You recover {x} more arrows,10%,20%,30%,40%,50%,60%
-Attackspeed Base,"tool,melee",Increases attacks/minute by {x},5,10,15,20,25,30
-Attackspeed %,"tool,melee",Increases attacks/minute by {x},10%,20%,30%,40%,50%,60%
-Bleed %,"tool,weapon",You have a {x} chance to apply a bleed with each attack,17%,33%,50%,67%,83%,100%
+Attackspeed Base,"tool,melee",Increases attacks/minute by {x},3,6,9,12,16,20
+Attackspeed %,"tool,melee",Increases attacks/minute by {x},5%,10%,15%,20%,25%,30%
+Bleed %,"tool,weapon",You have a {x} chance to apply a bleed with each attack. The bleed from this source can stack infinitely,10%,20%,30%,40%,50%,60%
 Block Damage Base,tool,Increases base block damage by {x},2,4,6,8,10,12
-Block Damage %,tool,Increases block damage by {x},15%,30%,45%,60%,75%,90%
-Body Damage Base,"tool,weapon",Increases base weapon damage by {x} when dealing damage to the body,2,4,6,8,10,12
-Body Damage %,"tool,weapon",Increases weapon damage to body by {x},20%,40%,60%,80%,100%,120%
-XP Bonus,"tool,weapon,armorHead",Increases XP gain by {x} from kills,10%,20%,30%,40%,50%,60%
+Block Damage %,tool,Increases block damage by {x},7.5%,15%,22.5%,30%,40%,50%
+Body Damage Base,"tool,weapon",Increases base weapon damage by {x} when dealing damage to the body,1.5,3,4.5,6,7.5,9
+Body Damage %,"tool,weapon",Increases weapon damage to body by {x},15%,30%,45%,60%,75%,90%
+XP Bonus,"tool,weapon,armorHead",Increases XP gain by {x} from kills,5%,10%,15%,20%,25%,30%
 Burn %,"tool,weapon",You have a {x} chance to set the target on fire,10%,20%,30%,40%,50%,60%
-Cripple,"tool,weapon",You have a {x} chance to cripple an enemy with a headshot,10%,20%,30%,40%,50%,60%
-Crouch Speed,"tool,weapon,armorFeet",Increases your sneaking speed by {x},10%,20%,30%,40%,50%,60%
-Dismemberment,"tool,weapon",Increases dismemberment chance by {x},10%,20%,30%,40%,50%,60%
+Cripple,"tool,weapon",You have a {x} chance to cripple an enemy with a headshot,5%,10%,15%,20%,25%,30%
+Crouch Speed,"tool,weapon,armorFeet",Increases your sneaking speed by {x},5%,10%,15%,20%,25%,30%
+Dismemberment,"tool,weapon",Increases dismemberment chance by {x},5%,10%,15%,20%,25%,30%
 Durability,"tool,weapon,armor",Increases max durability by {x},100,200,300,400,500,600
 Durability%,"tool,weapon,armor",Increases max durability by {x},10%,20%,30%,40%,50%,60%
-Base Entity Damage,"tool,weapon",Increases base entity damage by {x},1,2,3,4,5,6
-Entity Damage %,"tool,weapon",Increases weapon entity damage by {x},10%,20%,30%,40%,50%,60%
-Power Damage Base,"tool,melee",Increases base weapon damage for power attacks by {x},"1,5",3,"4,5",6,"7,5",9
-Power Damage %,"tool,melee",Increases weapon power attack damage by {x},10%,20%,30%,40%,50%,60%
-Health Regen,"tool,weapon,armorHead,armorChest",You passively heal 1 additional hp every {x} seconds,45,30,20,15,10,5
-Full HP Bonus,"tool,weapon",Increases damage to zombies with full HP by {x},20%,40%,60%,80%,100%,120%
-Cleave Bonus,"tool,melee",Increases your glancing hit damage by {x},200%,400%,600%,800%,1000%,1200%
-Accuracy,ranged,Increases shooting accuracy by {x},6%,12%,18%,24%,30%,36%
-Resource Bonus,tool,You collect {x} more resources with this tool,10%,20%,30%,40%,50%,60%
-Headshot Base,"tool,weapon",Increases base weapon damage by {x} when dealing headshot damage,"1,5",3,"4,5",6,"7,5",9
-Headshot%,"tool,weapon",Increases headshot damage by {x},15%,30%,45%,60%,75%,90%
+Base Entity Damage,"tool,weapon",Increases base entity damage by {x},0.5,1,1.5,2,3,4
+Entity Damage %,"tool,weapon",This weapon is somewhat sharpened albeit a little dull still. Increases weapon entity damage by {x},5%,10%,15%,20%,25%,30%
+Power Damage Base,"tool,melee",Increases base weapon damage for power attacks by {x},1,2,3,4,5,6
+Power Damage %,"tool,melee",Increases weapon power attack damage by {x},5%,10%,15%,20%,25%,30%
+Health Regen,"tool,weapon,armorHead,armorChest",You passively heal 1 additional hp every {x} seconds,60,45,30,20,15,10
+Full HP Bonus,"tool,weapon",Increases damage to zombies with full HP by {x},10%,20%,30%,40%,50%,60%
+Cleave Bonus,"tool,melee",Increases your glancing hit damage by {x},100%,200%,300%,400%,500%,600%
+Accuracy,ranged,Increases shooting accuracy by {x},5%,10%,15%,20%,25%,30%
+Resource Bonus,tool,You collect {x} more resources with this tool,5%,10%,15%,20%,25%,30%
+Headshot Base,"tool,weapon",Increases base weapon damage by {x} when dealing headshot damage,1,2,3,4,5,6
+Headshot%,"tool,weapon",Increases headshot damage by {x},5%,10%,15%,20%,30%,40%
 Instakill,"tool,weapon",You have a {x} chance to instakill with every hit,-,-,-,-,1%,2%
-Jump Strength,"tool,weapon,armorFeet",Increases your jump strength by {x},15%,30%,45%,60%,75%,90%
+Jump Strength,"tool,weapon,armorFeet",Increases your jump strength by {x},10%,20%,30%,40%,50%,60%
 Killstreak Damage,"tool,weapon","Increases weapon damage by 7% for each kill as long as you keep killing within {x} seconds, capped at 175%",-,14,21,28,35,42
 Kill Streak HP,"tool,weapon",Increases your max HP by {x} for every kill as long as you keep killing,-,-,-,-,-,1
-Knockdown Damage,"tool,weapon",Increases damage to knocked down enemies by {x},20%,40%,60%,80%,100%,120%
+Knockdown Damage,"tool,weapon",Increases damage to knocked down enemies by {x},10%,20%,30%,40%,50%,60%
 Lifesteal,melee,Heal {x} HP every hit (mythic heals additional 2 hp per kill),-,-,-,-,1,1
-Low HP Bonus,"tool,weapon",Increases damage to zombies with less than 33% remaining HP by {x},20%,40%,60%,80%,100%,120%
-Damage at LowHP,"tool,weapon",Increases weapon damage by {x} when you're at less than 30% HP,20%,40%,60%,80%,100%,120%
-Magazine Base,magazine,Increases magazine size by {x},2,4,6,8,10,12
-Magazine %,magazine,Increases Magazine size by {x},20%,40%,60%,80%,100%,120%
-Damage at MaxHP,"tool,weapon",Increases weapon damage by {x} when you're at max HP,15%,30%,45%,60%,75%,90%
-Movement Speed,"tool,weapon,armorFeet",Increases your movement speed by {x},5%,10%,15%,20%,25%,30%
-Night Damage Base,"tool,weapon",Increases base weapon damage by {x} at night,2,4,6,8,10,12
-Night Damage %,"tool,weapon",Increases weapon damage by {x} at night,20%,40%,60%,80%,100%,120%
-Night Sneak Bonus,"tool,weapon,armor",Increases sneak damage at night by {x},75%,150%,225%,300%,375%,450%
-Projectilevelocity,"bow,crossbow",Increases projectile velocity by {x},10%,20%,30%,40%,50%,60%
-Ragdoll,"tool,weapon",You have a {x} chance to ragdoll an enemy with a headshot,10%,20%,30%,40%,50%,60%
-Range Increase,ranged,Increases effective range by {x},10%,20%,30%,40%,50%,60%
-Reload Speed,ranged,Increases reload speed by {x},7%,14%,21%,28%,35%,42%
-Firerate Base,gun,Increases rounds/minute by {x},8,16,24,32,40,48
-Firerate %,gun,Increases rounds/minute by {x},10%,20%,30%,40%,50%,60%
-Run Speed,"tool,weapon,armorFeet",Increases your run speed by {x},5%,10%,15%,20%,25%,30%
-Shock%,"tool,weapon",You have a {x} chance to shock an enemy for 4 seconds,7%,14%,21%,28%,35%,42%
-Slow PowerHeadshots,"tool,melee",You have a {x} chance to apply a slow on a power attack headshot,17%,33%,55%,67%,83%,100%
-Sneak Base Bonus,"weapon,armor",Increases base weapon damage on sneak attacks by {x},2,4,6,8,10,12
-Sneak Bonus%,"weapon,armor",Increases sneak damage bonus by {x},50%,100%,150%,200%,250%,300%
-Sprint Damage,"tool,melee",Increases sprint attack damage by {x},20%,40%,60%,80%,100%,120%
-Stamina on Kill,"tool,weapon",You recover {x} stamina on kill,3,6,9,12,15,20
-Stamina Regen,"tool,weapon,armorHands,armorFeet",Increases your stamina regen by {x},6%,12%,18%,24%,30%,36%
-Sprint Stamina,"tool,weapon,armorHands,armorFeet",Increases stamina regen while sprinting by {x},10%,20%,30%,40%,50%,60%
-Stamina Base,"tool,weapon,armorHands,armorFeet",Increase your stamina by {x} while holding this weapon,5,10,15,20,25,30
-Stamina %,"tool,weapon,armorHands,armorFeet",Increases your stamina by {x} while holding this weapon,5%,10%,15%,20%,25%,30%
-Stamina Cost,"tool,melee",Decreases stamina cost by {x},5%,10%,15%,20%,25%,30%
-Stamina Primary,"tool,melee",Decreases stamina cost of light attacks by {x},6%,12%,18%,24%,30%,36%
-Stamina Secondary,"tool,melee",Decreases stamina cost of power attacks by {x},5%,10%,15%,20%,25%,30%
-Stun %,"tool,weapon",You have a {x} chance to stun an enemy with a headshot,6%,12%,18%,24%,30%,36%
+Low HP Bonus,"tool,weapon",Increases damage to zombies with less than 33% remaining HP by {x},10%,20%,30%,40%,50%,60%
+Damage at LowHP,"tool,weapon",Increases weapon damage by {x} when you're at less than 30% HP,10%,20%,30%,40%,50%,60%
+Magazine Base,magazine,Increases magazine size by {x},1,2,3,4,5,6
+Magazine %,magazine,Increases Magazine size by {x},10%,20%,30%,40%,50%,60%
+Damage at MaxHP,"tool,weapon",Increases weapon damage by {x} when you're at max HP,7.5%,15%,22.5%,30%,40%,50%
+Movement Speed,"tool,weapon,armorFeet",Increases your movement speed by {x},2.5%,5%,7.5%,10%,12.5%,15%
+Night Damage Base,"tool,weapon",Increases base weapon damage by {x} at night,1,2,3,4,5,6
+Night Damage %,"tool,weapon",Increases weapon damage by {x} at night,10%,20%,30%,40%,50%,60%
+Night Sneak Bonus,"tool,weapon,armor",Increases sneak damage at night by {x},40%,80%,120%,160%,200%,250%
+Projectilevelocity,"bow, crossbow",Increases projectile velocity by {x},10%,20%,30%,40%,50%,60%
+Ragdoll,"tool,weapon",You have a {x} chance to ragdoll an enemy with a headshot,5%,10%,15%,20%,25%,30%
+Range Increase,ranged,Increases effective range by {x},5%,10%,15%,20%,25%,30%
+Reload Speed,ranged,Increases reload speed by {x},5%,10%,15%,20%,25%,30%
+Firerate Base,gun,Increases rounds/minute by {x},5,10,15,20,25,30
+Firerate %,gun,Increases rounds/minute by {x},5%,10%,15%,20%,25%,30%
+Run Speed,"tool,weapon,armorFeet",Increases your run speed by {x},2.5%,5%,7.5%,10%,12.5%,15%
+Shock%,"tool,weapon",You have a 3% chance to shock an enemy for {x} seconds,4,4,5,5,6,6
+Slow PowerHeadshots,"tool,melee",You have a {x} chance to apply a slow on a power attack headshot,8%,16%,24%,32%,40%,50%
+Sneak Base Bonus,"weapon,armor",Increases base weapon damage on sneak attacks by {x}. Note: This bonus damage is not reflected in the sneak bonus popup (only counts percentage bonus),1,2,3,4,5,6
+Sneak Bonus%,"weapon,armor",Increases sneak damage bonus by {x},25%,50%,75%,100%,125%,150%
+Sprint Damage,"tool,melee",Increases sprint attack damage by {x},10%,20%,30%,40%,50%,60%
+Stamina on Kill,"tool,weapon",You recover {x} stamina on kill,2,4,6,8,10,12
+Stamina Regen,"tool,weapon,armorHands,armorFeet",Increases your stamina regen by {x},3%,6%,9%,12%,16%,20%
+Sprint Stamina,"tool,weapon,armorHands,armorFeet",Increases stamina regen while sprinting by {x},5%,10%,15%,20%,25%,30%
+Stamina Base,"tool,weapon,armorHands,armorFeet",Increase your stamina by {x},3,6,9,12,16,20
+Stamina %,"tool,weapon,armorHands,armorFeet",Increases your stamina by {x},2.5%,5%,7.5%,10%,12.5%,15%
+Stamina Cost,"tool,melee",Decreases stamina cost by {x},2.5%,5%,7.5%,10%,12.5%,15%
+Stamina Primary,"tool,melee",Decreases stamina cost of light attacks by {x},2.5%,5%,7.5%,10%,12.5%,15%
+Stamina Secondary,"tool,melee",Decreases stamina cost of power attacks by {x},2.5%,5%,7.5%,10%,12.5%,15%
+Stun %,"tool,weapon",You have a {x} chance to stun an enemy with a headshot,4%,8%,12%,16%,20%,25%
 Walk Speed,"tool,weapon,armorFeet",Increases your walking speed by {x},5%,10%,15%,20%,25%,30%
-LootBag Chance,weapon,Increases your lootbag drop chance from zombies by {x},10%,20%,30%,40%,50%,60%
+LootBag Chance,weapon,Increases your chance to gain a lootbag from a zombie by {x},5%,10%,15%,20%,25%,30%
+Bullet Recovery,gun,You recover {x} of bullet casings when shooting a gun (Except shotguns). This effect does not stack,15%,30%,45%,60%,75%,90%
