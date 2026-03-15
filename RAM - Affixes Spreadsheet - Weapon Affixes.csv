@@ -65,3 +65,4 @@ Stun %,"tool,weapon",You have a {x} chance to stun an enemy with a headshot,4%,8
 Walk Speed,"tool,weapon,armorFeet",Increases your walking speed by {x},5%,10%,15%,20%,25%,30%
 LootBag Chance,weapon,Increases your chance to gain a lootbag from a zombie by {x},5%,10%,15%,20%,25%,30%
 Bullet Recovery,gun,You recover {x} of bullet casings when shooting a gun (Except shotguns). This effect does not stack,15%,30%,45%,60%,75%,90%
+Giantslayer,"weapon,tool",You have a {x} chance to deal additional damage equal to 6% of the enemies max hp (3% on bosses).,4%,8%,12%,16%,20%,25%

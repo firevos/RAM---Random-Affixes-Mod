@@ -63,6 +63,7 @@
     <Compile Include="AffixSystem.cs" />
     <Compile Include="AffixUtils.cs" />
     <Compile Include="BuffMod.cs" />
+    <Compile Include="EntityAliveDamageEntity.cs" />
     <Compile Include="EntityAliveOnEntityDeath.cs" />
     <Compile Include="ItemActionRangedConsumeAmmo.cs" />
     <Compile Include="ItemActionEntryUpgradeItem.cs" />

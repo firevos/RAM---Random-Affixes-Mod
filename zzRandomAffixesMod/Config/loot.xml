@@ -165,7 +165,7 @@
         </lootprobtemplate>
         <lootprobtemplate name="uniqueT3">
             <loot level="0,98" prob="0"/>
-            <loot level="99,999999" prob=".01"/>
+            <loot level="99,999999" prob=".005"/>
         </lootprobtemplate>
     </insertBefore>
 
@@ -182,10 +182,16 @@
         <item name="meleeWpnBladeT1HuntingKnifeUnique" count="1" loot_prob_template="uniqueT0"/>
     </append>
     <append xpath="/lootcontainers/lootgroup[@name='groupZpackPlague']">
-        <item name="gunRifleT1HuntingRifleUnique" count="1" loot_prob_template="uniqueT1"/>
+        <item name="gunRifleT1HuntingRifleUnique" count="1" loot_prob_template="uniqueT1" force_prob="true"/>
     </append>
     <append xpath="/lootcontainers/lootgroup[@name='groupDesks02']">
         <item name="meleeWpnClubT1BaseballBatUnique" count="1" loot_prob_template="uniqueT1"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupZpackSoldier']">
+        <item name="gunMGT2TacticalARUnique" count="1" loot_prob_template="uniqueT2" force_prob="true"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupGunSafeSecure']">
+        <item name="gunMGT3M60Unique" count="1" loot_prob_template="uniqueT3" force_prob="true"/>
     </append>
 
 

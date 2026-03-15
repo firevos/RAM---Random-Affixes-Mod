@@ -3653,7 +3653,7 @@
             <property name="MaxModsAllowed" value="6"/>
             <effect_group>
                 <triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
-                <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="60"/>
+                    <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="60"/>
             </effect_group>
         </item_modifier>
     </append>
@@ -7282,6 +7282,57 @@
         </item_modifier>
     </append>
 
+    <!-- Giantslayer -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModGiantslayer1" type="attachment" installable_tags="weapon,tool" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_giantslayer_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod,giantslayer"/>
+            <property name="MaxModsAllowed" value="6"/>
+        </item_modifier>
+        
+        <item_modifier name="affixModGiantslayer2" type="attachment" installable_tags="weapon,tool" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_giantslayer_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod,giantslayer"/>
+            <property name="MaxModsAllowed" value="6"/>
+        </item_modifier>
+        
+        <item_modifier name="affixModGiantslayer3" type="attachment" installable_tags="weapon,tool" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_giantslayer_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod,giantslayer"/>
+            <property name="MaxModsAllowed" value="6"/>
+        </item_modifier>
+        
+        <item_modifier name="affixModGiantslayer4" type="attachment" installable_tags="weapon,tool" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_giantslayer_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod,giantslayer"/>
+            <property name="MaxModsAllowed" value="6"/>
+        </item_modifier>
+        
+        <item_modifier name="affixModGiantslayer5" type="attachment" installable_tags="weapon,tool" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_giantslayer_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod,giantslayer"/>
+            <property name="MaxModsAllowed" value="6"/>
+        </item_modifier>
+        
+        <item_modifier name="affixModGiantslayer6" type="attachment" installable_tags="weapon,tool" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_giantslayer_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod,giantslayer"/>
+            <property name="MaxModsAllowed" value="6"/>
+        </item_modifier>
+    </append>
+
     <!-- NEGATIVE affixes -->
     <!-- Smell -->
     <append xpath="/item_modifiers">
@@ -7321,6 +7372,37 @@
                 <triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffInjuryBleedingTwo">
                     <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="1"/>
                 </triggered_effect>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- PTSD: reduced damage resit and crit resist -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModPTSD" type="attachment" installable_tags="gun" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_ptsd_icon"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="unique_affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="GeneralDamageResist" operation="base_add" value="-0.2"/>
+                <passive_effect name="BuffResistance" operation="base_add" value="-0.3" tags="buffInfectionCatch,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Reduced Movement speed -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModReducedMovement" type="attachment" installable_tags="gun" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_lower_movement_icon"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="unique_affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="WalkSpeed" operation="perc_add" value="-.1"/>
+                <passive_effect name="RunSpeed" operation="perc_add" value="-.1"/>
+                <passive_effect name="CrouchSpeed" operation="perc_add" value="-.1"/>
             </effect_group>
         </item_modifier>
     </append>

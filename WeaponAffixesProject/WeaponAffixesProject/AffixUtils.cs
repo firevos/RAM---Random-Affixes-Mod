@@ -25,6 +25,7 @@ namespace WeaponAffixesProject
                 new[] {25, 23, 19, 15, 11, 7}, // Q6: 25% common 23% uncommon 19% rare 15% epic 11% legendary 7% mythic
             };
         internal static readonly int requiredKills = 100;
+        internal static readonly int magicSlayerBonus = 5;
         internal static readonly int unlockNewAffixChance = 67; // actual chance is 100 - unlockNewAffixChance %
 
         internal static bool IsAffixMod(ItemClass itemClass)
@@ -137,12 +138,11 @@ namespace WeaponAffixesProject
 
         internal static void ApplyQuestEventManagerUseItem(string name)
         {
-            Log.Out("Applying check.");
+            Log.Out("Applying Challenges check.");
             ItemClass requiredClass = ItemClass.GetItemClass(name, false);
             if (requiredClass != null)
             {
                 ItemValue requiredValue = new ItemValue(requiredClass.Id, false);
-                Log.Out($"{name} == {requiredValue.ItemClass.Name}");
                 var quester = QuestEventManager.Current;
                 if (quester != null)
                     quester.UsedItem(requiredValue);
