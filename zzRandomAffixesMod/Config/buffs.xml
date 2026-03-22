@@ -2274,18 +2274,18 @@
         </buff>
     </append>
 
-     <!-- Kill Streak Bonus Damage Buff -->
+    <!-- Kill Streak Bonus Damage Buff -->
     <append xpath="/buffs">
         <buff name="buffaffixModKillStreakDamage2" name_key="buffaffixModKillStreakDamage2Name" description_key="buffaffixModKillStreakDamage2Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="104,249,104" icon_blink="true">
             <stack_type value="replace"/>
-            <duration value="14"/>
+            <duration value="8"/>
             <display_value value=".killStreakDamageDisplay2"/>
 		    <display_value_key value="+{0:0}%"/>
 
             <effect_group>
                 <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage2" operation="set" value=".05"/>
                 <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage2" operation="add" value=".05">
-                    <requirement name="CVarCompare" cvar=".killStreakDamage2" operation="LT" value="1.75"/>
+                    <requirement name="CVarCompare" cvar=".killStreakDamage2" operation="LT" value="0.99"/>
                 </triggered_effect>
                 <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage2"/>
                 <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage2"/>
@@ -2299,14 +2299,14 @@
 
         <buff name="buffaffixModKillStreakDamage3" name_key="buffaffixModKillStreakDamage3Name" description_key="buffaffixModKillStreakDamage3Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="56,166,246" icon_blink="true">
             <stack_type value="replace"/>
-            <duration value="21"/>
+            <duration value="16"/>
             <display_value value=".killStreakDamageDisplay3"/>
 		    <display_value_key value="+{0:0}%"/>
 
             <effect_group>
                 <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage3" operation="set" value=".05"/>
                 <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage3" operation="add" value=".05">
-                    <requirement name="CVarCompare" cvar=".killStreakDamage3" operation="LT" value="1.75"/>
+                    <requirement name="CVarCompare" cvar=".killStreakDamage3" operation="LT" value="1.24"/>
                 </triggered_effect>
                 <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage3"/>
                 <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage3"/>
@@ -2320,14 +2320,14 @@
 
         <buff name="buffaffixModKillStreakDamage4" name_key="buffaffixModKillStreakDamage4Name" description_key="buffaffixModKillStreakDamage4Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="133,46,200" icon_blink="true">
             <stack_type value="replace"/>
-            <duration value="28"/>
+            <duration value="24"/>
             <display_value value=".killStreakDamageDisplay4"/>
 		    <display_value_key value="+{0:0}%"/>
 
             <effect_group>
                 <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage4" operation="set" value=".05"/>
                 <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage4" operation="add" value=".05">
-                    <requirement name="CVarCompare" cvar=".killStreakDamage4" operation="LT" value="1.75"/>
+                    <requirement name="CVarCompare" cvar=".killStreakDamage4" operation="LT" value="1.49"/>
                 </triggered_effect>
                 <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage4"/>
                 <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage4"/>
@@ -2341,14 +2341,14 @@
 
         <buff name="buffaffixModKillStreakDamage5" name_key="buffaffixModKillStreakDamage5Name" description_key="buffaffixModKillStreakDamage5Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="214,209,98" icon_blink="true">
             <stack_type value="replace"/>
-            <duration value="35"/>
+            <duration value="32"/>
             <display_value value=".killStreakDamageDisplay5"/>
 		    <display_value_key value="+{0:0}%"/>
 
             <effect_group>
                 <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage5" operation="set" value=".05"/>
                 <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage5" operation="add" value=".05">
-                    <requirement name="CVarCompare" cvar=".killStreakDamage5" operation="LT" value="1.75"/>
+                    <requirement name="CVarCompare" cvar=".killStreakDamage5" operation="LT" value="1.74"/>
                 </triggered_effect>
                 <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage5"/>
                 <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage5"/>
@@ -2362,14 +2362,14 @@
 
         <buff name="buffaffixModKillStreakDamage6" name_key="buffaffixModKillStreakDamage6Name" description_key="buffaffixModKillStreakDamage6Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="255,54,70" icon_blink="true">
             <stack_type value="replace"/>
-            <duration value="42"/>
+            <duration value="40"/>
             <display_value value=".killStreakDamageDisplay6"/>
 		    <display_value_key value="+{0:0}%"/>
 
             <effect_group>
                 <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage6" operation="set" value=".05"/>
                 <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage6" operation="add" value=".05">
-                    <requirement name="CVarCompare" cvar=".killStreakDamage6" operation="LT" value="1.75"/>
+                    <requirement name="CVarCompare" cvar=".killStreakDamage6" operation="LT" value="1.99"/>
                 </triggered_effect>
 
                 <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage6"/>
@@ -2383,4 +2383,85 @@
         </buff>
     </append>
 
+    <!-- Rapid Response Buff -->
+    <append  xpath="/buffs">
+        <buff name="buffaffixModRapidResponse1" name_key="buffaffixModRapidResponse1Name" description_key="buffaffixModRapidResponse1Desc" showonhud="true" icon="ui_rapid_response_icon">
+            <stack_type value="effect"/>
+            <duration value="4"/>
+
+            <effect_group>
+                <passive_effect name="WalkSpeed" operation="perc_add" value=".05"/>
+                <passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
+                <passive_effect name="CrouchSpeed" operation="perc_add" value=".05"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffaffixModRapidResponse2" name_key="buffaffixModRapidResponse2Name" description_key="buffaffixModRapidResponse2Desc" showonhud="true" icon="ui_rapid_response_icon" icon_color="104,249,104">
+            <stack_type value="effect"/>
+            <duration value="4"/>
+
+            <effect_group>
+                <passive_effect name="WalkSpeed" operation="perc_add" value=".1"/>
+                <passive_effect name="RunSpeed" operation="perc_add" value=".1"/>
+                <passive_effect name="CrouchSpeed" operation="perc_add" value=".1"/>
+            </effect_group>
+        </buff>
+        
+        <buff name="buffaffixModRapidResponse3" name_key="buffaffixModRapidResponse3Name" description_key="buffaffixModRapidResponse3Desc" showonhud="true" icon="ui_rapid_response_icon" icon_color="56,166,246">
+            <stack_type value="effect"/>
+            <duration value="5"/>
+
+            <effect_group>
+                <passive_effect name="WalkSpeed" operation="perc_add" value=".15"/>
+                <passive_effect name="RunSpeed" operation="perc_add" value=".15"/>
+                <passive_effect name="CrouchSpeed" operation="perc_add" value=".15"/>
+            </effect_group>
+        </buff>
+        
+        <buff name="buffaffixModRapidResponse4" name_key="buffaffixModRapidResponse4Name" description_key="buffaffixModRapidResponse4Desc" showonhud="true" icon="ui_rapid_response_icon" icon_color="133,46,200">
+            <stack_type value="effect"/>
+            <duration value="5"/>
+
+            <effect_group>
+                <passive_effect name="WalkSpeed" operation="perc_add" value=".2"/>
+                <passive_effect name="RunSpeed" operation="perc_add" value=".2"/>
+                <passive_effect name="CrouchSpeed" operation="perc_add" value=".2"/>
+            </effect_group>
+        </buff>
+        
+        <buff name="buffaffixModRapidResponse5" name_key="buffaffixModRapidResponse5Name" description_key="buffaffixModRapidResponse5Desc" showonhud="true" icon="ui_rapid_response_icon" icon_color="214,209,98">
+            <stack_type value="effect"/>
+            <duration value="6"/>
+
+            <effect_group>
+                <passive_effect name="WalkSpeed" operation="perc_add" value=".3"/>
+                <passive_effect name="RunSpeed" operation="perc_add" value=".3"/>
+                <passive_effect name="CrouchSpeed" operation="perc_add" value=".3"/>
+            </effect_group>
+        </buff>
+        
+        <buff name="buffaffixModRapidResponse6" name_key="buffaffixModRapidResponse6Name" description_key="buffaffixModRapidResponse6Desc" showonhud="true" icon="ui_rapid_response_icon" icon_color="255,54,70">
+            <stack_type value="effect"/>
+            <duration value="6"/>
+
+            <effect_group>
+                <passive_effect name="WalkSpeed" operation="perc_add" value=".4"/>
+                <passive_effect name="RunSpeed" operation="perc_add" value=".4"/>
+                <passive_effect name="CrouchSpeed" operation="perc_add" value=".4"/>
+            </effect_group>
+        </buff>
+    </append>
+
+    <!-- Permadeath buff -->
+    <append xpath="/buffs">
+        <buff name="buffPermadeathPenalty" name_key="buffPermadeathPenaltyName" description_key="buffPermadeathPenaltyDesc" showonhud="false">
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".deathPenalty" operation="set" value="@$deathCount"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".deathPenalty" operation="multiply" value="-5"/>
+
+                <passive_effect name="EntityDamage" operation="base_add" value="@.deathPenalty"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".deathPenalty"/>
+            </effect_group>
+        </buff>
+    </append>
 </configs>

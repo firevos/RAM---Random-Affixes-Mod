@@ -60,26 +60,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AffixSystem.cs" />
-    <Compile Include="AffixUtils.cs" />
+    <Compile Include="Affixes\AffixBulletRecovery.cs" />
+    <Compile Include="Affixes\AffixResurgence.cs" />
+    <Compile Include="Tokens\AffixSystem.cs" />
+    <Compile Include="Utils\AffixUtils.cs" />
+    <Compile Include="Affixes\AffixBonusKills.cs" />
+    <Compile Include="Affixes\AffixBringItDown.cs" />
     <Compile Include="BuffMod.cs" />
-    <Compile Include="EntityAliveDamageEntity.cs" />
-    <Compile Include="EntityAliveOnEntityDeath.cs" />
-    <Compile Include="ItemActionRangedConsumeAmmo.cs" />
-    <Compile Include="ItemActionEntryUpgradeItem.cs" />
-    <Compile Include="ChallengeObjectiveUseItemDescriptionText.cs" />
-    <Compile Include="XUiC_ItemCosmeticStackCanRemove.cs" />
-    <Compile Include="XUiC_ItemPartStackCanRemove.cs" />
-    <Compile Include="ItemActionEntryExtractAffix.cs" />
-    <Compile Include="LootContainerPatch.cs" />
+    <Compile Include="Utils\BuffUtils.cs" />
+    <Compile Include="HarmonyPatches\EntityAliveDamageEntity.cs" />
+    <Compile Include="HarmonyPatches\EntityAliveOnEntityDeath.cs" />
+    <Compile Include="HarmonyPatches\EntityPlayerDamageEntity.cs" />
+    <Compile Include="Affixes\AffixGiantSlayer.cs" />
+    <Compile Include="Affixes\AffixIncreaseBuffDuration.cs" />
+    <Compile Include="HarmonyPatches\ItemActionRangedConsumeAmmo.cs" />
+    <Compile Include="Tokens\ItemActionEntryUpgradeAffix.cs" />
+    <Compile Include="HarmonyPatches\ChallengeObjectiveUseItemDescriptionText.cs" />
+    <Compile Include="Affixes\AffixPermadeath.cs" />
+    <Compile Include="UpgradeSystem\WeaponUpgrades.cs" />
+    <Compile Include="HarmonyPatches\XUiC_ItemCosmeticStackCanRemove.cs" />
+    <Compile Include="HarmonyPatches\XUiC_ItemPartStackCanRemove.cs" />
+    <Compile Include="Tokens\ItemActionEntryExtractAffix.cs" />
+    <Compile Include="HarmonyPatches\LootContainerSpawnItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ItemActionEntryRerollAffix.cs" />
-    <Compile Include="QualityInfoCleanupPrefix.cs" />
-    <Compile Include="XUiC_ActiveItemKillsUpgrades.cs" />
-    <Compile Include="XUiC_CollectedItemListSetYOffset.cs" />
-    <Compile Include="XUiC_ItemActionListSetCraftingActionList.cs" />
-    <Compile Include="XUiC_ItemInfoWindowSetInfo.cs" />
-    <Compile Include="XUiC_ItemPartStackSwapItemPrefix.cs" />
+    <Compile Include="Tokens\ItemActionEntryRerollAffix.cs" />
+    <Compile Include="HarmonyPatches\QualityInfoCleanupPrefix.cs" />
+    <Compile Include="UpgradeSystem\XUiC_ActiveItemKillsUpgrades.cs" />
+    <Compile Include="HarmonyPatches\XUiC_CollectedItemListSetYOffset.cs" />
+    <Compile Include="Tokens\XUiC_ItemActionListSetCraftingActionList.cs" />
+    <Compile Include="HarmonyPatches\XUiC_ItemInfoWindowSetInfo.cs" />
+    <Compile Include="HarmonyPatches\XUiC_ItemPartStackSwapItemPrefix.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

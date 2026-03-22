@@ -27,7 +27,6 @@
         xuiAffixes
     </set>
 
-    <!-- Insert our panel BEFORE the ammo grid, but NOT inside it -->
     <insertBefore xpath="/windows/window[@name='HUDRightStatBars']/grid[@name='hud']">
         <rect name="KillsUpgradesPanel" pos="-194,55" width="188" height="46" side="right" controller="XUiC_ActiveItemKillsUpgrades,WeaponAffixesProject" visible="{kuvisible}">
         <sprite depth="3" pos="3,0" sprite="ui_game_popup" height="46" width="182" />
@@ -36,8 +35,6 @@
         <sprite depth="4" sprite="ui_kill_count_icon" size="35,35" pos="148,-24" pivot="center" foregroundlayer="true" />
         </rect>
     </insertBefore>
-
-
 </configs>
 
 <!-- <configs>

@@ -30,7 +30,8 @@ legendary
     upgrade any weapon 25 times
     tbd
 
-SATURDAY = NERF DAY DONE
+killstreak slight rework (again)    DONE
+very slightly buffed entity damage base DONE
 
 Uniques: make a custom affix set for each specific weapon and add that weapon to loot
     -   needs a custom name 
@@ -41,6 +42,7 @@ Uniques: make a custom affix set for each specific weapon and add that weapon to
 Unique Ideas:
     -   Fireaxe is fire based (100% to set on fire, (higher damage fire???)) chance to set self on fire on every swing.
     -   Nerd outfit: 'Teacher armor' increased skill xp, maybe something else school themed. Only found in lockers.
+    -   some weapon that does more damage/effects if you havent died yet (permadeath).  DONE
 
 Joke/unique affixes for uniques:
     chance to fall down when powerattacking
@@ -50,11 +52,27 @@ Joke/unique affixes for uniques:
     sprain arm chance when firing through scope on m60
 
 rocket launcher unique from demo loot bag
+'Golden' zombies. like 0.001 odds of spawning, theyre infernals but recolered to gold. can base some of the legendary challenges on killing it, count as 50 kills, drop a lootbag that always contains a token etc etc
+
+i want more 'conditional' affixes. not just passive stat boost and not just random roll for an effect. But things like IF thing A happens then apply buff B for x seconds kinda things.
 
     Weapon Both Armor Total
-DONE: 51 - 16 - 34 -    101
+DONE: 53 - 17 - 43 -    113
 
 New Affixes:
+do more damage based on player level    DONE
+do more damage in specific biome (for all 5)    DONE
+chance to get get bonus kills for ferals-rads-infernals     DONE
+manipulate buffs in a thousand and one ways.
+add x seconds to a random buff on a kill    DONE
+increase buff duration
+wisdom of battle - become immune to certain debuffs for a certain amount of time after it expires
+mighty endurance - increased damage resist when affected by critical injury
+stoked to fury - increased damage when affected by critical injury      DONE
+resurgent - chance to heal an injury when taking damage        DONE
+AP ammo pierce additional target
+rapid response - increase movement speed after taking damage         DONE
+bring it down - increase damage against high hp enemies         DONE
 extra healing from healing items
 waterbreathing
 higher reach for melee

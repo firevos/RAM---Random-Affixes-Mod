@@ -193,6 +193,9 @@
     <append xpath="/lootcontainers/lootgroup[@name='groupGunSafeSecure']">
         <item name="gunMGT3M60Unique" count="1" loot_prob_template="uniqueT3" force_prob="true"/>
     </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupPurse']">
+        <item name="gunHandgunT3DesertVultureUnique" count="1" loot_prob_template="uniqueT3" force_prob="true"/>
+    </append>
 
 
     <!-- ARMOR QUALITY TEMPLATE-->
