@@ -49,3 +49,13 @@ Inventory Capacity,"armorChest,armorHands",Increases carry capacity by {x},1,2,3
 Dodge Chance,armorChest,You have a {x} chance to dodge all damage from an attack,1%,2%,3%,5%,7%,10%
 Tool Damage,armor,Increase Tool damage by {x},5%,10%,15%,20%,25%,30%
 Motortool Damage,armor,"Increase Motortools, like chainsaws and augers damage by {x}",5%,10%,15%,20%,25%,30%
+Bring it Down,"armor,weapon,tool",Multiplies your total damage by {x} against enemies with more than 1500 max hp,1.03x,1.06x,1.09x,1.12x,1.16x,1.2x
+Rapid Response,armor,Increase your movement speed by {x} for {y} seconds after getting hit,5% / 4s,10% / 4s,15% / 5s,20% / 5s,30% / 6s,40% / 6s
+Resurgence,armor,You have a {x} chance to heal any injury after taking a hit,1%,2%,3%,4%,5%,6%
+Stoked to Fury,armor,Increase damage by {x} when affected by an injury,10%,20%,30%,40%,50%,60%
+Forest Damage,armor,Increase damage by {x} while in the forest biome,5%,10%,15%,20%,25%,30%
+Snow Damage,armor,Increase damage by {x} while in the snow biome,5%,10%,15%,20%,25%,30%
+Desert Damage,armor,Increase damage by {x} while in the desert biome,5%,10%,15%,20%,25%,30%
+Burnt Forest Damage,armor,Increase damage by {x} while in the burnt forest biome,5%,10%,15%,20%,25%,30%
+Wasteland Damage,armor,Increase damage by {x} in the wasteland biome,5%,10%,15%,20%,25%,30%
+Level Damage,armor,Increase damage by {x} for each 20 player levels (up to level 300),-,1%,2%,3%,4%,5%
