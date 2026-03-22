@@ -15,7 +15,7 @@ Crouch Speed,"tool,weapon,armorFeet",Increases your sneaking speed by {x},5%,10%
 Dismemberment,"tool,weapon",Increases dismemberment chance by {x},5%,10%,15%,20%,25%,30%
 Durability,"tool,weapon,armor",Increases max durability by {x},100,200,300,400,500,600
 Durability%,"tool,weapon,armor",Increases max durability by {x},10%,20%,30%,40%,50%,60%
-Base Entity Damage,"tool,weapon",Increases base entity damage by {x},0.5,1,1.5,2,3,4
+Base Entity Damage,"tool,weapon",Increases base entity damage by {x},0.75,1.5,2.25,3,4,5
 Entity Damage %,"tool,weapon",This weapon is somewhat sharpened albeit a little dull still. Increases weapon entity damage by {x},5%,10%,15%,20%,25%,30%
 Power Damage Base,"tool,melee",Increases base weapon damage for power attacks by {x},1,2,3,4,5,6
 Power Damage %,"tool,melee",Increases weapon power attack damage by {x},5%,10%,15%,20%,25%,30%
@@ -28,7 +28,7 @@ Headshot Base,"tool,weapon",Increases base weapon damage by {x} when dealing hea
 Headshot%,"tool,weapon",Increases headshot damage by {x},5%,10%,15%,20%,30%,40%
 Instakill,"tool,weapon",You have a {x} chance to instakill with every hit,-,-,-,-,1%,2%
 Jump Strength,"tool,weapon,armorFeet",Increases your jump strength by {x},10%,20%,30%,40%,50%,60%
-Killstreak Damage,"tool,weapon","Increases weapon damage by 7% for each kill as long as you keep killing within {x} seconds, capped at 175%",-,14,21,28,35,42
+Killstreak Damage,"tool,weapon","Increases weapon damage by 5% for each kill as long as you keep killing within {x} seconds, capped at {y}%",-,"8 / 100%","16 / 125%","24 / 150%","32 / 175%","40 / 200%"
 Kill Streak HP,"tool,weapon",Increases your max HP by {x} for every kill as long as you keep killing,-,-,-,-,-,1
 Knockdown Damage,"tool,weapon",Increases damage to knocked down enemies by {x},10%,20%,30%,40%,50%,60%
 Lifesteal,melee,Heal {x} HP every hit (mythic heals additional 2 hp per kill),-,-,-,-,1,1
@@ -66,3 +66,6 @@ Walk Speed,"tool,weapon,armorFeet",Increases your walking speed by {x},5%,10%,15
 LootBag Chance,weapon,Increases your chance to gain a lootbag from a zombie by {x},5%,10%,15%,20%,25%,30%
 Bullet Recovery,gun,You recover {x} of bullet casings when shooting a gun (Except shotguns). This effect does not stack,15%,30%,45%,60%,75%,90%
 Giantslayer,"weapon,tool",You have a {x} chance to deal additional damage equal to 6% of the enemies max hp (3% on bosses).,4%,8%,12%,16%,20%,25%
+Bonus Kills,"weapon,tool","High tier zombies give you a chance to get a bonus kill for the kill counter. Ferals {x}, Radiated {y}, Charged/Infernals {z}",5% / 10% / 15%,10% / 20% / 30%,15% / 30% / 45%,20% / 40% / 60%,25% / 50% / 75%,30% / 60% / 90%
+Bring it Down,"armor,weapon,tool",Multiplies your total damage by {x} against enemies with more than 1500 max hp,1.03x,1.06x,1.09x,1.12x,1.16x,1.2x
+Increase Buff Duration,"weapon,tool",Increases duration of a random positive buff by {x} seconds after getting a kill,3,4,5,6,7,8
