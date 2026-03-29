@@ -30,5 +30,13 @@
             <ingredient name="resourceAcid" count="1"/>
             <ingredient name="resourceForgedSteel" count="50"/>
         </recipe>
+
+        <recipe name="affixUnlockToken" count="1" craft_time="60" craft_exp_gain="0" craft_area="workbench" tags="workbenchCrafting">
+            <ingredient name="affixBlankToken" count="1"/>
+            <ingredient name="resourceLegendaryParts" count="1"/>
+            <ingredient name="foodCropGraceCorn" count="5"/>
+            <ingredient name="resourceArmorCraftingKit" count="1"/>
+            <ingredient name="resourceForgedSteel" count="75"/>
+        </recipe>
     </insertAfter>
 </configs>

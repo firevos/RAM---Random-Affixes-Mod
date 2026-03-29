@@ -1,0 +1,15 @@
+<configs>
+    <insertAfter xpath="ui_display_info/item_display/item_display_info[@display_type='armorPrimitiveBoots']">
+        <item_display_info display_type="armorPrimitiveHelmetUnique" display_group="groupAttire" extends="armorLight" >
+		</item_display_info>
+
+		<item_display_info display_type="armorPrimitiveOutfitUnique" display_group="groupAttire" extends="armorLight" >
+		</item_display_info>
+
+		<item_display_info display_type="armorPrimitiveGlovesUnique" display_group="groupAttire" extends="armorLight" >
+		</item_display_info>
+
+		<item_display_info display_type="armorPrimitiveBootsUnique" display_group="groupAttire" extends="armorLight" >
+		</item_display_info>
+    </insertAfter>
+</configs>

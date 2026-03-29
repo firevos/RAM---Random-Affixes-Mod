@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace WeaponAffixesProject
 {
@@ -185,10 +186,16 @@ namespace WeaponAffixesProject
             return true;
         }
 
-        internal static bool AddNewAffix(ItemValue itemValue, ref string affixName)
+        internal static bool AddNewAffix(ItemValue itemValue, ref string affixName, bool fromToken)
         {
             List<List<ItemClassModifier>> modList = AffixUtils.GetCorrectModList(itemValue);
             if (modList == null || modList.Count == 0) return false;
+
+            if (itemValue.CosmeticMods.Count() == 0)
+            {
+                var newCosmetics = new ItemValue[1];
+                itemValue.CosmeticMods = newCosmetics;
+            }
 
             if (itemValue.CosmeticMods[0] != null && !itemValue.CosmeticMods[0].IsEmpty())
             {
@@ -199,15 +206,14 @@ namespace WeaponAffixesProject
                     modList = AffixUtils.RemoveSimilarMods(modList, mod);
                 }
 
-                // first clear all buffs from affixes, either here or in xml make sure it deactivates before removing.
                 int affixSlots = itemValue.CosmeticMods.Length + 1;
                 var newCosmetic = new ItemValue[affixSlots];
                 if (itemValue.CosmeticMods != null && !itemValue.CosmeticMods[0].IsEmpty())
                     Array.Copy(itemValue.CosmeticMods, newCosmetic, itemValue.CosmeticMods.Length);
                 itemValue.CosmeticMods = newCosmetic;
             }
-
-            ItemClassModifier selectedMod = modList[0][AffixUtils.rng.Next(modList[0].Count)];
+            int tier = (fromToken && AffixUtils.rng.Next(100) < 2) ? 5 : 0;
+            ItemClassModifier selectedMod = modList[tier][AffixUtils.rng.Next(modList[tier].Count)];
             if (selectedMod == null) return false;
             affixName = selectedMod.localizedName;
 
@@ -223,7 +229,8 @@ namespace WeaponAffixesProject
                     itemValue.CosmeticMods[j] = new ItemValue(selectedMod.Id);
 
                     // Unlock an affix
-                    AffixUtils.ApplyQuestEventManagerUseItem("affixModEntityDamagePerc3");
+                    if (!fromToken)
+                        AffixUtils.ApplyQuestEventManagerUseItem("affixModEntityDamagePerc3");
                     return true;
                 }
             }
@@ -238,9 +245,9 @@ namespace WeaponAffixesProject
             // If an empty slot is available, unlock a new one.
             if (itemValue.CosmeticMods.Length < totalAffixes)
             {
-                if (itemValue.CosmeticMods[0] == null || itemValue.CosmeticMods[0].IsEmpty()) didUpgrade = AffixSystem.AddNewAffix(itemValue, ref affixName);
-                else if (!itemValue.CosmeticMods[0].ItemClass.HasAnyTags(AffixUtils.AffixTag)) didUpgrade = AffixSystem.AddNewAffix(itemValue, ref affixName);
-                else if (AffixUtils.rng.Next(0, 100) > AffixUtils.unlockNewAffixChance) didUpgrade = AffixSystem.AddNewAffix(itemValue, ref affixName);
+                if (itemValue.CosmeticMods[0] == null || itemValue.CosmeticMods[0].IsEmpty()) didUpgrade = AffixSystem.AddNewAffix(itemValue, ref affixName, false);
+                else if (!itemValue.CosmeticMods[0].ItemClass.HasAnyTags(AffixUtils.AffixTag)) didUpgrade = AffixSystem.AddNewAffix(itemValue, ref affixName, false);
+                else if (AffixUtils.rng.Next(0, 100) > AffixUtils.unlockNewAffixChance) didUpgrade = AffixSystem.AddNewAffix(itemValue, ref affixName, false);
             }
             if (!didUpgrade)
             {
@@ -258,7 +265,7 @@ namespace WeaponAffixesProject
                 // If no slots can be upgraded, see if you can add a new one instead.
                 if (canUpgradeSlots.Count == 0)
                 {
-                    if (itemValue.CosmeticMods.Length < totalAffixes) didUpgrade = AffixSystem.AddNewAffix(itemValue, ref affixName);
+                    if (itemValue.CosmeticMods.Length < totalAffixes) didUpgrade = AffixSystem.AddNewAffix(itemValue, ref affixName, false);
                     else return didUpgrade;
                 }
                 else didUpgrade = AffixSystem.UpgradeAffix(itemValue, canUpgradeSlots, ref affixName);

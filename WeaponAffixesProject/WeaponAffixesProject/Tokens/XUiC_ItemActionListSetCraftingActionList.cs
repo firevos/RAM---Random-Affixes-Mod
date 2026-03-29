@@ -12,10 +12,22 @@ namespace WeaponAffixesProject
         {
             try
             {
-                if (_actionListType != XUiC_ItemActionList.ItemActionListTypes.Part) return;
-                if (!(itemController is XUiC_ItemCosmeticStack) && !(itemController is XUiC_ItemPartStack)) return;
+                if (!(itemController is XUiC_ItemCosmeticStack) && !(itemController is XUiC_ItemPartStack) && !(itemController is XUiC_ItemStack)) return;
 
                 var xui = __instance.xui;
+                // Item/Armor one
+                if (itemController is XUiC_ItemStack)
+                {
+                    var weaponController = (XUiC_ItemStack)itemController;
+                    var selectedClass = weaponController.itemStack.itemValue.ItemClass;
+                    if (selectedClass == null || (!selectedClass.HasAnyTags(AffixUtils.WeaponTag) && !selectedClass.HasAnyTags(AffixUtils.ToolTag) && !selectedClass.HasAnyTags(AffixUtils.ArmorTag)) || selectedClass.HasAnyTags(FastTags<TagGroup.Global>.GetTag("noMods")) || selectedClass.HasAnyTags(AffixUtils.UniqueAffixTag)) return;
+
+                    MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryUnlockAffix(itemController) });
+
+                    return;
+                }
+
+                // Affix specific ones
                 var parent = xui?.AssembleItem?.CurrentItem;
                 if (parent == null || parent.IsEmpty() || parent.itemValue == null || parent.itemValue.IsEmpty()) return;
 
@@ -29,6 +41,7 @@ namespace WeaponAffixesProject
                     MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryRerollAffix(itemController) });
                     MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryExtractAffix(itemController) });
                     MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryUpgradeAffix(itemController) });
+                    return;
                 }
                 else if (itemController is XUiC_ItemPartStack)
                 {
@@ -38,6 +51,7 @@ namespace WeaponAffixesProject
                     if (selectedClass2 == null || !selectedClass2.HasAnyTags(AffixUtils.AffixTag)) return;
 
                     MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryExtractAffix(itemController) });
+                    return;
                 }
 
             }

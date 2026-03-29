@@ -8364,6 +8364,931 @@
         </item_modifier>
     </append>
 
+    <!-- +1 Strength -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModStrength6" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_strength_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="1"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- +1 Agility -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModAgility6" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_agility_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="AttributeLevel" tags="attAgility" operation="base_add" value="1"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- +1 Perception -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModPerception6" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_perception_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="AttributeLevel" tags="attPerception" operation="base_add" value="1"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- +1 Fortitude -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModFortitude6" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_fortitude_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="AttributeLevel" tags="attFortitude" operation="base_add" value="1"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- +1 Intellect -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModIntellect6" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_intellect_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="AttributeLevel" tags="attIntellect" operation="base_add" value="1"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Blood moon damage -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModBloodMoonDamage1" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_blood_moon_damage_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="IsBloodMoon"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".075"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModBloodMoonDamage2" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_blood_moon_damage_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="IsBloodMoon"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".15"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModBloodMoonDamage3" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_blood_moon_damage_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="IsBloodMoon"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".225"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModBloodMoonDamage4" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_blood_moon_damage_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="IsBloodMoon"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModBloodMoonDamage5" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_blood_moon_damage_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="IsBloodMoon"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".375"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModBloodMoonDamage6" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_blood_moon_damage_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="IsBloodMoon"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".45"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Indoors damage -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModIndoorsDamage1" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_indoors_damage_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="IsIndoors"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".075"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModIndoorsDamage2" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_indoors_damage_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="IsIndoors"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".15"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModIndoorsDamage3" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_indoors_damage_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="IsIndoors"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".225"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModIndoorsDamage4" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_indoors_damage_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="IsIndoors"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModIndoorsDamage5" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_indoors_damage_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="IsIndoors"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".375"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModIndoorsDamage6" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_indoors_damage_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="IsIndoors"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".45"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Damage at max strength -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModMaxStrengthDamage1" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_strength_damage_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attStrength"/>
+                <requirement name="ProgressionLevel" progression_name="attStrength" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxStrengthDamage2" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_strength_damage_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attStrength"/>
+                <requirement name="ProgressionLevel" progression_name="attStrength" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxStrengthDamage3" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_strength_damage_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attStrength"/>
+                <requirement name="ProgressionLevel" progression_name="attStrength" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".15"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxStrengthDamage4" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_strength_damage_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attStrength"/>
+                <requirement name="ProgressionLevel" progression_name="attStrength" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxStrengthDamage5" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_strength_damage_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attStrength"/>
+                <requirement name="ProgressionLevel" progression_name="attStrength" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".25"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxStrengthDamage6" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_strength_damage_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attStrength"/>
+                <requirement name="ProgressionLevel" progression_name="attStrength" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Damage at max agility -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModMaxAgilityDamage1" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_agility_damage_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attAgility"/>
+                <requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxAgilityDamage2" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_agility_damage_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attAgility"/>
+                <requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxAgilityDamage3" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_agility_damage_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attAgility"/>
+                <requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".15"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxAgilityDamage4" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_agility_damage_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attAgility"/>
+                <requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxAgilityDamage5" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_agility_damage_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attAgility"/>
+                <requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".25"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxAgilityDamage6" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_agility_damage_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attAgility"/>
+                <requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Damage at max fortitude -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModMaxFortitudeDamage1" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_fortitude_damage_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attFortitude"/>
+                <requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxFortitudeDamage2" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_fortitude_damage_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attFortitude"/>
+                <requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxFortitudeDamage3" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_fortitude_damage_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attFortitude"/>
+                <requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".15"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxFortitudeDamage4" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_fortitude_damage_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attFortitude"/>
+                <requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxFortitudeDamage5" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_fortitude_damage_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attFortitude"/>
+                <requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".25"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxFortitudeDamage6" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_fortitude_damage_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attFortitude"/>
+                <requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Damage at max intellect -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModMaxIntellectDamage1" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_intellect_damage_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attIntellect"/>
+                <requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxIntellectDamage2" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_intellect_damage_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attIntellect"/>
+                <requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
+            </effect_group>
+        </item_modifier>
+
+        <item_modifier name="affixModMaxIntellectDamage3" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_intellect_damage_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attIntellect"/>
+                <requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".15"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxIntellectDamage4" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_intellect_damage_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attIntellect"/>
+                <requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxIntellectDamage5" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_intellect_damage_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attIntellect"/>
+                <requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".25"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxIntellectDamage6" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_intellect_damage_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attIntellect"/>
+                <requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Damage at max Perception -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModMaxPerceptionDamage1" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_perception_damage_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attPerception"/>
+                <requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".05"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxPerceptionDamage2" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_perception_damage_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attPerception"/>
+                <requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxPerceptionDamage3" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_perception_damage_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attPerception"/>
+                <requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".15"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxPerceptionDamage4" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_perception_damage_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attPerception"/>
+                <requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxPerceptionDamage5" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_perception_damage_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attPerception"/>
+                <requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".25"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxPerceptionDamage6" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_max_perception_damage_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="HoldingItemHasTags" tags="attPerception"/>
+                <requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="10"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Damage at low water -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModMaxLowWaterDamage1" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_low_water_damage_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="water" operation="LTE" value=".3"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".075"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxLowWaterDamage2" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_low_water_damage_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="water" operation="LTE" value=".3"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".15"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxLowWaterDamage3" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_low_water_damage_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="water" operation="LTE" value=".3"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".225"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxLowWaterDamage4" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_low_water_damage_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="water" operation="LTE" value=".3"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxLowWaterDamage5" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_low_water_damage_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="water" operation="LTE" value=".3"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".375"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxLowWaterDamage6" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_low_water_damage_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="water" operation="LTE" value=".3"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".45"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Damage at high water -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModMaxHighWaterDamage1" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_high_water_damage_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="water" operation="GTE" value=".85"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".075"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxHighWaterDamage2" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_high_water_damage_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="water" operation="GTE" value=".85"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".15"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxHighWaterDamage3" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_high_water_damage_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="water" operation="GTE" value=".85"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".225"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxHighWaterDamage4" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_high_water_damage_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="water" operation="GTE" value=".85"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxHighWaterDamage5" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_high_water_damage_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="water" operation="GTE" value=".85"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".375"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxHighWaterDamage6" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_high_water_damage_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="water" operation="GTE" value=".85"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".45"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Damage at low food -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModMaxLowFoodDamage1" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_low_food_damage_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="food" operation="LTE" value=".3"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".075"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxLowFoodDamage2" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_low_food_damage_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="food" operation="LTE" value=".3"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".15"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxLowFoodDamage3" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_low_food_damage_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="food" operation="LTE" value=".3"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".225"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxLowFoodDamage4" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_low_food_damage_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="food" operation="LTE" value=".3"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxLowFoodDamage5" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_low_food_damage_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="food" operation="LTE" value=".3"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".375"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxLowFoodDamage6" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_low_food_damage_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="food" operation="LTE" value=".3"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".45"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
+    <!-- Damage at high food -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModMaxHighFoodDamage1" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_high_food_damage_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="food" operation="GTE" value=".85"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".075"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxHighFoodDamage2" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_high_food_damage_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="food" operation="GTE" value=".85"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".15"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxHighFoodDamage3" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_high_food_damage_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="food" operation="GTE" value=".85"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".225"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxHighFoodDamage4" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_high_food_damage_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="food" operation="GTE" value=".85"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxHighFoodDamage5" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_high_food_damage_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="food" operation="GTE" value=".85"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".375"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModMaxHighFoodDamage6" type="attachment" installable_tags="weapon,tool,armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_high_food_damage_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <requirement name="StatComparePercCurrentToMax" stat="food" operation="GTE" value=".85"/>
+                    <passive_effect name="EntityDamage" operation="perc_add" value=".45"/>
+            </effect_group>
+        </item_modifier>
+    </append>
+
     <!-- NEGATIVE affixes -->
     <!-- Smell -->
     <append xpath="/item_modifiers">
@@ -8446,6 +9371,21 @@
             <property name="Group" value="Weapon Mods"/>
             <property name="Tags" value="unique_affix_mod,permadeath"/>
             <property name="MaxModsAllowed" value="6"/>
+        </item_modifier>
+    </append>
+
+    <!-- Reduced Armor -->
+    <append xpath="/item_modifiers">
+        <item_modifier name="affixModReducedArmor" type="attachment" installable_tags="armor" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_armor_reduced_icon"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="unique_affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-7"/>
+                <display_value name="dPhysicalDamageResist" operation="base_add" value="-7"/>
+            </effect_group>
         </item_modifier>
     </append>
 </configs>

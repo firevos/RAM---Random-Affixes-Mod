@@ -81,6 +81,14 @@
             <item name="affixRerollToken" count="1" loot_prob_template="high"/>
             <item name="affixExtractionToken" count="1" loot_prob_template="med"/>
             <item name="affixUpgradeToken" count="1" loot_prob_template="low"/>
+            <item name="affixUnlockToken" count="1" loot_prob_template="veryLow"/>
+        </lootgroup>
+
+        <lootgroup name="groupJackOfAllTradesArmors">
+            <item name="armorPrimitiveHelmetUnique"/>
+            <item name="armorPrimitiveOutfitUnique"/>
+            <item name="armorPrimitiveGlovesUnique"/>
+            <item name="armorPrimitiveBootsUnique"/>
         </lootgroup>
     </insertAfter>
 
@@ -148,6 +156,9 @@
         <lootgroup name="groupQuestT5Token" count="all">
             <item name="affixUpgradeToken"/>
         </lootgroup>
+        <lootgroup name="groupQuestT6Token" count="all">
+            <item name="affixUnlockToken"/>
+        </lootgroup>
     </insertAfter>
 
     <!-- Templates for Uniques -->
@@ -195,6 +206,9 @@
     </append>
     <append xpath="/lootcontainers/lootgroup[@name='groupPurse']">
         <item name="gunHandgunT3DesertVultureUnique" count="1" loot_prob_template="uniqueT3" force_prob="true"/>
+    </append>
+    <append xpath="/lootcontainers/lootgroup[@name='groupBackpacks']">
+        <item group="groupJackOfAllTradesArmors" count="1" loot_prob_template="uniqueT0" force_prob="true"/>
     </append>
 
 

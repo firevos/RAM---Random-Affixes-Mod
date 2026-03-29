@@ -63,6 +63,7 @@
     <Compile Include="Affixes\AffixBulletRecovery.cs" />
     <Compile Include="Affixes\AffixResurgence.cs" />
     <Compile Include="Tokens\AffixSystem.cs" />
+    <Compile Include="Tokens\ItemActionEntryUnlockAffix.cs" />
     <Compile Include="Utils\AffixUtils.cs" />
     <Compile Include="Affixes\AffixBonusKills.cs" />
     <Compile Include="Affixes\AffixBringItDown.cs" />

@@ -105,6 +105,22 @@
             <property name="SoundPickup" value="coins_grab"/>
             <property name="SoundPlace" value="coins_place"/>
         </item>
+
+        <item name="affixUnlockToken">
+            <property name="Tags" value="unlock"/>
+            <property name="HoldType" value="45"/>
+            <property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="MresourceScrapBrassSmall"/>
+            <property name="MeltTimePerUnit" value=".4"/>
+            <property name="Weight" value="100"/>
+            <property name="Stacknumber" value="10"/> <!-- STK resource -->
+            <property name="EconomicValue" value="7500"/>
+            <property name="EconomicBundleSize" value="1"/>
+            <property name="SellableToTrader" value="false"/>
+            <property name="SoundPickup" value="coins_grab"/>
+            <property name="SoundPlace" value="coins_place"/>
+        </item>
     </insertBefore>
 
     <insertBefore xpath="/items/item[@name='questRewardT1BookBundle']">
@@ -566,6 +582,120 @@
                 <passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
                 <passive_effect name="StaminaLoss" operation="base_set" value="35.6" tags="secondary"/>
             </effect_group>
+        </item>
+    </insertAfter>
+
+    <insertAfter xpath="/items/item[@name='armorPrimitiveBoots']">
+        <item name="armorPrimitiveHelmetUnique">
+            <property name="Extends" value="armorPrimitiveMaster" param1="CustomIcon"/>
+            <property name="DescriptionKey" value="armorPrimitiveHelmetUniqueDesc"/>
+            <property name="DisplayType" value="armorPrimitiveHelmetUnique"/>
+            <property name="ArmorGroup" value="groupPrimitive"/>
+            <property name="Tags" value="unique_affix_mod,affixModReducedArmor,affixModStrength6,affixModAgility6,affixModPerception6,affixModFortitude6,affixModIntellect6,head,armor,armorHead,lightArmor,lightArmorDeg"/>
+            <property name="EquipSlot" value="Head"/>
+            <property name="SoundPickup" value="headwear_cloth_grab"/>
+            <property name="SoundPlace" value="headwear_cloth_place"/>
+            <effect_group name="PrimitiveHelmet">
+                <passive_effect name="ModSlots" operation="base_set" value="1,1,1,1,1,2,4" tier="1,2,3,4,5,6,7"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="8,13.4" tier="1,7"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="8,13.4" tier="1,7" tags="heat,electrical"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="250,600" tier="1,7"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+            </effect_group>
+
+            <property class="SDCS">
+                <property name="Prefab" value="@:Entities/Player/{sex}/Gear/Fiber/gear{sex}FiberPrefab.prefab"/>
+                <property name="TransformName" value="head"/>
+                <property name="Excludes" value="head"/>
+                <property name="HairMaskType" value="None"/>
+                <property name="FacialHairMaskType" value="None"/>
+            </property>
+        </item>
+
+                <!-- *** PRIMITIVE_OUTFIT -->
+        <item name="armorPrimitiveOutfitUnique">
+            <property name="Extends" value="armorPrimitiveMaster" param1="CustomIcon"/>
+            <property name="DescriptionKey" value="armorPrimitiveOutfitUniqueDesc"/>
+            <property name="DisplayType" value="armorPrimitiveOutfitUnique"/>
+            <property name="ArmorGroup" value="groupPrimitive"/>
+            <property name="Tags" value="unique_affix_mod,affixModReducedArmor,affixModStrength6,affixModAgility6,affixModPerception6,affixModFortitude6,affixModIntellect6,upperbody,chest,armor,armorChest,lightArmor,lightArmorDeg"/>
+            <property name="EquipSlot" value="Chest"/>
+            <property name="SoundPickup" value="outfit_cloth_grab"/>
+            <property name="SoundPlace" value="outfit_cloth_place"/>
+            <effect_group name="PrimitiveOutfit">
+                <passive_effect name="ModSlots" operation="base_set" value="1,1,1,1,1,2,4" tier="1,2,3,4,5,6,7"/>
+                <passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="8,13.4" tier="1,7"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="8,13.4" tier="1,7" tags="heat,electrical"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="250,600" tier="1,7"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+            </effect_group>
+
+            <property class="SDCS">
+                <property name="Prefab" value="@:Entities/Player/{sex}/Gear/Fiber/gear{sex}FiberPrefab.prefab"/>
+                <property name="TransformName" value="body"/>
+                <property name="Excludes" value="body"/>
+            </property>
+        </item>
+
+                <!-- *** PRIMITIVE_GLOVES -->
+        <item name="armorPrimitiveGlovesUnique">
+            <property name="Extends" value="armorPrimitiveMaster" param1="CustomIcon"/>
+            <property name="DescriptionKey" value="armorPrimitiveGlovesUniqueDesc"/>
+            <property name="DisplayType" value="armorPrimitiveGlovesUnique"/>
+            <property name="ArmorGroup" value="groupPrimitive"/>
+            <property name="Tags" value="unique_affix_mod,affixModReducedArmor,affixModStrength6,affixModAgility6,affixModPerception6,affixModFortitude6,affixModIntellect6,upperbody,hands,armor,armorHands,lightArmor,lightArmorDeg"/>
+            <property name="EquipSlot" value="Hands"/>
+            <property name="SoundPickup" value="gloves_cloth_grab"/>
+            <property name="SoundPlace" value="gloves_cloth_place"/>
+            <effect_group name="PrimitiveGloves">
+                <passive_effect name="ModSlots" operation="base_set" value="1,1,1,1,1,2,4" tier="1,2,3,4,5,6,7"/>
+                <passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="8,13.4" tier="1,7"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="8,13.4" tier="1,7" tags="heat,electrical"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="250,600" tier="1,7"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+            </effect_group>
+
+            <property class="SDCS">
+                <property name="Prefab" value="@:Entities/Player/{sex}/Gear/Fiber/gear{sex}FiberPrefab.prefab"/>
+                <property name="TransformName" value="hands"/>
+                <property name="Excludes" value=""/>
+            </property>
+        </item>
+
+                <!-- *** PRIMITIVE_BOOTS -->
+        <item name="armorPrimitiveBootsUnique">
+            <property name="Extends" value="armorPrimitiveMaster" param1="CustomIcon"/>
+            <property name="DescriptionKey" value="armorPrimitiveBootsUniqueDesc"/>
+            <property name="DisplayType" value="armorPrimitiveBootsUnique"/>
+            <property name="ArmorGroup" value="groupPrimitive"/>
+            <property name="Tags" value="unique_affix_mod,affixModReducedArmor,affixModStrength6,affixModAgility6,affixModPerception6,affixModFortitude6,affixModIntellect6,lowerbody,feet,armor,armorFeet,lightArmor,lightArmorDeg"/>
+            <property name="EquipSlot" value="Feet"/>
+            <property name="SoundPickup" value="footwear_straw_grab"/>
+            <property name="SoundPlace" value="footwear_straw_place"/>
+            <effect_group name="PrimitiveBoots">
+                <passive_effect name="ModSlots" operation="base_set" value="1,1,1,1,1,2,4" tier="1,2,3,4,5,6,7"/>
+                <passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="8,13.4" tier="1,7"/>
+                <passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="8,13.4" tier="1,7" tags="heat,electrical"/>
+                <passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="250,600" tier="1,7"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
+            </effect_group>
+
+            <property class="SDCS">
+                <property name="Prefab" value="@:Entities/Player/{sex}/Gear/Fiber/gear{sex}FiberPrefab.prefab"/>
+                <property name="TransformName" value="feet"/>
+                <property name="Excludes" value=""/>
+            </property>
         </item>
     </insertAfter>
 </configs>

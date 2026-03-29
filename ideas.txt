@@ -30,9 +30,6 @@ legendary
     upgrade any weapon 25 times
     tbd
 
-killstreak slight rework (again)    DONE
-very slightly buffed entity damage base DONE
-
 Uniques: make a custom affix set for each specific weapon and add that weapon to loot
     -   needs a custom name 
     -   very rare 
@@ -42,7 +39,7 @@ Uniques: make a custom affix set for each specific weapon and add that weapon to
 Unique Ideas:
     -   Fireaxe is fire based (100% to set on fire, (higher damage fire???)) chance to set self on fire on every swing.
     -   Nerd outfit: 'Teacher armor' increased skill xp, maybe something else school themed. Only found in lockers.
-    -   some weapon that does more damage/effects if you havent died yet (permadeath).  DONE
+    -   primitive armor set: Jack of all Trades: +1 to each attribute, -8 armor on each piece.      DONE
 
 Joke/unique affixes for uniques:
     chance to fall down when powerattacking
@@ -51,28 +48,49 @@ Joke/unique affixes for uniques:
     lucky 7, all stats are sevens (desert vulture)
     sprain arm chance when firing through scope on m60
 
+Rework towards digital rather than magical theme.
+
+workstation is a computer (can use a pc block thats already in game)
+can add servers and attach them to the computer (servers are also already in game)
+they both require power
+the servers hold affixes inside them and you can see them all in the computer. Think AE2 pc system from mc mod
+can 'upload' a weapon with affixes, destroying the weapon and storing the affixes inside the server.
+a server has a limited capacity, so need more servers to store more.
+maybe pay something small to upload a weapon. 
+'extraction token' is paid to apply an affix from the bank into a weapon. 
+can upgrade an affix with a token as long as its in the pc (or in affixes list of a weapon)
+pc can be used for other things, maybe rerolling has to be done in there. Maybe upgrading item quality, maybe combining items
+lock pc behind electrical magazines (maybe like 30), and server even higher (like 50 or something)
+
+server has a scrollable inventory, can sort based on rarity, or affix (putting all rarities of the same affix together). can also filter on weapon or armor or a specific piece.
+
+tokens get rebranded to Discs or something similar, like cd disks, floppy discs, something like that
+
+magic slayer -> data analyst. You 'gather' more data by killing zombies and therefore unlocking more power
+magic find -> hacker. You hack into the system to find more and more powerful affixes
+
+New token: Unlock a new affix (up to max 7) makes it possible to add more affixes on armor (always common (maybe low odds for higher rarity))   DONE
+
 rocket launcher unique from demo loot bag
 'Golden' zombies. like 0.001 odds of spawning, theyre infernals but recolered to gold. can base some of the legendary challenges on killing it, count as 50 kills, drop a lootbag that always contains a token etc etc
 
 i want more 'conditional' affixes. not just passive stat boost and not just random roll for an effect. But things like IF thing A happens then apply buff B for x seconds kinda things.
 
     Weapon Both Armor Total
-DONE: 53 - 17 - 43 -    113
+DONE: 53 - 23 - 53 -    129
 
 New Affixes:
-do more damage based on player level    DONE
-do more damage in specific biome (for all 5)    DONE
-chance to get get bonus kills for ferals-rads-infernals     DONE
++1 attribute for each one affix         DONE
+more damage at high/low food/water      DONE
+increase damage at max strength (for strength based weapons) (one for each attribute)   DONE
+more damage during blood moon       DONE
+more damage indoors         DONE
+more damage the less bullets in magazine
 manipulate buffs in a thousand and one ways.
-add x seconds to a random buff on a kill    DONE
 increase buff duration
 wisdom of battle - become immune to certain debuffs for a certain amount of time after it expires
 mighty endurance - increased damage resist when affected by critical injury
-stoked to fury - increased damage when affected by critical injury      DONE
-resurgent - chance to heal an injury when taking damage        DONE
 AP ammo pierce additional target
-rapid response - increase movement speed after taking damage         DONE
-bring it down - increase damage against high hp enemies         DONE
 extra healing from healing items
 waterbreathing
 higher reach for melee
