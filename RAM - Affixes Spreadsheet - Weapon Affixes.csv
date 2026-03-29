@@ -69,3 +69,9 @@ Giantslayer,"weapon,tool",You have a {x} chance to deal additional damage equal 
 Bonus Kills,"weapon,tool","High tier zombies give you a chance to get a bonus kill for the kill counter. Ferals {x}, Radiated {y}, Charged/Infernals {z}",5% / 10% / 15%,10% / 20% / 30%,15% / 30% / 45%,20% / 40% / 60%,25% / 50% / 75%,30% / 60% / 90%
 Bring it Down,"armor,weapon,tool",Multiplies your total damage by {x} against enemies with more than 1500 max hp,1.03x,1.06x,1.09x,1.12x,1.16x,1.2x
 Increase Buff Duration,"weapon,tool",Increases duration of a random positive buff by {x} seconds after getting a kill,3,4,5,6,7,8
+Damage at Low Water,"weapon,tool,armor",Increase damage by {x} when you have less than 30% water,7.5%,15%,22.5%,30%,37.5%,45%
+Damage at High Water,"weapon,tool,armor",Increase damage by {x} when you have more than 85% water,7.5%,15%,22.5%,30%,37.5%,45%
+Damage at Low Food,"weapon,tool,armor",Increase damage by {x} when you have less than 30% food,7.5%,15%,22.5%,30%,37.5%,45%
+Damage at High Food,"weapon,tool,armor",Increase damage by {x} when you have more than 85% food,7.5%,15%,22.5%,30%,37.5%,45%
+Blood Moon Damage,"weapon,tool,armor",Increase damage by {x} during blood moon,7.5%,15%,22.5%,30%,37.5%,45%
+Indoors Damage,"weapon,tool,armor",Increase damage by {x} while indoors,7.5%,15%,22.5%,30%,37.5%,45%
