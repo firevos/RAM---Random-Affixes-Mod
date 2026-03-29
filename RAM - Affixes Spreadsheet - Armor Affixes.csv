@@ -59,3 +59,19 @@ Desert Damage,armor,Increase damage by {x} while in the desert biome,5%,10%,15%,
 Burnt Forest Damage,armor,Increase damage by {x} while in the burnt forest biome,5%,10%,15%,20%,25%,30%
 Wasteland Damage,armor,Increase damage by {x} in the wasteland biome,5%,10%,15%,20%,25%,30%
 Level Damage,armor,Increase damage by {x} for each 20 player levels (up to level 300),-,1%,2%,3%,4%,5%
+Intellect Damage,armor,Increase damage of intellect based weapons when at 10 intellect by {x},5%,10%,15%,20%,25%,30%
+Perception Damage,armor,Increase damage of perception based weapons when at 10 perception by {x},5%,10%,15%,20%,25%,30%
+Damage at Low Water,"weapon,tool,armor",Increase damage by {x} when you have less than 30% water,7.5%,15%,22.5%,30%,37.5%,45%
+Damage at High Water,"weapon,tool,armor",Increase damage by {x} when you have more than 85% water,7.5%,15%,22.5%,30%,37.5%,45%
+Damage at Low Food,"weapon,tool,armor",Increase damage by {x} when you have less than 30% food,7.5%,15%,22.5%,30%,37.5%,45%
+Damage at High Food,"weapon,tool,armor",Increase damage by {x} when you have more than 85% food,7.5%,15%,22.5%,30%,37.5%,45%
+Blood Moon Damage,"weapon,tool,armor",Increase damage by {x} during blood moon,7.5%,15%,22.5%,30%,37.5%,45%
+Indoors Damage,"weapon,tool,armor",Increase damage by {x} while indoors,7.5%,15%,22.5%,30%,37.5%,45%
+Strength Damage,armor,Increase damage of strength based weapons when at 10 strength by {x},5%,10%,15%,20%,25%,30%
+Agility Damage,armor,Increase damage of agility based weapons when at 10 agility by {x},5%,10%,15%,20%,25%,30%
+Fortitude Damage,armor,Increase damage of fortitude based weapons when at 10 fortitude by {x},5%,10%,15%,20%,25%,30%
+Strength Attribute,armor,Increase your strength attribute by {x},-,-,-,-,-,1
+Agility Attribute,armor,Increase your agility attribute by {x},-,-,-,-,-,1
+Perception Attribute,armor,Increase your Perception attribute by {x},-,-,-,-,-,1
+Fortitude Attribute,armor,Increase your Fortitude attribute by {x},-,-,-,-,-,1
+Intellect Attribute,armor,Increase your Intellect attribute by {x},-,-,-,-,-,1
