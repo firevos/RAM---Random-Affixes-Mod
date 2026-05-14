@@ -1,4 +1,6 @@
 Next mods:
+repair costs weapon parts
+Dew collectors create minaral water (remove mineral water recipe)
 horde night recap UI
 storm overhaul - reduce max hp/max stamina instead of just dealing damage
     - increase loot stage rather than more bags (or mix of both)
