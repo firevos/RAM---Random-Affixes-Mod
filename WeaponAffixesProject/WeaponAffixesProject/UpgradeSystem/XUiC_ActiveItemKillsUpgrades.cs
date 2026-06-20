@@ -64,7 +64,7 @@ public class XUiC_ActiveItemKillsUpgrades : XUiController
             UpdatePanelPosition();
 
             IsDirty = false;
-            RefreshBindings(true);
+            RefreshBindings();
         }
     }
 

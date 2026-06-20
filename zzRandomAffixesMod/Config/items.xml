@@ -11,7 +11,7 @@
     </set>
 
     <!-- Kill tracker-->
-    <append xpath="/items/item[property[@name='Tags' and contains(@value,'ranged') and not(contains(@value,'ammo'))]]">
+    <append xpath="/items/item[property[@name='Tags' and contains(concat(',', @value, ','), ',ranged,') and not(contains(concat(',', @value, ','), ',ammo,'))]]">
         <effect_group name="increase kill count">
             <!-- Setup kill counter if this item does not have it yet. -->
             <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="kills"/>
@@ -21,7 +21,7 @@
         </effect_group>
     </append>
 
-    <append xpath="/items/item[property[@name='Tags' and contains(@value,'melee') and not(contains(@value,'noMods'))] and not(@name='meleeHandMaster') and not(@name='meleeHandPlayer')]">
+    <append xpath="/items/item[property[@name='Tags' and contains(concat(',', @value, ','), ',melee,') and not(contains(concat(',', @value, ','), ',noMods,'))] and not(@name='meleeHandMaster') and not(@name='meleeHandPlayer')]">
         <effect_group name="increase kill count">
             <!-- Setup kill counter if this item does not have it yet. -->
             <triggered_effect trigger="onSelfEquipStart" action="SetItemMetaFloat" change="0" relative="true" key="kills"/>
@@ -142,7 +142,7 @@
     <insertAfter xpath="/items/item[@name='meleeWpnBladeT1HuntingKnife']">
         <item name="meleeWpnBladeT1HuntingKnifeUnique">
 	        <property name="Extends" value="meleeWpnBladeT1HuntingKnife"/>
-            <property name="Tags" value="unique_affix_mod,affixModSmell,affixModBleed6,affixModDurabilityBase6,affixModInstaKill5,affixModLifesteal5,affixModStamKill3,knife,melee,grunting,light,perkFlurryOfAgility,weapon,meleeWeapon,attAgility,perkDeepCuts,perkTheHuntsman,canHaveCosmetic,bladeSkill,corpseRemoval"/>
+            <property name="Tags" value="unique_affix_mod,uniqueAffixModSmell,affixModBleed6,affixModDurabilityBase6,affixModInstaKill5,affixModLifesteal5,affixModStamKill3,knife,melee,grunting,light,perkFlurryOfAgility,weapon,meleeWeapon,attAgility,perkDeepCuts,perkTheHuntsman,canHaveCosmetic,bladeSkill,corpseRemoval"/>
             <property name="TintColor" value="91,68,29"/>
             <property name="Smell" value="35"/>
             <property name="EconomicValue" value="4000"/>
@@ -152,8 +152,10 @@
                 <property name="Damage_type" value="Piercing"/>
                 <property name="Sphere" value=".1"/>
                 <property name="Sound_start" value="knife_metal_swinglight"/>
-                <property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
-                <property name="ToolCategory.Butcher" value="0" param1="5"/>
+                <property class="ToolCategory">
+                    <property name="harvestingTools" value=".5" param1="1"/>
+                    <property name="Butcher" value="0" param1="5"/>
+                </property>
                 <property name="UseGrazingHits" value="false"/>
                 <property name="GrazeStart" value=".25"/>
                 <property name="GrazeEnd" value=".35"/>
@@ -172,8 +174,10 @@
                 <property name="Damage_type" value="Piercing"/>
                 <property name="Sphere" value=".1"/>
                 <property name="Sound_start" value="knife_metal_swingheavy"/>
-                <property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
-                <property name="ToolCategory.Butcher" value="0" param1="5"/>
+                <property class="ToolCategory">
+                    <property name="harvestingTools" value=".5" param1="1"/>
+                    <property name="Butcher" value="0" param1="5"/>
+                </property>
                 <property name="UsePowerAttackAnimation" value="true"/>
                 <property name="UseGrazingHits" value="false"/>
                 <property name="GrazeStart" value=".2"/>
@@ -229,7 +233,7 @@
     <insertAfter xpath="items/item[@name='gunHandgunT3DesertVulture']">
         <item name="gunHandgunT3DesertVultureUnique">
 	        <property name="Extends" value="gunHandgunT3DesertVulture"/>
-            <property name="Tags" value="unique_affix_mod,affixModPermadeath1,affixModBuffDuration6,affixModJumpStrength6,affixModMovementSpeed6,affixModLootbagChance5,affixModBulletCasing3,weapon,ranged,revolver,44enforcer,holdBreathAiming,reloadPenalty,gun,shortRange,pistol,barrelAttachments,sideAttachments,smallTopAttachments,magazine,firingMode,attAgility,perkGunslinger,attachmentsIncluded,canHaveCosmetic,handgunSkill,enforcerReload"/>
+            <property name="Tags" value="unique_affix_mod,uniqueAffixModPermadeath1,affixModBuffDuration6,affixModJumpStrength6,affixModMovementSpeed6,affixModLootbagChance5,affixModBulletCasing3,weapon,ranged,revolver,44enforcer,holdBreathAiming,reloadPenalty,gun,shortRange,pistol,barrelAttachments,sideAttachments,smallTopAttachments,magazine,firingMode,attAgility,perkGunslinger,attachmentsIncluded,canHaveCosmetic,handgunSkill,enforcerReload"/>
             <property name="EconomicValue" value="10000"/>
 
             <property class="Action0">
@@ -296,7 +300,7 @@
     <insertAfter xpath="/items/item[@name='gunRifleT1HuntingRifle']">
         <item name="gunRifleT1HuntingRifleUnique">
             <property name="Extends" value="gunRifleT1HuntingRifle"/>
-            <property name="Tags" value="unique_affix_mod,affixModReloadSpeedDouble,affixModRangePerc6,affixModHeadshotDamageBase6,affixModHeadshotDamagePerc5,affixModGunAccuracy5,weapon,ranged,holdBreathAiming,reloadPenalty,gun,barrelAttachments,sideAttachments,smallTopAttachments,mediumTopAttachments,largeTopAttachments,stock,bottomAttachments,attPerception,perkDeadEye,attachmentsIncluded,canHaveCosmetic,rifleSkill"/>
+            <property name="Tags" value="unique_affix_mod,uniqueAffixModReloadSpeedDouble,affixModRangePerc6,affixModHeadshotDamageBase6,affixModHeadshotDamagePerc5,affixModGunAccuracy5,weapon,ranged,holdBreathAiming,reloadPenalty,gun,barrelAttachments,sideAttachments,smallTopAttachments,mediumTopAttachments,largeTopAttachments,stock,bottomAttachments,attPerception,perkDeadEye,attachmentsIncluded,canHaveCosmetic,rifleSkill"/>
             <property name="EconomicValue" value="3000"/>
 
             <property class="Action0">
@@ -371,7 +375,7 @@
     <insertAfter xpath="/items/item[@name='gunMGT2TacticalAR']">
         <item name="gunMGT2TacticalARUnique">
             <property name="Extends" value="gunMGT2TacticalAR"/>
-            <property name="Tags" value="unique_affix_mod,affixModPTSD,affixModHeadshotDamagePerc6,affixModGunAccuracy5,affixModReloadSpeed5,affixModRoundsPerMinutePerc4,affixModEntityDamageBase4,weapon,ranged,holdBreathAiming,reloadPenalty,gun,barrelAttachments,sideAttachments,smallTopAttachments,mediumTopAttachments,stock,magazine,drumMagazine,firingMode,bottomAttachments,attFortitude,perkMachineGunner,perkBookAutoWeapons,canHaveCosmetic,attachmentsIncluded,machinegunSkill"/>
+            <property name="Tags" value="unique_affix_mod,uniqueAffixModPTSD,affixModHeadshotDamagePerc6,affixModGunAccuracy5,affixModReloadSpeed5,affixModRoundsPerMinutePerc4,affixModEntityDamageBase4,weapon,ranged,holdBreathAiming,reloadPenalty,gun,barrelAttachments,sideAttachments,smallTopAttachments,mediumTopAttachments,stock,magazine,drumMagazine,firingMode,bottomAttachments,attFortitude,perkMachineGunner,perkBookAutoWeapons,canHaveCosmetic,attachmentsIncluded,machinegunSkill"/>
             <property name="EconomicValue" value="6000"/>
 
             <property class="Action0">
@@ -444,7 +448,7 @@
     <insertAfter xpath="/items/item[@name='gunMGT3M60']">
         <item name="gunMGT3M60Unique">
             <property name="Extends" value="gunMGT3M60"/>
-            <property name="Tags" value="unique_affix_mod,affixModReducedMovement,affixModMagSizePerc6,affixModMagSizePerc5,affixModRoundsPerMinutePerc5,affixModEntityDamagePerc4,affixModDismemberPerc3,weapon,ranged,holdBreathAiming,reloadPenalty,gun,barrelAttachments,sideAttachments,smallTopAttachments,magazine,drumMagazine,bottomAttachments,mediumTopAttachments,attFortitude,perkMachineGunner,perkBookAutoWeapons,attachmentsIncluded,canHaveCosmetic,machinegunSkill"/>
+            <property name="Tags" value="unique_affix_mod,uniqueAffixModReducedMovement,affixModMagSizePerc6,affixModMagSizePerc5,affixModRoundsPerMinutePerc5,affixModEntityDamagePerc4,affixModDismemberPerc3,weapon,ranged,holdBreathAiming,reloadPenalty,gun,barrelAttachments,sideAttachments,smallTopAttachments,magazine,drumMagazine,bottomAttachments,mediumTopAttachments,attFortitude,perkMachineGunner,perkBookAutoWeapons,attachmentsIncluded,canHaveCosmetic,machinegunSkill"/>
             <property name="EconomicValue" value="8000"/>
 
             <property class="Action0">
@@ -515,14 +519,16 @@
     <insertAfter xpath="/items/item[@name='meleeWpnClubT1BaseballBat']">
         <item name="meleeWpnClubT1BaseballBatUnique">
             <property name="Extends" value="meleeWpnClubT1BaseballBat"/>
-            <property name="Tags" value="unique_affix_mod,affixModBleedOnSelf,affixModBleed6,affixModBurn5,affixModRagdoll5,affixModShock3,blunt,club,melee,grunting,light,longShaft,perkFlurryOfStrength,weapon,meleeWeapon,attStrength,perkPummelPete,canHaveCosmetic,clubSkill"/>
+            <property name="Tags" value="unique_affix_mod,uniqueAffixModBleedOnSelf,affixModBleed6,affixModBurn5,affixModRagdoll5,affixModShock3,blunt,club,melee,grunting,light,longShaft,perkFlurryOfStrength,weapon,meleeWeapon,attStrength,perkPummelPete,canHaveCosmetic,clubSkill"/>
             <property name="EconomicValue" value="3000"/>
 
             <property class="Action0">
                 <property name="Class" value="DynamicMelee"/>
                 <property name="Sound_start" value="club_swinglight"/>
                 <property name="Sphere" value=".1"/>
-                <property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+                <property class="ToolCategory">
+                    <property name="harvestingTools" value=".5" param1="1"/>
+                </property>
                 <property name="UseGrazingHits" value="true"/>
                 <property name="GrazeStart" value=".25"/>
                 <property name="GrazeEnd" value=".32"/>
@@ -539,7 +545,9 @@
                 <property name="Class" value="DynamicMelee"/>
                 <property name="Sound_start" value="club_swingheavy"/>
                 <property name="Sphere" value=".15"/>
-                <property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+                <property class="ToolCategory">
+                    <property name="harvestingTools" value=".5" param1="1"/>
+                </property>
                 <property name="UsePowerAttackAnimation" value="true"/>
                 <property name="UseGrazingHits" value="true"/>
                 <property name="IsHorizontalSwing" value="true"/>
@@ -591,7 +599,7 @@
             <property name="DescriptionKey" value="armorPrimitiveHelmetUniqueDesc"/>
             <property name="DisplayType" value="armorPrimitiveHelmetUnique"/>
             <property name="ArmorGroup" value="groupPrimitive"/>
-            <property name="Tags" value="unique_affix_mod,affixModReducedArmor,affixModStrength6,affixModAgility6,affixModPerception6,affixModFortitude6,affixModIntellect6,head,armor,armorHead,lightArmor,lightArmorDeg"/>
+            <property name="Tags" value="unique_affix_mod,uniqueAffixModReducedArmor,affixModStrength6,affixModAgility6,affixModPerception6,affixModFortitude6,affixModIntellect6,head,armor,armorHead,lightArmor,lightArmorDeg"/>
             <property name="EquipSlot" value="Head"/>
             <property name="SoundPickup" value="headwear_cloth_grab"/>
             <property name="SoundPlace" value="headwear_cloth_place"/>
@@ -620,7 +628,7 @@
             <property name="DescriptionKey" value="armorPrimitiveOutfitUniqueDesc"/>
             <property name="DisplayType" value="armorPrimitiveOutfitUnique"/>
             <property name="ArmorGroup" value="groupPrimitive"/>
-            <property name="Tags" value="unique_affix_mod,affixModReducedArmor,affixModStrength6,affixModAgility6,affixModPerception6,affixModFortitude6,affixModIntellect6,upperbody,chest,armor,armorChest,lightArmor,lightArmorDeg"/>
+            <property name="Tags" value="unique_affix_mod,uniqueAffixModReducedArmor,affixModStrength6,affixModAgility6,affixModPerception6,affixModFortitude6,affixModIntellect6,upperbody,chest,armor,armorChest,lightArmor,lightArmorDeg"/>
             <property name="EquipSlot" value="Chest"/>
             <property name="SoundPickup" value="outfit_cloth_grab"/>
             <property name="SoundPlace" value="outfit_cloth_place"/>
@@ -648,7 +656,7 @@
             <property name="DescriptionKey" value="armorPrimitiveGlovesUniqueDesc"/>
             <property name="DisplayType" value="armorPrimitiveGlovesUnique"/>
             <property name="ArmorGroup" value="groupPrimitive"/>
-            <property name="Tags" value="unique_affix_mod,affixModReducedArmor,affixModStrength6,affixModAgility6,affixModPerception6,affixModFortitude6,affixModIntellect6,upperbody,hands,armor,armorHands,lightArmor,lightArmorDeg"/>
+            <property name="Tags" value="unique_affix_mod,uniqueAffixModReducedArmor,affixModStrength6,affixModAgility6,affixModPerception6,affixModFortitude6,affixModIntellect6,upperbody,hands,armor,armorHands,lightArmor,lightArmorDeg"/>
             <property name="EquipSlot" value="Hands"/>
             <property name="SoundPickup" value="gloves_cloth_grab"/>
             <property name="SoundPlace" value="gloves_cloth_place"/>
@@ -676,7 +684,7 @@
             <property name="DescriptionKey" value="armorPrimitiveBootsUniqueDesc"/>
             <property name="DisplayType" value="armorPrimitiveBootsUnique"/>
             <property name="ArmorGroup" value="groupPrimitive"/>
-            <property name="Tags" value="unique_affix_mod,affixModReducedArmor,affixModStrength6,affixModAgility6,affixModPerception6,affixModFortitude6,affixModIntellect6,lowerbody,feet,armor,armorFeet,lightArmor,lightArmorDeg"/>
+            <property name="Tags" value="unique_affix_mod,uniqueAffixModReducedArmor,affixModStrength6,affixModAgility6,affixModPerception6,affixModFortitude6,affixModIntellect6,lowerbody,feet,armor,armorFeet,lightArmor,lightArmorDeg"/>
             <property name="EquipSlot" value="Feet"/>
             <property name="SoundPickup" value="footwear_straw_grab"/>
             <property name="SoundPlace" value="footwear_straw_place"/>

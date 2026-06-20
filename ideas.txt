@@ -20,23 +20,33 @@ Random Plus:
     only simple affixes that fit on that weapon, no shock etc
     basically just a stat randomizer, every stat on a weapon can roll between a range
 
+3.0 Update:
+- Remove q6 from loot (its an option ingame now)
+- Make affix mods compatible with qualities
+- Update c# to work with the new changes to modding.
+- Localization is csv now, so update the custom one.
+- Make combining work with affixes, for now, just 
+
+
+3.0 Ideas:
+Gamesettings:
+    - Max affixes on an item (default is 7, range from 1 to 8).
+    - Affix abundance (default = 100%) lower, i.e. 66% would mean each affix has a 66% of actually spawning on the item when found. Higher % means theres a chance for additional affix (up till maximum).
+    - Upgrade requirements (100 kills is default). Make it harder/easier to upgrade affixes on weapons.
+    - Loot abundance for tokens.
+Combine System:
+    - A way to 'choose' which affixes to keep from each weapon, paying some token per affix you chose.
+
 TODO:
 check quality range for items (make sure its normalized to 1-6 for mods that increase it)
 check gameevents.xml for ideas for effects
 Some TI commands
-turn amount of affixes on weapons found in gamesettings, can also add how much it takes to upgrade.
 upgrade quality of item with legendary parts
 a way to 'combine' weapons to improve/reroll affixes
 nerf magic find, remove 1 item from loot
 legendary
     upgrade any weapon 25 times
     tbd
-
-Uniques: make a custom affix set for each specific weapon and add that weapon to loot
-    -   needs a custom name 
-    -   very rare 
-    -   affix list is set
-    -   each unique might contain a joke/meme affix
 
 Unique Ideas:
     -   Fireaxe is fire based (100% to set on fire, (higher damage fire???)) chance to set self on fire on every swing.
@@ -52,27 +62,6 @@ Joke/unique affixes for uniques:
 
 Rework towards digital rather than magical theme.
 
-workstation is a computer (can use a pc block thats already in game)
-can add servers and attach them to the computer (servers are also already in game)
-they both require power
-the servers hold affixes inside them and you can see them all in the computer. Think AE2 pc system from mc mod
-can 'upload' a weapon with affixes, destroying the weapon and storing the affixes inside the server.
-a server has a limited capacity, so need more servers to store more.
-maybe pay something small to upload a weapon. 
-'extraction token' is paid to apply an affix from the bank into a weapon. 
-can upgrade an affix with a token as long as its in the pc (or in affixes list of a weapon)
-pc can be used for other things, maybe rerolling has to be done in there. Maybe upgrading item quality, maybe combining items
-lock pc behind electrical magazines (maybe like 30), and server even higher (like 50 or something)
-
-server has a scrollable inventory, can sort based on rarity, or affix (putting all rarities of the same affix together). can also filter on weapon or armor or a specific piece.
-
-tokens get rebranded to Discs or something similar, like cd disks, floppy discs, something like that
-
-magic slayer -> data analyst. You 'gather' more data by killing zombies and therefore unlocking more power
-magic find -> hacker. You hack into the system to find more and more powerful affixes
-
-New token: Unlock a new affix (up to max 7) makes it possible to add more affixes on armor (always common (maybe low odds for higher rarity))   DONE
-
 rocket launcher unique from demo loot bag
 'Golden' zombies. like 0.001 odds of spawning, theyre infernals but recolered to gold. can base some of the legendary challenges on killing it, count as 50 kills, drop a lootbag that always contains a token etc etc
 
@@ -82,11 +71,9 @@ i want more 'conditional' affixes. not just passive stat boost and not just rand
 DONE: 53 - 23 - 53 -    129
 
 New Affixes:
-+1 attribute for each one affix         DONE
-more damage at high/low food/water      DONE
-increase damage at max strength (for strength based weapons) (one for each attribute)   DONE
-more damage during blood moon       DONE
-more damage indoors         DONE
+specific loot bonuses (increase ammo in loot etc)
+decrease smell distance
+something with the drone shock mod
 more damage the less bullets in magazine
 manipulate buffs in a thousand and one ways.
 increase buff duration
@@ -116,3 +103,23 @@ damageResistOnKill                  ONHOLD (maybe better for armor)
 ChanceToHealCritInjuryOnKill        ONHOLD
 hitStreak (more damage each hit until you miss or 1 minute passes) ONHOLD
 explosive bullets                   ONHOLD
+
+workstation is a computer (can use a pc block thats already in game)
+can add servers and attach them to the computer (servers are also already in game)
+they both require power
+the servers hold affixes inside them and you can see them all in the computer. Think AE2 pc system from mc mod
+can 'upload' a weapon with affixes, destroying the weapon and storing the affixes inside the server.
+a server has a limited capacity, so need more servers to store more.
+maybe pay something small to upload a weapon. 
+'extraction token' is paid to apply an affix from the bank into a weapon. 
+can upgrade an affix with a token as long as its in the pc (or in affixes list of a weapon)
+pc can be used for other things, maybe rerolling has to be done in there. Maybe upgrading item quality, maybe combining items
+lock pc behind electrical magazines (maybe like 30), and server even higher (like 50 or something)
+
+server has a scrollable inventory, can sort based on rarity, or affix (putting all rarities of the same affix together). can also filter on weapon or armor or a specific piece.
+
+tokens get rebranded to Discs or something similar, like cd disks, floppy discs, something like that
+
+magic slayer -> data analyst. You 'gather' more data by killing zombies and therefore unlocking more power
+magic find -> hacker. You hack into the system to find more and more powerful affixes
+

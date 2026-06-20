@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 using WeaponAffixesProject;
@@ -22,7 +23,7 @@ public class ItemActionEntryRerollAffix : BaseItemActionEntry
 
         XUiC_BasePartStack affixMod = this.ItemController as XUiC_BasePartStack;
         if (affixMod == null) return;
-        if (!affixMod.ItemClass.HasAnyTags(AffixUtils.AffixTag)) return;
+        if (!affixMod.ItemClass.Name.StartsWith("affixMod")) return;
         var player = GameManager.Instance.myEntityPlayerLocal;
         if (player == null) return;
         XUiM_PlayerInventory playerInventory = this.ItemController.xui.PlayerInventory;

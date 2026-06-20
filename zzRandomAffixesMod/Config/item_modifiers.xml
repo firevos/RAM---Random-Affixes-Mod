@@ -9292,7 +9292,7 @@
     <!-- NEGATIVE affixes -->
     <!-- Smell -->
     <append xpath="/item_modifiers">
-        <item_modifier name="affixModSmell" type="attachment" installable_tags="weapon" blocked_tags="noMods">
+        <item_modifier name="uniqueAffixModSmell" type="attachment" installable_tags="weapon" blocked_tags="noMods">
             <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
             <property name="CustomIcon" value="ui_smell_icon"/>
             <property name="Group" value="Weapon Mods"/>
@@ -9304,7 +9304,7 @@
 
     <!-- Reload Speed % -->
     <append xpath="/item_modifiers">
-        <item_modifier name="affixModReloadSpeedDouble" type="attachment" installable_tags="ranged" blocked_tags="noMods">
+        <item_modifier name="uniqueAffixModReloadSpeedDouble" type="attachment" installable_tags="ranged" blocked_tags="noMods">
             <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
             <property name="CustomIcon" value="ui_reload_speed_icon_7"/>
             <property name="Group" value="Weapon Mods"/>
@@ -9318,7 +9318,7 @@
 
     <!-- Bleed on self % -->
     <append xpath="/item_modifiers">
-        <item_modifier name="affixModBleedOnSelf" type="attachment" installable_tags="ranged" blocked_tags="noMods">
+        <item_modifier name="uniqueAffixModBleedOnSelf" type="attachment" installable_tags="ranged" blocked_tags="noMods">
             <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
             <property name="CustomIcon" value="ui_bleed_self_icon"/>
             <property name="Group" value="Weapon Mods"/>
@@ -9334,7 +9334,7 @@
 
     <!-- PTSD: reduced damage resit and crit resist -->
     <append xpath="/item_modifiers">
-        <item_modifier name="affixModPTSD" type="attachment" installable_tags="gun" blocked_tags="noMods">
+        <item_modifier name="uniqueAffixModPTSD" type="attachment" installable_tags="gun" blocked_tags="noMods">
             <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
             <property name="CustomIcon" value="ui_ptsd_icon"/>
             <property name="Group" value="Weapon Mods"/>
@@ -9349,7 +9349,7 @@
 
     <!-- Reduced Movement speed -->
     <append xpath="/item_modifiers">
-        <item_modifier name="affixModReducedMovement" type="attachment" installable_tags="gun" blocked_tags="noMods">
+        <item_modifier name="uniqueAffixModReducedMovement" type="attachment" installable_tags="gun" blocked_tags="noMods">
             <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
             <property name="CustomIcon" value="ui_lower_movement_icon"/>
             <property name="Group" value="Weapon Mods"/>
@@ -9365,7 +9365,7 @@
 
     <!-- PermaDeath -->
     <append xpath="/item_modifiers">
-        <item_modifier name="affixModPermadeath1" type="attachment" installable_tags="gun" blocked_tags="noMods">
+        <item_modifier name="uniqueAffixModPermadeath1" type="attachment" installable_tags="gun" blocked_tags="noMods">
             <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
             <property name="CustomIcon" value="ui_permadeath_icon"/>
             <property name="Group" value="Weapon Mods"/>
@@ -9376,7 +9376,7 @@
 
     <!-- Reduced Armor -->
     <append xpath="/item_modifiers">
-        <item_modifier name="affixModReducedArmor" type="attachment" installable_tags="armor" blocked_tags="noMods">
+        <item_modifier name="uniqueAffixModReducedArmor" type="attachment" installable_tags="armor" blocked_tags="noMods">
             <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
             <property name="CustomIcon" value="ui_armor_reduced_icon"/>
             <property name="Group" value="Weapon Mods"/>

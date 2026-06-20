@@ -60,8 +60,7 @@ public class ItemActionEntryUnlockAffix : BaseItemActionEntry
             string newAffix = "";
             if (UnlockAffix(ref item.itemStack, ref newAffix))
             {
-                this.ItemController.xui.itemStack = item;
-                this.ItemController.xui.itemStack.ForceRefreshItemStack();
+                item.ForceRefreshItemStack();
 
                 // Get assemble window + cosmetic grid
                 var assembleWg = xui.FindWindowGroupByName("assemble");

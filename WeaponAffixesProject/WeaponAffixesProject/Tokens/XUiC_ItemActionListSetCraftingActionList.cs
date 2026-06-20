@@ -36,7 +36,9 @@ namespace WeaponAffixesProject
                     var cosmeticController = (XUiC_ItemCosmeticStack)itemController;
                     var selectedClass = cosmeticController.ItemStack?.itemValue?.ItemClass;
 
-                    if (selectedClass == null || !selectedClass.HasAnyTags(AffixUtils.AffixTag)) return;
+                    Log.Out(selectedClass.Name);
+
+                    if (selectedClass == null || !selectedClass.Name.StartsWith("affixMod")) return;
 
                     MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryRerollAffix(itemController) });
                     MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryExtractAffix(itemController) });
@@ -48,7 +50,7 @@ namespace WeaponAffixesProject
                     var partController = (XUiC_ItemPartStack)itemController;
                     var selectedClass2 = partController.ItemStack?.itemValue?.ItemClass;
 
-                    if (selectedClass2 == null || !selectedClass2.HasAnyTags(AffixUtils.AffixTag)) return;
+                    if (selectedClass2 == null || !selectedClass2.Name.StartsWith("affixMod")) return;
 
                     MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryExtractAffix(itemController) });
                     return;

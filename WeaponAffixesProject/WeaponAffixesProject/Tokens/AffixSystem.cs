@@ -38,7 +38,7 @@ namespace WeaponAffixesProject
             List<string> modsToApply = new List<string>();
             for (int i = 0; i < tags.Count; i++)
             {
-                if (tags[i].Contains("affixMod"))
+                if (tags[i].Contains("affixMod") || tags[i].Contains("uniqueAffix"))
                 {
                     modsToApply.Add(tags[i]);
                     count++;
@@ -69,9 +69,9 @@ namespace WeaponAffixesProject
 
             // Parse the modlist to see which mods can be added
             List<List<ItemClassModifier>> weaponMods = AffixUtils.GetCorrectModList(itemValue);
-            if (weaponMods.Count <= 0)
+            if (!AffixUtils.HasAnyMods(weaponMods))
             {
-                Log.Out("No affixes found to apply");
+                Log.Out($"No affixes found to apply to {itemValue.ItemClass.Name}. Loaded affixes: {AffixUtils.GetAffixModifiers().Count()}, item tags: {string.Join(",", itemValue.ItemClass.ItemTags.GetTagNames())}");
                 return;
             }
 
@@ -82,7 +82,8 @@ namespace WeaponAffixesProject
             {
                 // For each mod to add, first decide on which tier mod to add
                 int selectedTier = AffixUtils.RandomizeTierWithOdds(itemValue, player);
-                ItemClassModifier selectedMod = weaponMods[selectedTier][AffixUtils.rng.Next(weaponMods[selectedTier].Count)];
+                if (!AffixUtils.TrySelectAffixMod(weaponMods, selectedTier, out ItemClassModifier selectedMod))
+                    return;
 
                 // Find first empty cosmetic slot
                 for (int j = 0; j < itemValue.CosmeticMods.Length; j++)
@@ -95,7 +96,7 @@ namespace WeaponAffixesProject
                         break;
                     }
                 }
-                if (weaponMods.Count <= 0) return;
+                if (!AffixUtils.HasAnyMods(weaponMods)) return;
             }
         }
 
@@ -129,7 +130,6 @@ namespace WeaponAffixesProject
             if (AffixUtils.ChallengeGroupIsCompleted(player, "ram advanced"))
                 affixSlots++;
             if (magicFindLvl > 3 && itemValue.Quality == 6) affixSlots++;
-
             if (itemValue.CosmeticMods == null || itemValue.CosmeticMods.Length < affixSlots)
             {
                 var newCosmetic = new ItemValue[affixSlots];
@@ -189,7 +189,7 @@ namespace WeaponAffixesProject
         internal static bool AddNewAffix(ItemValue itemValue, ref string affixName, bool fromToken)
         {
             List<List<ItemClassModifier>> modList = AffixUtils.GetCorrectModList(itemValue);
-            if (modList == null || modList.Count == 0) return false;
+            if (!AffixUtils.HasAnyMods(modList)) return false;
 
             if (itemValue.CosmeticMods.Count() == 0)
             {
@@ -213,7 +213,8 @@ namespace WeaponAffixesProject
                 itemValue.CosmeticMods = newCosmetic;
             }
             int tier = (fromToken && AffixUtils.rng.Next(100) < 2) ? 5 : 0;
-            ItemClassModifier selectedMod = modList[tier][AffixUtils.rng.Next(modList[tier].Count)];
+            if (!AffixUtils.TrySelectAffixMod(modList, tier, out ItemClassModifier selectedMod))
+                return false;
             if (selectedMod == null) return false;
             affixName = selectedMod.localizedName;
 

@@ -28,7 +28,6 @@ namespace WeaponAffixesProject
             int totalAffixes = 5 + (magicSlayerLvl > 4 ? 1 : 0);
             if (AffixUtils.ChallengeGroupIsCompleted(player, "ram intermediate"))
                 totalAffixes++;
-
             int maxUpgrade = 4;
             if (AffixUtils.ChallengeGroupIsCompleted(player, "ram basics"))
                 maxUpgrade += 2;

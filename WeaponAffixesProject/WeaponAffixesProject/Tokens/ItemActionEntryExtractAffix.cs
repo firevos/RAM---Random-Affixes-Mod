@@ -19,7 +19,7 @@ public class ItemActionEntryExtractAffix : BaseItemActionEntry
 
         XUiC_BasePartStack affixMod = this.ItemController as XUiC_BasePartStack;
         if (affixMod == null) return;
-        if (!affixMod.ItemClass.HasAnyTags(AffixUtils.AffixTag)) return;
+        if (!affixMod.ItemClass.Name.StartsWith("affixMod")) return;
         var player = GameManager.Instance.myEntityPlayerLocal;
         if (player == null) return;
         XUiM_PlayerInventory playerInventory = this.ItemController.xui.PlayerInventory;

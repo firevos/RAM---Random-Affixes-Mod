@@ -28,7 +28,7 @@ namespace WeaponAffixesProject
 
         internal static bool IsAffixMod(ItemClass itemClass)
         {
-            return itemClass != null && (itemClass.HasAnyTags(AffixTag) || itemClass.HasAnyTags(UniqueAffixTag));
+            return itemClass != null && (itemClass.HasAnyTags(AffixTag) || itemClass.HasAnyTags(UniqueAffixTag) || IsAffixModifier(itemClass));
         }
 
         internal static int RandomizeTierWithOdds(ItemValue itemValue, EntityPlayer player)
@@ -83,9 +83,14 @@ namespace WeaponAffixesProject
 
         internal static List<List<ItemClassModifier>> RemoveSimilarMods(List<List<ItemClassModifier>> modList, ItemClassModifier mod)
         {
+            if (mod == null || string.IsNullOrEmpty(mod.Name))
+                return modList;
+
+            string baseName = GetAffixBaseName(mod.Name);
+
             for (int i = 0; i < modList.Count; i++)
                 for (int j = modList[i].Count - 1; j >= 0; j--)
-                    if (modList[i][j].Name.Contains(mod.Name.Substring(0, mod.Name.Length - 1)))
+                    if (modList[i][j].Name.StartsWith(baseName))
                         modList[i].Remove(modList[i][j]);
             return modList;
         }
@@ -96,14 +101,104 @@ namespace WeaponAffixesProject
             for (int i = 0; i < 6; i++)
                 correctMods.Add(new List<ItemClassModifier>());
 
-            List<ItemClass> modList = ItemClass.GetItemsWithTag(AffixTag);
+            IEnumerable<ItemClassModifier> modList = GetAffixModifiers();
 
             // Select which list of mods to use based on tags
-            foreach (ItemClassModifier itemClassModifier in modList.Cast<ItemClassModifier>())
+            foreach (ItemClassModifier itemClassModifier in modList)
+            {
+                if (!TryGetAffixTierIndex(itemClassModifier.Name, out int tierIndex))
+                    continue;
+
                 // Check if any tags match between mod and weapon and does not have any blocked tags, if yes, that mod can be added, if no, discard it.
                 if (itemClassModifier.InstallableTags.Test_AnySet(itemValue.ItemClass.ItemTags) && !itemClassModifier.DisallowedTags.Test_AnySet(itemValue.ItemClass.ItemTags))
-                    correctMods[itemClassModifier.Name[itemClassModifier.Name.Length - 1] - '1'].Add(itemClassModifier);
+                    correctMods[tierIndex].Add(itemClassModifier);
+            }
             return correctMods;
+        }
+
+        internal static IEnumerable<ItemClassModifier> GetAffixModifiers()
+        {
+            if (ItemClass.list == null)
+                return Enumerable.Empty<ItemClassModifier>();
+
+            return ItemClass.list
+                .OfType<ItemClassModifier>()
+                .Where(itemClassModifier => itemClassModifier.Name.StartsWith("affixMod"));
+        }
+
+        internal static bool IsAffixModifier(ItemClass itemClass)
+        {
+            if (!(itemClass is ItemClassModifier itemClassModifier))
+                return false;
+
+            return itemClassModifier.ModifierTags.Test_AnySet(AffixTag) ||
+                   itemClassModifier.ItemTags.Test_AnySet(AffixTag) ||
+                   itemClassModifier.Name.StartsWith("affixMod");
+        }
+
+        internal static bool HasAnyMods(List<List<ItemClassModifier>> modList)
+        {
+            return modList != null && modList.Any(tier => tier != null && tier.Count > 0);
+        }
+
+        internal static bool TrySelectAffixMod(List<List<ItemClassModifier>> modList, int preferredTier, out ItemClassModifier selectedMod)
+        {
+            selectedMod = null;
+            if (!HasAnyMods(modList))
+                return false;
+
+            preferredTier = ClampTierIndex(preferredTier, modList.Count);
+
+            for (int distance = 0; distance < modList.Count; distance++)
+            {
+                int lower = preferredTier - distance;
+                if (TrySelectAffixFromTier(modList, lower, out selectedMod))
+                    return true;
+
+                int upper = preferredTier + distance;
+                if (upper != lower && TrySelectAffixFromTier(modList, upper, out selectedMod))
+                    return true;
+            }
+
+            return false;
+        }
+
+        internal static bool TryGetAffixTierIndex(string affixName, out int tierIndex)
+        {
+            tierIndex = -1;
+            if (string.IsNullOrEmpty(affixName))
+                return false;
+
+            char tierChar = affixName[affixName.Length - 1];
+            if (tierChar < '1' || tierChar > '6')
+                return false;
+
+            tierIndex = tierChar - '1';
+            return true;
+        }
+
+        private static bool TrySelectAffixFromTier(List<List<ItemClassModifier>> modList, int tier, out ItemClassModifier selectedMod)
+        {
+            selectedMod = null;
+            if (tier < 0 || tier >= modList.Count || modList[tier] == null || modList[tier].Count == 0)
+                return false;
+
+            selectedMod = modList[tier][rng.Next(modList[tier].Count)];
+            return selectedMod != null;
+        }
+
+        private static int ClampTierIndex(int tierIndex, int tierCount)
+        {
+            if (tierIndex < 0)
+                return 0;
+            if (tierIndex >= tierCount)
+                return tierCount - 1;
+            return tierIndex;
+        }
+
+        private static string GetAffixBaseName(string affixName)
+        {
+            return TryGetAffixTierIndex(affixName, out _) ? affixName.Substring(0, affixName.Length - 1) : affixName;
         }
 
         internal static bool IsCalledFromExtractAffix()
