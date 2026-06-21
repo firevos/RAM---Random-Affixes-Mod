@@ -16,7 +16,7 @@ namespace WeaponBuffMod.HarmonyPatches
                 "MaxAffixes",
                 "goMaxAffixes",
                 "goMaxAffixesDesc",
-                SandboxOptions.SandboxOptions.UNUSED1,
+                (SandboxOptions.SandboxOptions)648,
                 7,
                 new[] { 1, 2, 3, 4, 5, 6, 7, 8 },
                 "{0}"),
@@ -24,7 +24,7 @@ namespace WeaponBuffMod.HarmonyPatches
                 "AffixAbundance",
                 "goAffixAbundance",
                 "goAffixAbundanceDesc",
-                SandboxOptions.SandboxOptions.UNUSED2,
+                (SandboxOptions.SandboxOptions)649,
                 100,
                 new[] { 25, 33, 50, 75, 100, 125, 150, 200 },
                 "{0}%"),
@@ -55,6 +55,30 @@ namespace WeaponBuffMod.HarmonyPatches
             foreach (var definition in Definitions)
             {
                 RegisterOption(manager, definition);
+            }
+        }
+
+        public static void ReloadPresetsIfManagerAlreadyInitialized()
+        {
+            try
+            {
+                if (!SandboxOptions.SandboxOptionManager.HasInstance)
+                {
+                    return;
+                }
+
+                var manager = SandboxOptions.SandboxOptionManager.Current;
+                EnsureRegistered(manager);
+
+                if (manager.IsInit)
+                {
+                    manager.LoadPresets();
+                    Log.Out("[WeaponBuffMod] Reloaded sandbox presets after registering RAM options.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Warning($"[WeaponBuffMod] Could not reload sandbox presets after registering RAM options. {ex.Message}");
             }
         }
 
@@ -213,6 +237,15 @@ namespace WeaponBuffMod.HarmonyPatches
             {
                 RamSandboxOptions.EnsureRegistered(SandboxOptions.SandboxOptionManager.Current);
             }
+        }
+    }
+
+    [HarmonyPatch(typeof(SandboxOptions.SandboxOptionManager), nameof(SandboxOptions.SandboxOptionManager.LoadPresets))]
+    public static class RamSandboxOptionsLoadPresetsPatch
+    {
+        public static void Prefix(SandboxOptions.SandboxOptionManager __instance)
+        {
+            RamSandboxOptions.EnsureRegistered(__instance);
         }
     }
 }
