@@ -111,8 +111,9 @@ namespace WeaponAffixesProject
                             {
                                 Log.Out($"Can't find magic slayer perk: '{e}'");
                             }
+                            int killsToUpgrade = AffixUtils.GetAdjustedKillsToUpgrade(magicSlayerLvl);
                             parentItemStack.itemValue.SetMetadata("upgrades", upgrades + 1);
-                            parentItemStack.itemValue.SetMetadata("nextUpgrade", lastUpgrade + ((AffixUtils.RequiredKills - 10 * magicSlayerLvl) * (upgrades + 2)));
+                            parentItemStack.itemValue.SetMetadata("nextUpgrade", lastUpgrade + killsToUpgrade * (upgrades + 2));
                             this.ItemController.xui.AssembleItem.currentItem = parentItemStack;
                             this.ItemController.xui.AssembleItem.RefreshAssembleItem();
                         }

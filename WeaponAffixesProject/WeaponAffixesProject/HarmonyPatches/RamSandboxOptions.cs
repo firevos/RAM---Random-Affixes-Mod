@@ -18,7 +18,7 @@ namespace WeaponBuffMod.HarmonyPatches
                 "goMaxAffixesDesc",
                 (SandboxOptions.SandboxOptions)648,
                 7,
-                new[] { 1, 2, 3, 4, 5, 6, 7, 8 },
+                new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
                 "{0}"),
             new RamSandboxOptionDefinition(
                 "AffixAbundance",

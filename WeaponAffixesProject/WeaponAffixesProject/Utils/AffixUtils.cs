@@ -27,17 +27,32 @@ namespace WeaponAffixesProject
         internal static int RequiredKills => CustomSandboxSettings.GetInt(CustomSandboxSettings.KillsToUpgrade, requiredKills);
         internal static int MaxAffixes => CustomSandboxSettings.GetInt(CustomSandboxSettings.MaxAffixes, 5);
         internal static int AffixAbundance => CustomSandboxSettings.GetInt(CustomSandboxSettings.AffixAbundance, 100);
-        internal static readonly int magicSlayerBonus = 5;
         internal static readonly int unlockNewAffixChance = 67; // actual chance is 100 - unlockNewAffixChance %
 
         internal static int GetConfiguredMaxAffixes()
         {
-            int configured = RamSandboxOptions.GetMaxAffixesValue();
+            int configured = MaxAffixes;
             if (configured < 1)
                 return 1;
-            if (configured > 8)
-                return 8;
+            if (configured > 10)
+                return 10;
             return configured;
+        }
+
+        internal static int GetAdjustedKillsToUpgrade(int magicSlayerLevel)
+        {
+            int baseKills = RequiredKills;
+            if (baseKills < 1)
+                baseKills = 1;
+
+            int reductionPercent = magicSlayerLevel * 5;
+            if (reductionPercent < 0)
+                reductionPercent = 0;
+            if (reductionPercent > 25)
+                reductionPercent = 25;
+
+            int adjustedKills = (baseKills * (100 - reductionPercent) + 99) / 100;
+            return adjustedKills < 1 ? 1 : adjustedKills;
         }
 
         internal static bool IsAffixMod(ItemClass itemClass)

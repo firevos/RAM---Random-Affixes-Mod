@@ -10,9 +10,9 @@
         </if>
     </conditional>
 
-    <InsertAfter xpath="windows/window[@name='newContinueGame']/rect/rect/rect/rect/grid/gameoption[@name='LootAbundance']">
+    <!-- <InsertAfter xpath="windows/window[@name='newContinueGame']/rect/rect/rect/rect/grid/gameoption[@name='LootAbundance']">
         <gameoption name="MaxAffixes" title="goRAMMaxAffixes" value_wrap="false" value_type="int" values="1,2,3,4,5,6,7,8,9,10,11,12" display_names="" />
         <gameoption name="AffixAbundance" title="goRAMAffixAbundance" value_wrap="false" value_type="int" values="0,25,50,75,100,125,150,200,300" display_names="" value_localization_prefix="goRAMPercentValue" />
         <gameoption name="KillsToUpgrade" title="goRAMKillsToUpgrade" value_wrap="false" value_type="int" values="25,50,75,100,125,150,200,300,500" display_names="" />
-    </InsertAfter>
+    </InsertAfter> -->
 </configs>

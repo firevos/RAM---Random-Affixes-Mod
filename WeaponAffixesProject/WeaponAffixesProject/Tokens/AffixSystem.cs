@@ -6,6 +6,8 @@ namespace WeaponAffixesProject
 {
     internal static class AffixSystem
     {
+        private const string AffixesRolledMetadataKey = "ramAffixesRolled";
+
         public static void ApplyAffixToLootCheck(List<ItemStack> spawnedItems, EntityPlayer player)
         {
             if (spawnedItems == null) return;
@@ -18,6 +20,8 @@ namespace WeaponAffixesProject
                             stack?.itemValue.Modifications.Length == 0 ||
                             stack?.itemValue.Quality == 0 ||
                             stack.itemValue.ItemClass.HasAnyTags(FastTags<TagGroup.Global>.GetTag("noMods")))
+                        continue;
+                    if (stack.itemValue.TryGetMetadata(AffixesRolledMetadataKey, out float rolled) && rolled > 0)
                         continue;
                     if (stack.itemValue.ItemClass.HasAnyTags(AffixUtils.WeaponTag) ||
                             stack.itemValue.ItemClass.HasAnyTags(AffixUtils.ToolTag) ||
@@ -77,6 +81,7 @@ namespace WeaponAffixesProject
 
             // Check how many mods to add to the weapon
             int toAdd = CountModsToApply(itemValue, player);
+            itemValue.SetMetadata(AffixesRolledMetadataKey, 1f);
             // Add random mods
             for (int i = 0; i < toAdd; i++)
             {
@@ -112,9 +117,7 @@ namespace WeaponAffixesProject
             int affixSlots = itemValue.Modifications?.Length ?? 0;
             if (affixSlots <= 0)
                 affixSlots = 1;
-            int maxAffixes = AffixUtils.MaxAffixes;
-            if (affixSlots > maxAffixes)
-                affixSlots = maxAffixes;
+            int maxAffixes = AffixUtils.GetConfiguredMaxAffixes();
 
             int magicFindLvl = 0;
             try
@@ -131,33 +134,56 @@ namespace WeaponAffixesProject
             if (AffixUtils.ChallengeGroupIsCompleted(player, "ram advanced"))
                 affixSlots++;
             if (magicFindLvl > 3 && itemValue.Quality == 6) affixSlots++;
-            affixSlots = Math.Min(affixSlots, AffixUtils.GetConfiguredMaxAffixes());
-            if (itemValue.CosmeticMods == null || itemValue.CosmeticMods.Length < affixSlots)
+            affixSlots = Math.Min(affixSlots, maxAffixes);
+
+            // Count existing affixes
+            int currentAffixes = 0;
+            if (itemValue.CosmeticMods != null)
             {
-                var newCosmetic = new ItemValue[affixSlots];
+                foreach (var mod in itemValue.CosmeticMods)
+                    if (mod?.ItemClass != null && AffixUtils.IsAffixMod(mod.ItemClass)) currentAffixes++;
+            }
+
+            int missingAffixes = Math.Max(0, affixSlots - currentAffixes);
+            int abundanceLimitedAffixes = RollAffixAbundance(missingAffixes, maxAffixes - currentAffixes);
+            int targetSlots = currentAffixes + abundanceLimitedAffixes;
+
+            if (targetSlots > 0 && (itemValue.CosmeticMods == null || itemValue.CosmeticMods.Length < targetSlots))
+            {
+                var newCosmetic = new ItemValue[targetSlots];
                 if (itemValue.CosmeticMods != null)
                     Array.Copy(itemValue.CosmeticMods, newCosmetic, itemValue.CosmeticMods.Length);
                 itemValue.CosmeticMods = newCosmetic;
             }
 
-            // Count existing affixes
-            int currentAffixes = 0;
-            foreach (var mod in itemValue.CosmeticMods)
-                if (mod?.ItemClass != null && AffixUtils.IsAffixMod(mod.ItemClass)) currentAffixes++;
+            return abundanceLimitedAffixes;
+        }
 
-            int missingAffixes = affixSlots - currentAffixes;
-            int abundance = AffixUtils.AffixAbundance;
-            int guaranteedAffixes = abundance / 100;
-            int extraAffixChance = abundance % 100;
-            int abundanceLimitedAffixes = 0;
+        private static int RollAffixAbundance(int intendedAffixes, int availableSlots)
+        {
+            if (intendedAffixes <= 0 || availableSlots <= 0)
+                return 0;
 
-            for (int i = 0; i < missingAffixes; i++)
+            int abundance = Math.Max(0, Math.Min(200, AffixUtils.AffixAbundance));
+            int affixesToAdd = 0;
+
+            for (int i = 0; i < intendedAffixes && affixesToAdd < availableSlots; i++)
             {
-                if (i < guaranteedAffixes || AffixUtils.rng.Next(0, 100) < extraAffixChance)
-                    abundanceLimitedAffixes++;
+                if (abundance < 100)
+                {
+                    if (AffixUtils.rng.Next(0, 100) < abundance)
+                        affixesToAdd++;
+                    continue;
+                }
+
+                affixesToAdd++;
+
+                int bonusChance = abundance - 100;
+                if (affixesToAdd < availableSlots && bonusChance > 0 && AffixUtils.rng.Next(0, 100) < bonusChance)
+                    affixesToAdd++;
             }
 
-            return abundanceLimitedAffixes;
+            return affixesToAdd;
         }
 
         internal static bool UpgradeAffix(ItemValue itemValue, List<int> canUpgradeSlots, ref string affixName)

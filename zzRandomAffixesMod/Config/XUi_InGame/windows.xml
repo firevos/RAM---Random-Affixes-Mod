@@ -8,7 +8,7 @@
     </set>
 
     <set xpath="/windows/window[@name='windowAssemble']/rect[@name='content']//grid[@name='cosmeticparts']/@rows">
-        8
+        10
     </set>
 
     <set xpath="/windows/window[@name='windowAssemble']/rect[@name='content']//grid[@name='cosmeticparts']/@pos">
