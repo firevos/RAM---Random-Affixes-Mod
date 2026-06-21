@@ -95,7 +95,7 @@ public class ItemActionEntryUnlockAffix : BaseItemActionEntry
             }
             else
             {
-                GameManager.ShowTooltip(player, string.Format(Localization.Get("ttUnlockAffixFail")), string.Empty, "ui/ui_denied");
+                GameManager.ShowTooltip(player, string.Format(Localization.Get("ttUnlockAffixFail"), AffixUtils.GetConfiguredMaxAffixes()), string.Empty, "ui/ui_denied");
             }
         }
         else
@@ -125,7 +125,7 @@ public class ItemActionEntryUnlockAffix : BaseItemActionEntry
 
     public static bool UnlockAffix(ref ItemStack itemStack, ref string newAffix)
     {
-        if (itemStack.itemValue.CosmeticMods.Count() >= 7) return false;
+        if (itemStack.itemValue.CosmeticMods.Count() >= AffixUtils.GetConfiguredMaxAffixes()) return false;
 
         return AffixSystem.AddNewAffix(itemStack.itemValue, ref newAffix, true);
     }

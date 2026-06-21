@@ -112,8 +112,9 @@ namespace WeaponAffixesProject
             int affixSlots = itemValue.Modifications?.Length ?? 0;
             if (affixSlots <= 0)
                 affixSlots = 1;
-            if (affixSlots > 5)
-                affixSlots = 5;
+            int maxAffixes = AffixUtils.MaxAffixes;
+            if (affixSlots > maxAffixes)
+                affixSlots = maxAffixes;
 
             int magicFindLvl = 0;
             try
@@ -130,6 +131,7 @@ namespace WeaponAffixesProject
             if (AffixUtils.ChallengeGroupIsCompleted(player, "ram advanced"))
                 affixSlots++;
             if (magicFindLvl > 3 && itemValue.Quality == 6) affixSlots++;
+            affixSlots = Math.Min(affixSlots, AffixUtils.GetConfiguredMaxAffixes());
             if (itemValue.CosmeticMods == null || itemValue.CosmeticMods.Length < affixSlots)
             {
                 var newCosmetic = new ItemValue[affixSlots];
@@ -143,7 +145,19 @@ namespace WeaponAffixesProject
             foreach (var mod in itemValue.CosmeticMods)
                 if (mod?.ItemClass != null && AffixUtils.IsAffixMod(mod.ItemClass)) currentAffixes++;
 
-            return affixSlots - currentAffixes;
+            int missingAffixes = affixSlots - currentAffixes;
+            int abundance = AffixUtils.AffixAbundance;
+            int guaranteedAffixes = abundance / 100;
+            int extraAffixChance = abundance % 100;
+            int abundanceLimitedAffixes = 0;
+
+            for (int i = 0; i < missingAffixes; i++)
+            {
+                if (i < guaranteedAffixes || AffixUtils.rng.Next(0, 100) < extraAffixChance)
+                    abundanceLimitedAffixes++;
+            }
+
+            return abundanceLimitedAffixes;
         }
 
         internal static bool UpgradeAffix(ItemValue itemValue, List<int> canUpgradeSlots, ref string affixName)
@@ -191,6 +205,10 @@ namespace WeaponAffixesProject
             List<List<ItemClassModifier>> modList = AffixUtils.GetCorrectModList(itemValue);
             if (!AffixUtils.HasAnyMods(modList)) return false;
 
+            int maxAffixes = AffixUtils.GetConfiguredMaxAffixes();
+            if (itemValue.CosmeticMods != null && itemValue.CosmeticMods.Length >= maxAffixes)
+                return false;
+
             if (itemValue.CosmeticMods.Count() == 0)
             {
                 var newCosmetics = new ItemValue[1];
@@ -207,6 +225,8 @@ namespace WeaponAffixesProject
                 }
 
                 int affixSlots = itemValue.CosmeticMods.Length + 1;
+                if (affixSlots > maxAffixes)
+                    return false;
                 var newCosmetic = new ItemValue[affixSlots];
                 if (itemValue.CosmeticMods != null && !itemValue.CosmeticMods[0].IsEmpty())
                     Array.Copy(itemValue.CosmeticMods, newCosmetic, itemValue.CosmeticMods.Length);

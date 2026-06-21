@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using WeaponBuffMod.HarmonyPatches;
 
 namespace WeaponAffixesProject
 {
@@ -23,8 +24,21 @@ namespace WeaponAffixesProject
                 new[] {25, 23, 19, 15, 11, 7}, // Q6: 25% common 23% uncommon 19% rare 15% epic 11% legendary 7% mythic
             };
         internal static readonly int requiredKills = 100;
+        internal static int RequiredKills => CustomSandboxSettings.GetInt(CustomSandboxSettings.KillsToUpgrade, requiredKills);
+        internal static int MaxAffixes => CustomSandboxSettings.GetInt(CustomSandboxSettings.MaxAffixes, 5);
+        internal static int AffixAbundance => CustomSandboxSettings.GetInt(CustomSandboxSettings.AffixAbundance, 100);
         internal static readonly int magicSlayerBonus = 5;
         internal static readonly int unlockNewAffixChance = 67; // actual chance is 100 - unlockNewAffixChance %
+
+        internal static int GetConfiguredMaxAffixes()
+        {
+            int configured = RamSandboxOptions.GetMaxAffixesValue();
+            if (configured < 1)
+                return 1;
+            if (configured > 8)
+                return 8;
+            return configured;
+        }
 
         internal static bool IsAffixMod(ItemClass itemClass)
         {

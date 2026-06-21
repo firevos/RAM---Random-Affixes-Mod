@@ -28,6 +28,7 @@ namespace WeaponAffixesProject
             int totalAffixes = 5 + (magicSlayerLvl > 4 ? 1 : 0);
             if (AffixUtils.ChallengeGroupIsCompleted(player, "ram intermediate"))
                 totalAffixes++;
+            totalAffixes = Math.Min(totalAffixes, AffixUtils.GetConfiguredMaxAffixes());
             int maxUpgrade = 4;
             if (AffixUtils.ChallengeGroupIsCompleted(player, "ram basics"))
                 maxUpgrade += 2;
@@ -44,12 +45,12 @@ namespace WeaponAffixesProject
                 string affixName = "";
                 if (nextUpgrade == 0)
                 {
-                    heldItem.SetMetadata("nextUpgrade", ((AffixUtils.requiredKills - AffixUtils.magicSlayerBonus * magicSlayerLvl) * (upgrades + 1)));
+                    heldItem.SetMetadata("nextUpgrade", ((AffixUtils.RequiredKills - AffixUtils.magicSlayerBonus * magicSlayerLvl) * (upgrades + 1)));
                     return;
                 }
-                if (nextUpgrade - lastUpgrade > ((AffixUtils.requiredKills - AffixUtils.magicSlayerBonus * magicSlayerLvl) * (upgrades + 1)))
+                if (nextUpgrade - lastUpgrade > ((AffixUtils.RequiredKills - AffixUtils.magicSlayerBonus * magicSlayerLvl) * (upgrades + 1)))
                 {
-                    nextUpgrade = lastUpgrade + ((AffixUtils.requiredKills - AffixUtils.magicSlayerBonus * magicSlayerLvl) * (upgrades + 1));
+                    nextUpgrade = lastUpgrade + ((AffixUtils.RequiredKills - AffixUtils.magicSlayerBonus * magicSlayerLvl) * (upgrades + 1));
                     heldItem.SetMetadata("nextUpgrade", nextUpgrade);
                 }
 
@@ -60,11 +61,11 @@ namespace WeaponAffixesProject
                 if (didUpgrade)
                 {
                     if (affixName.Contains("Common"))
-                        GameManager.ShowTooltip(player, string.Format(Localization.Get("ttaffixunlock", false), upgrades + 1, (AffixUtils.requiredKills - AffixUtils.magicSlayerBonus * magicSlayerLvl) * (upgrades + 2), affixName), string.Empty, "read_skillbook_final");
+                        GameManager.ShowTooltip(player, string.Format(Localization.Get("ttaffixunlock", false), upgrades + 1, (AffixUtils.RequiredKills - AffixUtils.magicSlayerBonus * magicSlayerLvl) * (upgrades + 2), affixName), string.Empty, "read_skillbook_final");
                     else
-                        GameManager.ShowTooltip(player, string.Format(Localization.Get("ttaffixup", false), upgrades + 1, (AffixUtils.requiredKills - AffixUtils.magicSlayerBonus * magicSlayerLvl) * (upgrades + 2), affixName), string.Empty, "read_skillbook_final");
+                        GameManager.ShowTooltip(player, string.Format(Localization.Get("ttaffixup", false), upgrades + 1, (AffixUtils.RequiredKills - AffixUtils.magicSlayerBonus * magicSlayerLvl) * (upgrades + 2), affixName), string.Empty, "read_skillbook_final");
                     heldItem.SetMetadata("upgrades", upgrades + 1);
-                    heldItem.SetMetadata("nextUpgrade", nextUpgrade + ((AffixUtils.requiredKills - AffixUtils.magicSlayerBonus * magicSlayerLvl) * (upgrades + 2)));
+                    heldItem.SetMetadata("nextUpgrade", nextUpgrade + ((AffixUtils.RequiredKills - AffixUtils.magicSlayerBonus * magicSlayerLvl) * (upgrades + 2)));
                     heldItem.SetMetadata("lastUpgrade", kills);
                     if (upgrades + 1 >= 15)
                     {

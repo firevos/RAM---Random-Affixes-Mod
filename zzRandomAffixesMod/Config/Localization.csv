@@ -1,4 +1,4 @@
-Key,File,Type,UsedInMainMenu,NoTranslate,english,Context
+﻿Key,File,Type,UsedInMainMenu,NoTranslate,english,Context
 
 xuiAffixes,UI,XUI,,,Affixes,,
 lblContextActionRerollAffix,UI,Item Context Menu,,,Reroll,,
@@ -21,7 +21,7 @@ lblContextActionUnlockAffix,UI,Item Context Menu,,,Unlock,,
 ttUnlockAffixSucces,UI,Tooltip,,,You succesfully unlocked the {0} affix!,,
 ttUnlockAffixRequiresItem,UI,Tooltip,,,You need an {0} and 10 {1} in order to unlock an affix.,,
 ttUnlockAffixRequiresItem2,UI,Tooltip,,,You need an {0} in order to unlock an affix.,,
-ttUnlockAffixFail,UI,Tooltip,,,Failed to unlock a new affix. Are there already 7 affixes on this item?,,
+ttUnlockAffixFail,UI,Tooltip,,,Failed to unlock a new affix. Are there already {0} affixes on this item?,,
 
 dummyAffix,items,Item,,,Affix,,
 
@@ -1940,3 +1940,32 @@ uniqueAffixModPermadeath1Desc,item_modifiers,mod,,,"Surely you wouldn't die in a
 
 uniqueAffixModReducedArmor,item_modifiers,mod,,,Brittle Armor,,
 uniqueAffixModReducedArmorDesc,item_modifiers,mod,,,"It's primitive armor, did you really expect it to have this high armor rating? Reduces armor by 7.",,
+<<<<<<< ours
+<<<<<<< ours
+
+goMaxAffixes,UI,Menu,x,,Max Affixes,
+goMaxAffixesDesc,UI,Menu,x,,Maximum number of affixes an item can have..,
+goAffixAbundance,UI,Menu,x,,Affix Abundance,
+goAffixAbundanceDesc,UI,Menu,x,,Values under 100% mean you only have that chance per affix for it to actually spawn. This means you can find items with 0 affixes. Values over 100% mean you have a chance to get an additional affix on every affix spawned. It can never go over Max Affixes count.,
+goKillsToUpgrade,UI,Menu,x,,Kills to Upgrade,
+goKillsToUpgradeDesc,UI,Menu,x,,The amount of kills requirement to upgrade an affix on an item.,
+sandboxOptionCategoryRAM,UI,Menu,x,,RAM,
+=======
+=======
+>>>>>>> theirs
+goRAMMaxAffixes,UI,XUI,,,Max Affixes,,
+goRAMAffixAbundance,UI,XUI,,,Affix Abundance,,
+goRAMKillsToUpgrade,UI,XUI,,,Kills to Upgrade,,
+goRAMPercentValue0,UI,XUI,,,0%,,
+goRAMPercentValue25,UI,XUI,,,25%,,
+goRAMPercentValue50,UI,XUI,,,50%,,
+goRAMPercentValue75,UI,XUI,,,75%,,
+goRAMPercentValue100,UI,XUI,,,100%,,
+goRAMPercentValue125,UI,XUI,,,125%,,
+goRAMPercentValue150,UI,XUI,,,150%,,
+goRAMPercentValue200,UI,XUI,,,200%,,
+goRAMPercentValue300,UI,XUI,,,300%,,
+<<<<<<< ours
+>>>>>>> theirs
+=======
+>>>>>>> theirs

@@ -69,6 +69,7 @@
     <Compile Include="Affixes\AffixResurgence.cs" />
     <Compile Include="HarmonyPatches\CombineGridOverwrite.cs" />
     <Compile Include="Tokens\AffixSystem.cs" />
+    <Compile Include="CustomSandboxSettings.cs" />
     <Compile Include="Tokens\ItemActionEntryUnlockAffix.cs" />
     <Compile Include="Utils\AffixUtils.cs" />
     <Compile Include="Affixes\AffixBonusKills.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="HarmonyPatches\XUiC_ItemPartStackCanRemove.cs" />
     <Compile Include="Tokens\ItemActionEntryExtractAffix.cs" />
     <Compile Include="HarmonyPatches\LootContainerSpawnItem.cs" />
+    <Compile Include="HarmonyPatches\RamSandboxOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tokens\ItemActionEntryRerollAffix.cs" />
     <Compile Include="HarmonyPatches\QualityInfoCleanupPrefix.cs" />
