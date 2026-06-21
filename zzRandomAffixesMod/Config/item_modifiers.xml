@@ -9289,6 +9289,75 @@
         </item_modifier>
     </append>
 
+    <!-- More Ammo in Loot -->
+    <!-- <append xpath="/item_modifiers">
+        <item_modifier name="affixModAmmoLoot1" type="attachment" installable_tags="armorHead,armorFeet" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_ammo_loot_icon_1"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="LootQuantity" operation="perc_add" value=".05" tags="ammo"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModAmmoLoot2" type="attachment" installable_tags="armorHead,armorFeet" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_ammo_loot_icon_2"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="LootQuantity" operation="perc_add" value=".1" tags="ammo"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModAmmoLoot3" type="attachment" installable_tags="armorHead,armorFeet" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_ammo_loot_icon_3"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="LootQuantity" operation="perc_add" value=".15" tags="ammo"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModAmmoLoot4" type="attachment" installable_tags="armorHead,armorFeet" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_ammo_loot_icon_4"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="LootQuantity" operation="perc_add" value=".2" tags="ammo"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModAmmoLoot5" type="attachment" installable_tags="armorHead,armorFeet" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_ammo_loot_icon_5"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="LootQuantity" operation="perc_add" value=".25" tags="ammo"/>
+            </effect_group>
+        </item_modifier>
+        
+        <item_modifier name="affixModAmmoLoot6" type="attachment" installable_tags="armorHead,armorFeet" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_ammo_loot_icon_6"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod"/>
+            <property name="MaxModsAllowed" value="6"/>
+            <effect_group>
+                <passive_effect name="LootQuantity" operation="perc_add" value="30" tags="ammo"/>
+            </effect_group>
+        </item_modifier>
+    </append> -->
+
     <!-- NEGATIVE affixes -->
     <!-- Smell -->
     <append xpath="/item_modifiers">

@@ -30,9 +30,9 @@ Random Plus:
 
 3.0 Ideas:
 Gamesettings:
-    - Max affixes on an item (default is 7, range from 1 to 8).
-    - Affix abundance (default = 100%) lower, i.e. 66% would mean each affix has a 66% of actually spawning on the item when found. Higher % means theres a chance for additional affix (up till maximum).
-    - Upgrade requirements (100 kills is default). Make it harder/easier to upgrade affixes on weapons.
+    - Max affixes on an item (default is 7, range from 1 to 10). DONE
+    - Affix abundance (default = 100%) lower, i.e. 66% would mean each affix has a 66% of actually spawning on the item when found. Higher % means theres a chance for additional affix (up till maximum). DONE
+    - Upgrade requirements (100 kills is default). Make it harder/easier to upgrade affixes on weapons. DONE
     - Loot abundance for tokens.
 Combine System:
     - A way to 'choose' which affixes to keep from each weapon, paying some token per affix you chose.
@@ -76,7 +76,6 @@ decrease smell distance
 something with the drone shock mod
 more damage the less bullets in magazine
 manipulate buffs in a thousand and one ways.
-increase buff duration
 wisdom of battle - become immune to certain debuffs for a certain amount of time after it expires
 mighty endurance - increased damage resist when affected by critical injury
 AP ammo pierce additional target

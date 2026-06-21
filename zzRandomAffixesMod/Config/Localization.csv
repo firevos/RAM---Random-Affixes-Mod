@@ -1923,6 +1923,19 @@ affixModMaxHighFoodDamage5Desc,item_modifiers,mod,,,Increase damage by 37.5% whe
 affixModMaxHighFoodDamage6,item_modifiers,mod,,,[FF3646]Mythic[-] Damage at High Food,,
 affixModMaxHighFoodDamage6Desc,item_modifiers,mod,,,Increase damage by 45% when you have more than 85% food.,,
 
+affixModAmmoLoot1,item_modifiers,mod,,,Common Ammo Loot,,
+affixModAmmoLoot1Desc,item_modifiers,mod,,,Increases ammo in loot by 5%.,,
+affixModAmmoLoot2,item_modifiers,mod,,,[68F968]Uncommon[-] Ammo Loot,,
+affixModAmmoLoot2Desc,item_modifiers,mod,,,Increases ammo in loot by 10%.,,
+affixModAmmoLoot3,item_modifiers,mod,,,[38A6F6]Rare[-] Ammo Loot,,
+affixModAmmoLoot3Desc,item_modifiers,mod,,,Increases ammo in loot by 15%.,,
+affixModAmmoLoot4,item_modifiers,mod,,,[852EC8]Epic[-] Ammo Loot,,
+affixModAmmoLoot4Desc,item_modifiers,mod,,,Increases ammo in loot by 20%.,,
+affixModAmmoLoot5,item_modifiers,mod,,,[D6D162]Legendary[-] Ammo Loot,,
+affixModAmmoLoot5Desc,item_modifiers,mod,,,Increases ammo in loot by 25%.,,
+affixModAmmoLoot6,item_modifiers,mod,,,[FF3646]Mythic[-] Ammo Loot,,
+affixModAmmoLoot6Desc,item_modifiers,mod,,,Increases ammo in loot by 30%.,,
+
 uniqueAffixModReloadSpeedDouble,item_modifiers,mod,,,Why you reloading?,,
 uniqueAffixModReloadSpeedDoubleDesc,item_modifiers,mod,,,"Why are you reloading, just kill in one shot right? Doubles your reloading time.",,
 

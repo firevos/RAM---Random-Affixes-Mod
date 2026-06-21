@@ -34,4 +34,45 @@
             <sprite depth="4" sprite="ui_kill_count_icon" size="35,35" pos="148,-24" pivot="center" foregroundlayer="true" />
         </rect>
     </insertBefore>
+
+    <append xpath="/windows">
+        <window name="windowCombineAffixChooser" width="153" height="796" panel="Right" cursor_area="true" controller="XUiC_CombineAffixChooser,WeaponAffixesProject">
+            <rect style="header.panel">
+                <headerbg />
+                <sprite style="header.icon" sprite="ui_affixes_icon"/>
+                <label style="header.name" text="AFFIXES" text_key="xuiAffixes"/>
+            </rect>
+
+            <rect name="content" pos="0,-46" height="750" width="153">
+                <sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,1" width="153" height="750" color="[black]" type="sliced" fillcenter="false" />
+                <sprite name="background" color="[darkGrey]" pos="0,1" type="sliced"/>
+
+                <grid name="itemAAffixes" rows="10" cols="1" pos="3,-3" cell_width="75" cell_height="75">
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="0" prefix_id="A0"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="1" prefix_id="A1"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="2" prefix_id="A2"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="3" prefix_id="A3"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="4" prefix_id="A4"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="5" prefix_id="A5"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="6" prefix_id="A6"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="7" prefix_id="A7"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="8" prefix_id="A8"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="9" prefix_id="A9"/>
+                </grid>
+
+                <grid name="itemBAffixes" rows="10" cols="1" pos="78,-3" cell_width="75" cell_height="75">
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="0" prefix_id="B0"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="1" prefix_id="B1"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="2" prefix_id="B2"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="3" prefix_id="B3"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="4" prefix_id="B4"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="5" prefix_id="B5"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="6" prefix_id="B6"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="7" prefix_id="B7"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="8" prefix_id="B8"/>
+                    <item_stack controller="XUiC_CombineAffixStack,WeaponAffixesProject" cell_size="75" allow_dropping="false" repeat_i="9" prefix_id="B9"/>
+                </grid>
+            </rect>
+        </window>
+    </append>
 </configs>

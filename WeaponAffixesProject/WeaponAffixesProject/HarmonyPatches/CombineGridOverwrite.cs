@@ -30,9 +30,11 @@ namespace WeaponAffixesProject.HarmonyPatches
                 if (!itemValue.EqualsForMerging(itemValue2))
                 {
                     ItemStack itemStack = __instance.merge1.ItemStack.Clone();
-                    ItemValue[] itemACosmeticMods = itemValue.CosmeticMods;
                     itemStack.itemValue.MergeBest(__instance.merge2.ItemStack.itemValue);
-                    itemStack.itemValue.CosmeticMods = itemACosmeticMods;
+                    itemStack.itemValue.CosmeticMods = CombineAffixSelectionState.BuildResultAffixes(
+                        __instance.GetParentByType<XUiC_CombineWindowGroup>(),
+                        itemValue,
+                        itemValue2);
                     if ((itemStack.itemValue.Quality > itemValue.Quality || !itemStack.itemValue.EqualsForMerging(itemValue)) && (itemStack.itemValue.Quality > itemValue2.Quality || !itemStack.itemValue.EqualsForMerging(itemValue2)))
                     {
                         itemStack.itemValue.Meta = 0;
