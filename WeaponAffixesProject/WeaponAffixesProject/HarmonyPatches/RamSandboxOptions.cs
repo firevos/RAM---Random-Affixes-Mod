@@ -18,7 +18,7 @@ namespace WeaponBuffMod.HarmonyPatches
                 "goMaxAffixesDesc",
                 (SandboxOptions.SandboxOptions)648,
                 7,
-                new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
+                new[] { 3, 4, 5, 6, 7, 8, 9, 10 },
                 "{0}"),
             new RamSandboxOptionDefinition(
                 "AffixAbundance",
@@ -35,7 +35,34 @@ namespace WeaponBuffMod.HarmonyPatches
                 (SandboxOptions.SandboxOptions)650,
                 100,
                 new[] { 25, 50, 75, 100, 125, 150, 200, 250, 300 },
-                "{0}")
+                "{0}"),
+            new RamSandboxOptionDefinition(
+                "ToggleKillcounter",
+                "goToggleKillcounter",
+                "goToggleKillcounterDesc",
+                (SandboxOptions.SandboxOptions)651,
+                1,
+                new[] { 1, 0 },
+                "{0}",
+                new[] { "Show", "Hide" }),
+            new RamSandboxOptionDefinition(
+                "AffixRarity",
+                "goAffixRarity",
+                "goAffixRarityDesc",
+                (SandboxOptions.SandboxOptions)652,
+                100,
+                new[] { 25, 50, 100, 150, 200 },
+                "{0}",
+                new[] { "Very Low", "Low", "Default", "High", "Very High" }),
+            new RamSandboxOptionDefinition(
+                "TokenLootAbundance",
+                "goTokenLootAbundance",
+                "goTokenLootAbundanceDesc",
+                (SandboxOptions.SandboxOptions)653,
+                100,
+                new[] { 0, 25, 35, 50, 65, 75, 85, 100, 125, 150, 200, 300, 400, 500 },
+                "{0}%",
+                new[] { "None", "25%", "35%", "50%", "65%", "75%", "85%", "100%", "125%", "150%", "200%", "300%", "400%", "500%" })
         };
 
         public static void Postfix(SandboxOptions.SandboxOptionManager __instance)
@@ -97,6 +124,21 @@ namespace WeaponBuffMod.HarmonyPatches
             return GetValue(Definitions[2]);
         }
 
+        public static int GetToggleKillcounterValue()
+        {
+            return GetValue(Definitions[3]);
+        }
+
+        public static int GetAffixRarityValue()
+        {
+            return GetValue(Definitions[4]);
+        }
+
+        public static int GetTokenLootAbundanceValue()
+        {
+            return GetValue(Definitions[5]);
+        }
+
         private static void RegisterOption(SandboxOptions.SandboxOptionManager manager, RamSandboxOptionDefinition definition)
         {
             if (manager.SandboxOptionsDict.TryGetValue(definition.BackingOption, out var existingOption))
@@ -118,6 +160,7 @@ namespace WeaponBuffMod.HarmonyPatches
             option.ValueOptions = new SandboxOptions.SandboxOptionValueSetInt
             {
                 IntValues = definition.Values,
+                DisplayValues = definition.DisplayValues,
                 DisplayFormat = definition.DisplayFormat
             };
             option.ValueOptions.Init();
@@ -199,7 +242,8 @@ namespace WeaponBuffMod.HarmonyPatches
                 SandboxOptions.SandboxOptions backingOption,
                 int defaultValue,
                 int[] values,
-                string displayFormat)
+                string displayFormat,
+                string[] displayValues = null)
             {
                 OptionName = optionName;
                 LocalizationKey = localizationKey;
@@ -208,6 +252,7 @@ namespace WeaponBuffMod.HarmonyPatches
                 DefaultValue = defaultValue;
                 Values = values;
                 DisplayFormat = displayFormat;
+                DisplayValues = displayValues;
             }
 
             public string OptionName { get; }
@@ -223,6 +268,8 @@ namespace WeaponBuffMod.HarmonyPatches
             public int[] Values { get; }
 
             public string DisplayFormat { get; }
+
+            public string[] DisplayValues { get; }
 
             public int SortOrder => Array.FindIndex(Definitions, definition => definition.OptionName == OptionName);
         }

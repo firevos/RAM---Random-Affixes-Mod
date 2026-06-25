@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace WeaponAffixesProject
@@ -36,9 +35,32 @@ namespace WeaponAffixesProject
             selectedFromB[slot] = itemB;
         }
 
+        internal static void ClearIfSelected(XUiC_CombineWindowGroup group, int slot, bool itemB)
+        {
+            if (group == null || slot < 0 || slot >= MaxSlots)
+                return;
+
+            bool[] explicitSelection = GetArray(HasExplicitSelection, group);
+            bool[] selectedFromB = GetArray(SelectedFromItemB, group);
+            if (!explicitSelection[slot] || selectedFromB[slot] != itemB)
+                return;
+
+            explicitSelection[slot] = false;
+            selectedFromB[slot] = false;
+        }
+
+        internal static void Clear(XUiC_CombineWindowGroup group)
+        {
+            if (group == null)
+                return;
+
+            HasExplicitSelection.Remove(group);
+            SelectedFromItemB.Remove(group);
+        }
+
         internal static ItemValue[] BuildResultAffixes(XUiC_CombineWindowGroup group, ItemValue itemA, ItemValue itemB)
         {
-            int maxAffixes = Math.Max(1, Math.Min(MaxSlots, AffixUtils.GetConfiguredMaxAffixes()));
+            int maxAffixes = AffixUtils.GetConfiguredMaxAffixes();
             ItemValue[] result = new ItemValue[maxAffixes];
             bool[] explicitSelection = GetArray(HasExplicitSelection, group);
             bool[] selectedFromB = GetArray(SelectedFromItemB, group);
@@ -50,6 +72,29 @@ namespace WeaponAffixesProject
             }
 
             return result;
+        }
+
+        internal static int CountSelectedAffixesFromItemB(XUiC_CombineWindowGroup group, ItemValue itemB)
+        {
+            if (group == null || itemB?.CosmeticMods == null)
+                return 0;
+
+            int maxAffixes = AffixUtils.GetConfiguredMaxAffixes();
+            bool[] explicitSelection = GetArray(HasExplicitSelection, group);
+            bool[] selectedFromB = GetArray(SelectedFromItemB, group);
+            int count = 0;
+
+            for (int i = 0; i < maxAffixes; i++)
+            {
+                if (!explicitSelection[i] || !selectedFromB[i])
+                    continue;
+                if (i >= itemB.CosmeticMods.Length || itemB.CosmeticMods[i] == null || itemB.CosmeticMods[i].IsEmpty())
+                    continue;
+
+                count++;
+            }
+
+            return count;
         }
 
         private static ItemValue CloneAffixAt(ItemValue[] mods, int slot)

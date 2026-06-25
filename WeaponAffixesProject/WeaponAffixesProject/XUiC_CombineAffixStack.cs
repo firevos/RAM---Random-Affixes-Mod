@@ -30,6 +30,11 @@ public class XUiC_CombineAffixStack : XUiC_ItemStack
 
     public override void HandleClickComplete()
     {
+        ToggleSelection();
+    }
+
+    public void ToggleSelection()
+    {
         if (!HasAffix())
             return;
 
@@ -127,6 +132,12 @@ public class XUiC_CombineAffixStack : XUiC_ItemStack
             ViewComponent.IsVisible = affixSlot < maxAffixes;
 
         ItemValue newAffix = GetAffix();
+        XUiC_CombineWindowGroup group = GetCombineWindowGroup();
+        if (newAffix == null || newAffix.IsEmpty())
+        {
+            WeaponAffixesProject.CombineAffixSelectionState.ClearIfSelected(group, affixSlot, useItemB);
+        }
+
         int type = newAffix == null || newAffix.IsEmpty() ? 0 : newAffix.type;
         if (!IsDirty && type == lastType)
             return;
@@ -183,6 +194,6 @@ public class XUiC_CombineAffixStack : XUiC_ItemStack
 
     private static int GetConfiguredMaxAffixes()
     {
-        return Math.Max(1, Math.Min(10, WeaponAffixesProject.AffixUtils.GetConfiguredMaxAffixes()));
+        return WeaponAffixesProject.AffixUtils.GetConfiguredMaxAffixes();
     }
 }

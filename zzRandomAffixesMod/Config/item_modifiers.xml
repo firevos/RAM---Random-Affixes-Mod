@@ -7451,6 +7451,14 @@
             <property name="Tags" value="affix_mod,buffduration"/>
             <property name="MaxModsAllowed" value="6"/>
         </item_modifier>
+        
+        <item_modifier name="affixModBuffDuration7" type="attachment" installable_tags="weapon,tool" blocked_tags="noMods">
+            <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+            <property name="CustomIcon" value="ui_buff_duration_icon_7"/>
+            <property name="Group" value="Weapon Mods"/>
+            <property name="Tags" value="affix_mod,buffduration"/>
+            <property name="MaxModsAllowed" value="6"/>
+        </item_modifier>
     </append>
 
     <!-- Bonus Kills -->

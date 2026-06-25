@@ -11,6 +11,7 @@ public class XUiC_ActiveItemKillsUpgrades : XUiController
     private bool hasKills;
     private bool haslastKills;
     private bool ammoHudVisible;
+    private bool killcounterVisible = true;
     private int baseY;
     private bool baseYCaptured;
 
@@ -40,6 +41,7 @@ public class XUiC_ActiveItemKillsUpgrades : XUiController
         float newKills = 0f, newlastKills = 0f;
         bool newHasKills = false, newHaslastKills = false;
         bool newAmmoHudVisible = false;
+        bool newKillcounterVisible = WeaponAffixesProject.WeaponUpgrades.IsKillcounterVisible();
 
         if (heldItem != null && !heldItem.IsEmpty())
         {
@@ -51,7 +53,7 @@ public class XUiC_ActiveItemKillsUpgrades : XUiController
             newAmmoHudVisible = magSize > 0f;
         }
 
-        bool needsRefresh = IsDirty || newKills != kills || newlastKills != lastKills || newHasKills != hasKills || newHaslastKills != haslastKills || newAmmoHudVisible != ammoHudVisible;
+        bool needsRefresh = IsDirty || newKills != kills || newlastKills != lastKills || newHasKills != hasKills || newHaslastKills != haslastKills || newAmmoHudVisible != ammoHudVisible || newKillcounterVisible != killcounterVisible;
 
         if (needsRefresh)
         {
@@ -60,6 +62,7 @@ public class XUiC_ActiveItemKillsUpgrades : XUiController
             hasKills = newHasKills;
             haslastKills = newHaslastKills;
             ammoHudVisible = newAmmoHudVisible;
+            killcounterVisible = newKillcounterVisible;
 
             UpdatePanelPosition();
 
@@ -91,7 +94,7 @@ public class XUiC_ActiveItemKillsUpgrades : XUiController
                 return true;
 
             case "kuvisible":
-                _value = (hasKills || haslastKills).ToString().ToLower();
+                _value = (killcounterVisible && (hasKills || haslastKills)).ToString().ToLower();
                 return true;
         }
 

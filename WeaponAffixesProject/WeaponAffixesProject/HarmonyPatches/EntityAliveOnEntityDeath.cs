@@ -25,33 +25,14 @@ namespace WeaponAffixesProject
 
         internal static void CheckChallengeUpdates(ItemValue heldItem)
         {
-            if (heldItem.CosmeticMods == null || heldItem.Modifications == null)
+            if (heldItem == null || heldItem.IsEmpty())
                 return;
 
             int totalAffixes = 0;
             int rareAffixes = 0;
             int mythicAffixes = 0;
-            foreach (var mod in heldItem.CosmeticMods)
-            {
-                if (mod == null || mod.IsEmpty() || !mod.ItemClass.HasAnyTags(AffixUtils.AffixTag))
-                    continue;
-
-                totalAffixes++;
-                if (mod.ItemClass.Name[mod.ItemClass.Name.Length - 1] - '0' > 2)
-                    rareAffixes++;
-
-                if (mod.ItemClass.Name[mod.ItemClass.Name.Length - 1] - '0' > 5)
-                    mythicAffixes++;
-            }
-            foreach (var mod in heldItem.Modifications)
-            {
-                if (mod == null || mod.IsEmpty() || !mod.ItemClass.HasAnyTags(AffixUtils.AffixTag))
-                    continue;
-
-                totalAffixes++;
-                if (mod.ItemClass.Name[mod.ItemClass.Name.Length - 1] - '0' > 5)
-                    mythicAffixes++;
-            }
+            CountAffixes(heldItem.CosmeticMods, ref totalAffixes, ref rareAffixes, ref mythicAffixes);
+            CountAffixes(heldItem.Modifications, ref totalAffixes, ref rareAffixes, ref mythicAffixes);
 
             // Get kill with any affix
             if (totalAffixes > 0)
@@ -77,6 +58,28 @@ namespace WeaponAffixesProject
             if (totalAffixes > 10)
                 AffixUtils.ApplyQuestEventManagerUseItem("affixModEntityDamageBase5");
 
+        }
+
+        private static void CountAffixes(ItemValue[] mods, ref int totalAffixes, ref int rareAffixes, ref int mythicAffixes)
+        {
+            if (mods == null)
+                return;
+
+            foreach (var mod in mods)
+            {
+                if (mod?.ItemClass == null || mod.IsEmpty() || !AffixUtils.IsAffixMod(mod.ItemClass))
+                    continue;
+
+                totalAffixes++;
+                if (!AffixUtils.TryGetAffixTierIndex(mod.ItemClass.Name, out int tierIndex))
+                    continue;
+
+                if (tierIndex >= 2)
+                    rareAffixes++;
+
+                if (tierIndex >= 5)
+                    mythicAffixes++;
+            }
         }
     }
 }

@@ -67,8 +67,10 @@
   <ItemGroup>
     <Compile Include="Affixes\AffixBulletRecovery.cs" />
     <Compile Include="Affixes\AffixResurgence.cs" />
+    <Compile Include="CombineAffixCost.cs" />
     <Compile Include="CombineAffixSelectionState.cs" />
     <Compile Include="HarmonyPatches\CombineGridOverwrite.cs" />
+    <Compile Include="HarmonyPatches\XUiC_CombineResultCost.cs" />
     <Compile Include="HarmonyPatches\XUiC_CombineAffixStackReadOnly.cs" />
     <Compile Include="Tokens\AffixSystem.cs" />
     <Compile Include="CustomSandboxSettings.cs" />
@@ -93,12 +95,15 @@
     <Compile Include="Tokens\ItemActionEntryExtractAffix.cs" />
     <Compile Include="HarmonyPatches\LootContainerSpawnItem.cs" />
     <Compile Include="HarmonyPatches\RamSandboxOptions.cs" />
+    <Compile Include="HarmonyPatches\RamLocalizationTokens.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tokens\ItemActionEntryRerollAffix.cs" />
     <Compile Include="HarmonyPatches\QualityInfoCleanupPrefix.cs" />
     <Compile Include="UpgradeSystem\XUiC_ActiveItemKillsUpgrades.cs" />
+    <Compile Include="XUiC_CombineAffixButton.cs" />
     <Compile Include="XUiC_CombineAffixChooser.cs" />
     <Compile Include="XUiC_CombineAffixStack.cs" />
+    <Compile Include="HarmonyPatches\CombineInspectTextOverride.cs" />
     <Compile Include="HarmonyPatches\XUiC_CollectedItemListSetYOffset.cs" />
     <Compile Include="Tokens\XUiC_ItemActionListSetCraftingActionList.cs" />
     <Compile Include="HarmonyPatches\XUiC_ItemInfoWindowSetInfo.cs" />

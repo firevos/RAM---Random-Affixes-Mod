@@ -7,6 +7,9 @@ namespace WeaponAffixesProject
         internal const string MaxAffixes = "MaxAffixes";
         internal const string AffixAbundance = "AffixAbundance";
         internal const string KillsToUpgrade = "KillsToUpgrade";
+        internal const string ToggleKillcounter = "ToggleKillcounter";
+        internal const string AffixRarity = "AffixRarity";
+        internal const string TokenLootAbundance = "TokenLootAbundance";
 
         internal static void Register()
         {
@@ -28,6 +31,12 @@ namespace WeaponAffixesProject
                     return RamSandboxOptions.GetAffixAbundanceValue();
                 case KillsToUpgrade:
                     return RamSandboxOptions.GetKillsToUpgradeValue();
+                case ToggleKillcounter:
+                    return RamSandboxOptions.GetToggleKillcounterValue();
+                case AffixRarity:
+                    return RamSandboxOptions.GetAffixRarityValue();
+                case TokenLootAbundance:
+                    return RamSandboxOptions.GetTokenLootAbundanceValue();
                 default:
                     return defaultValue;
             }

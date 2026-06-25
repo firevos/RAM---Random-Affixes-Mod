@@ -6,15 +6,7 @@ namespace WeaponAffixesProject
     {
         internal static void OnEntityDeathWeaponUpgrades(EntityAlive __instance, EntityPlayerLocal player, ItemValue heldItem)
         {
-            int magicSlayerLvl = 0;
-            try
-            {
-                magicSlayerLvl = player.Progression.GetProgressionValue("perkMagicSlayer").level;
-            }
-            catch (Exception e)
-            {
-                Log.Out($"Can't find magic slayer perk: '{e}'");
-            }
+            int magicSlayerLvl = AffixUtils.GetProgressionLevel(player, "perkMagicSlayer");
 
             if (!heldItem.ItemClass.HasAnyTags(FastTags<TagGroup.Global>.GetTag("weapon")) && !heldItem.ItemClass.HasAnyTags(FastTags<TagGroup.Global>.GetTag("tool")))
                 return;
@@ -25,10 +17,7 @@ namespace WeaponAffixesProject
             kills += AffixBonusKills.CheckBonusKills(__instance, player, heldItem);
             heldItem.SetMetadata("kills", kills);
 
-            int totalAffixes = AffixUtils.GetConfiguredMaxAffixes();
-            if (magicSlayerLvl < 5)
-                totalAffixes--;
-            totalAffixes = Math.Max(1, totalAffixes);
+            int totalAffixes = AffixUtils.GetEffectiveMaxAffixes(player);
             int maxUpgrade = 4;
             if (AffixUtils.ChallengeGroupIsCompleted(player, "ram basics"))
                 maxUpgrade += 2;
@@ -57,7 +46,7 @@ namespace WeaponAffixesProject
 
                 if (kills >= nextUpgrade)
                 {
-                    didUpgrade = AffixSystem.CheckUpgradeUnlockAffix(heldItem, ref affixName, totalAffixes, maxUpgrade);
+                    didUpgrade = AffixSystem.CheckUpgradeUnlockAffix(heldItem, ref affixName, totalAffixes, maxUpgrade, player);
                 }
                 if (didUpgrade)
                 {
@@ -83,6 +72,8 @@ namespace WeaponAffixesProject
 
         internal static void SetYOffset(ref int _yOffset)
         {
+            if (!IsKillcounterVisible()) return;
+
             var lp = GameManager.Instance?.myEntityPlayerLocal;
             if (lp == null) return;
 
@@ -93,6 +84,11 @@ namespace WeaponAffixesProject
             bool hasUpg = held.TryGetMetadata("upgrades", out float _);
 
             if (hasKills || hasUpg) _yOffset += 46;
+        }
+
+        internal static bool IsKillcounterVisible()
+        {
+            return CustomSandboxSettings.GetInt(CustomSandboxSettings.ToggleKillcounter, 1) != 0;
         }
     }
 }

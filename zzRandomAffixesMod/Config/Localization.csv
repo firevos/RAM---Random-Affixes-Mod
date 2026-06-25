@@ -1,6 +1,7 @@
 ﻿Key,File,Type,UsedInMainMenu,NoTranslate,english,Context
 
 xuiAffixes,UI,XUI,,,Affixes,,
+ramCombineInfoPanelText,UI,XUI,,,"RAM Combine Bench\n\nAll affixes and kills are copied from item A.\nYou can swap over an affix from Item B by selecting it in the Affix view on the right.\nIt will replace the affix in that slot.\nIt costs 1 extraction token per swap and 5 weapon parts if the weapon is made of parts (steel melee weapons and any non-pipe gun).\nThe output slot is only a preview. Press Combine to pay the cost and create the result.",,
 lblContextActionRerollAffix,UI,Item Context Menu,,,Reroll,,
 ttaffixup,UI,Tooltip,,,You upgraded to the {2} affix! This weapon upgraded {0} times. You need {1} kills for the next upgrade.,,
 ttaffixunlock,UI,Tooltip,,,You unlocked the affix {2}! This weapon upgraded {0} times. You need {1} kills for the next upgrade.,,
@@ -32,7 +33,7 @@ affixExtractionTokenDesc,items,Item,,,"This token grants you the ability to extr
 affixUpgradeToken,items,Item,,,Affix Upgrade Token,,
 affixUpgradeTokenDesc,items,Item,,,"This token grants you the ability to upgrade one specific affix on an item. Using this on a weapon/tool will increase the kill count required for the next upgrade as if you would've just upgraded normally."
 affixUnlockToken,items,Item,,,Affix Unlock Token,
-affixUnlockTokenDesc,item,Item,,,"This token grants you the ability to unlock a new affix on a piece of armor or weapon.\nAdditionally, an upgrade requires 10 appropriate parts if an item's recipe requires them.\nDoes not work on pieces that already have 7 affixes (does not count affixes in normal mod slots). Most of the time it will unlock a common affix, with a very low chance to unlock a mythic instead.\nClick on Modify first if button does not show.",,
+affixUnlockTokenDesc,item,Item,,,"This token grants you the ability to unlock a new affix on a piece of armor or weapon.\nAdditionally, an upgrade requires 10 appropriate parts if an item's recipe requires them.\nDoes not work on pieces that already have {ram.maxAffixes} affixes (does not count affixes in normal mod slots). Most of the time it will unlock a common affix, with a very low chance to unlock a mythic instead.\nClick on Modify first if button does not show.",,
 affixBlankToken,items,Item,,,Blank Affix Token,,
 affixBlankTokenDesc,items,Item,,,"This blank affix token is required to craft any of the actually useful affix tokens. It does nothing in this form."
 
@@ -55,11 +56,11 @@ challengeGetOneAffixDesc,Challenges,Challenge,,,"Affixes spawn on items found in
 
 challengeUpgradeOneAffix,Challenges,Challenge,,,Upgrade an Affix,,
 challengeUpgradeOneAffixShort,Challenges,Challenge,,,Upgrade any affix through the magic slayer system.,,
-challengeUpgradeOneAffixDesc,Challenges,Challenge,,,"You can upgrade and unlock affixes on weapons by getting enough kills on them. See the killcounter/requirement on the bottom right of the screen when holding a weapon.\n\nGet enough kills on any weapon and upgrade any affix.",,
+challengeUpgradeOneAffixDesc,Challenges,Challenge,,,"You can upgrade and unlock affixes on weapons by getting enough kills on them. The first upgrade takes {ram.killsToUpgrade} kills before Magic Slayer reductions. See the killcounter/requirement on the bottom right of the screen when holding a weapon.\n\nGet enough kills on any weapon and upgrade any affix.",,
 
 challengeGetRerollToken,Challenges,Challenge,,,Obtain a Reroll Token,,
 challengeGetRerollTokenShort,Challenges,Challenge,,,Obtain 1 affix reroll token.,,
-challengeGetRerollTokenDesc,Challenges,Challenge,,,"Reroll tokens are crucial to get rid of unwanted affixes or to try to get that one specific affix you've been dying to get.\n\nIn order to do so, obtain a reroll token by crafting, looting, buying or earning them trough quests rewards.\n\nCompleting this group of challenges gives you the ability to unlock one additional affix on weapons through the Magic Slayer system.\n\nNormally, you can unlock up to 5 affixes, this will increase the limit by one, just like the magic slayer perk. Giving you a limit of 7."
+challengeGetRerollTokenDesc,Challenges,Challenge,,,"Reroll tokens are crucial to get rid of unwanted affixes or to try to get that one specific affix you've been dying to get.\n\nIn order to do so, obtain a reroll token by crafting, looting, buying or earning them trough quests rewards.\n\nCompleting this group of challenges gives you the ability to unlock one additional affix on weapons through the Magic Slayer system.\n\nNormally, you can unlock up to {ram.baseAffixCap} affixes. This challenge group raises that to {ram.challengeAffixCap}, and Magic Slayer rank 5 can raise it to {ram.maxAffixes}."
 
 challengeGetTenAffixes,Challenges,Challenge,,,Find 10 Affixes,,
 challengeGetTenAffixesShort,Challenges,Challenge,,,Find any 10 Affixes.,,
@@ -75,7 +76,7 @@ challengeGetRerollTokensDesc,Challenges,Challenge,,,"Reroll tokens are the most 
 
 challengeUnlockOneAffix,Challenges,Challenge,,,Unlock Any Affix,,
 challengeUnlockOneAffixShort,Challenges,Challenge,,,Unlock any new affix on a weapon.,,
-challengeUnlockOneAffixDesc,Challenges,Challenge,,,"In addition to upgrading existing affixes, you can also unlock new ones through the upgrade system. When you reach the kill requirement there is a 33% chance to unlock a new one instead of upgrading an existing one.\n\nGet enough kills and unlock a new affix.",,
+challengeUnlockOneAffixDesc,Challenges,Challenge,,,"In addition to upgrading existing affixes, you can also unlock new ones through the upgrade system. When you reach the kill requirement there is a {ram.unlockAffixChance}% chance to unlock a new one instead of upgrading an existing one.\n\nGet enough kills and unlock a new affix.",,
 
 challengeGetThreeAffixes,Challenges,Challenge,,,Get 3 affixes,,
 challengeGetThreeAffixesShort,Challenges,Challenge,,,Get a kill with a weapon with at least 3 affixes on it.,,
@@ -139,9 +140,9 @@ challengeGetElevenAffixesDesc,Challenges,Challenge,,,"Is this your God weapon?\n
 
 challengeObjectiveBonusRAMBasics,Challenges,Challenge,,,You can now upgrade affixes to Mythic rarity,,
 challengeRewardBonusRAMBasics,Challenges,Reward,,,Mythic Upgrades,,
-challengeObjectiveBonusRAMIntermediate,Challenges,Challenge,,,You can now unlock one additional affix on any weapon,,
+challengeObjectiveBonusRAMIntermediate,Challenges,Challenge,,,You can now unlock one additional affix on any weapon up to {ram.challengeAffixCap},,
 challengeRewardBonusRAMIntermediate,Challenges,Reward,,,Unlock 1 extra affix,,
-challengeObjectiveBonusRAMAdvanced,Challenges,Challenge,,,Every weapon and armor you find will now come with 1 additional affix,,
+challengeObjectiveBonusRAMAdvanced,Challenges,Challenge,,,Every weapon and armor you find can now come with 1 additional affix up to {ram.maxAffixes},,
 challengeRewardBonusRAMAdvanced,Challenges,Reward,,,Find 1 more affix on items,,
 challengeObjectiveBonusRAMLegendary,Challenges,Challenge,,,Coming Soon,,
 challengeRewardBonusRAMLegendary,Challenges,Reward,,,Coming Soon,,
@@ -160,7 +161,7 @@ perkMagicFindRank5Desc,progression,perk Per,,,You're a Wizard!,,
 perkMagicFindRank5LongDesc,progression,perk Per,,,You have a 25% chance on each affix to increase the rarity (can apply to the same affix multiple times). High tier loot chests (T4 and T5) and hidden stashes now provide 1 additional magic item. You can now find affix reroll tokens in garbage piles.,,
 
 perkMagicSlayerName,progression,perk Per,,,Magic Slayer,,
-perkMagicSlayerDesc,progression,perk Per,,,You unlock/upgrade a random affix after reaching the kill requirement (bottom right of the screen when having a weapon in your hand).\nEach next upgrade takes more kills than the last.\nYou can unlock upgrade to [852EC8]Epic[-] rarity.,,
+perkMagicSlayerDesc,progression,perk Per,,,You unlock/upgrade a random affix after reaching the kill requirement (bottom right of the screen when having a weapon in your hand).\nThe first upgrade takes {ram.killsToUpgrade} kills before rank reductions. Each next upgrade takes more kills than the last. You can unlock upgrade to [852EC8]Epic[-] rarity.,,
 perkMagicSlayerRank1Desc,progression,perk Per,,,Basic Killer,,
 perkMagicSlayerRank1LongDesc,progression,perk Per,,,Additional kills required per upgrade reduced by 5%.,,
 perkMagicSlayerRank2Desc,progression,perk Per,,,Legendary Instincts,,
@@ -170,7 +171,7 @@ perkMagicSlayerRank3LongDesc,progression,perk Per,,,Additional kills required pe
 perkMagicSlayerRank4Desc,progression,perk Per,,,Mythical Instincts,,
 perkMagicSlayerRank4LongDesc,progression,perk Per,,,Additional kills required per upgrade reduced by 20%.,,
 perkMagicSlayerRank5Desc,progression,perk Per,,,True Slayer,,
-perkMagicSlayerRank5LongDesc,progression,perk Per,,,Additional kills required per upgrade reduced by 25%. You can now unlock one additional affix.,,
+perkMagicSlayerRank5LongDesc,progression,perk Per,,,Additional kills required per upgrade reduced by 25%. You can now unlock one additional affix up to {ram.maxAffixes}.,,
 
 meleeWpnBladeT1HuntingKnifeUnique,items,Melee,,,Jonah's Poop Knife,,
 meleeWpnBladeT1HuntingKnifeUniqueDesc,items,Melee,,,Did you really just pull this from a dirty old toilet? You do you I guess...,,
@@ -1636,6 +1637,8 @@ affixModBuffDuration5,item_modifiers,mod,,,[D6D162]Legendary[-] Increase Buff Du
 affixModBuffDuration5Desc,item_modifiers,mod,,,Increases duration of a random positive buff by 7 seconds after getting a kill.,,
 affixModBuffDuration6,item_modifiers,mod,,,[FF3646]Mythic[-] Increase Buff Duration,,
 affixModBuffDuration6Desc,item_modifiers,mod,,,Increases duration of a random positive buff by 8 seconds after getting a kill.,,
+affixModBuffDuration7,item_modifiers,mod,,,[FFD54A]Godlike[-] Increase Buff Duration,,
+affixModBuffDuration7Desc,item_modifiers,mod,,,Increases duration of a random positive buff by 15 seconds after getting a kill.,,
 
 affixModBonusKills1,item_modifiers,mod,,,Common Bonus Kills,,
 affixModBonusKills1Desc,item_modifiers,mod,,,"High tier zombies gives you a chance to get a bonus kill for the kill counter.\nFerals 5%, Radiated 10%, Charged/Infernals 15%.",,
@@ -1955,9 +1958,15 @@ uniqueAffixModReducedArmor,item_modifiers,mod,,,Brittle Armor,,
 uniqueAffixModReducedArmorDesc,item_modifiers,mod,,,"It's primitive armor, did you really expect it to have this high armor rating? Reduces armor by 7.",,
 
 goMaxAffixes,UI,Menu,x,,Max Affixes,
-goMaxAffixesDesc,UI,Menu,x,,Maximum number of affixes an item can have.,
+goMaxAffixesDesc,UI,Menu,x,,Maximum number of affixes an item can have after RAM challenge and Magic Slayer unlocks. Without those unlocks, the cap is {ram.baseAffixCap}.,
 goAffixAbundance,UI,Menu,x,,Affix Abundance,
-goAffixAbundanceDesc,UI,Menu,x,,Values under 100% mean you only have that chance per affix for it to actually spawn. This means you can find items with 0 affixes. Values over 100% mean you have a chance to get an additional affix on every affix spawned. It can never go over Max Affixes count.,
+goAffixAbundanceDesc,UI,Menu,x,,Current value: {ram.affixAbundance}%. Values under 100% mean you only have that chance per affix for it to actually spawn. This means you can find items with 0 affixes. Values over 100% mean you have a chance to get an additional affix on every affix spawned. It can never go over Max Affixes count.,
 goKillsToUpgrade,UI,Menu,x,,Kills to Upgrade,
-goKillsToUpgradeDesc,UI,Menu,x,,The amount of kills requirement to upgrade an affix on an item.,
+goKillsToUpgradeDesc,UI,Menu,x,,The base kill requirement to upgrade an affix on an item. Current value: {ram.killsToUpgrade}.,
+goToggleKillcounter,UI,Menu,x,,Toggle Killcounter,
+goToggleKillcounterDesc,UI,Menu,x,,Show or hide the RAM killcounter display while holding an eligible weapon or tool.,
+goAffixRarity,UI,Menu,x,,Affix Rarity,
+goAffixRarityDesc,UI,Menu,x,,Adjusts how likely affixes are to roll into higher rarities.,
+goTokenLootAbundance,UI,Menu,x,,Token Loot Abundance,
+goTokenLootAbundanceDesc,UI,Menu,x,,Adjusts how often RAM affix tokens appear in loot.,
 sandboxOptionCategoryRAM,UI,Menu,x,,RAM,

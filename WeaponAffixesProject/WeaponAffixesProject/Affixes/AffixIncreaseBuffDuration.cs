@@ -16,7 +16,7 @@ namespace WeaponAffixesProject
             foreach (int entry in instances)
             {
                 string selected = "$" + positiveBuffs[AffixUtils.rng.Next(positiveBuffs.Count)] + "duration";
-                player.Buffs.SetCustomVar(selected, player.Buffs.GetCustomVar(selected) + entry + 2);
+                player.Buffs.SetCustomVar(selected, player.Buffs.GetCustomVar(selected) + entry == 7 ? entry + 8 : entry + 2);
             }
         }
     }
