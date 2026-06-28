@@ -17,6 +17,7 @@ namespace WeaponAffixesProject
 
             List<int> bringDowns = AffixUtils.GetAllAffixesFromItem(_damageSource.AttackingItem, "bringdown");
             bringDowns.AddRange(AffixUtils.GetAllAffixesFromArmor(player, "bringdown"));
+            bringDowns.Where(x => x == 7).ToList().ForEach(x => bringDowns.Add(1));
             return bringDowns.Sum() * 0.03f;
         }
     }

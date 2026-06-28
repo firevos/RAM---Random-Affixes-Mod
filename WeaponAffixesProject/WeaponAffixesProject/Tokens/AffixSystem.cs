@@ -192,7 +192,13 @@ namespace WeaponAffixesProject
 
             int randomIndex = canUpgradeSlots[AffixUtils.rng.Next(canUpgradeSlots.Count)];
             ItemClassModifier oldAffix = itemValue.CosmeticMods[randomIndex].ItemClass as ItemClassModifier;
-            int oldTier = int.Parse(oldAffix.Name.Substring(oldAffix.Name.Length - 1));
+            if (oldAffix == null || !AffixUtils.TryGetAffixTierIndex(oldAffix.Name, out int oldTierIndex))
+                return false;
+
+            int oldTier = oldTierIndex + 1;
+            if (oldTier >= AffixUtils.MaxNormallyObtainableAffixTier)
+                return false;
+
             string newName = oldAffix.Name.Substring(0, oldAffix.Name.Length - 1) + (oldTier + 1).ToString();
 
             if (!(ItemClass.GetItemClass(newName) is ItemClassModifier newAffix)) return false;
@@ -279,6 +285,7 @@ namespace WeaponAffixesProject
         internal static bool CheckUpgradeUnlockAffix(ItemValue itemValue, ref string affixName, int totalAffixes, int maxUpgrade, EntityPlayer player)
         {
             // Check if you should upgrade
+            maxUpgrade = Math.Min(maxUpgrade, AffixUtils.MaxNormallyObtainableAffixTier);
 
             bool didUpgrade = false;
             if (itemValue.CosmeticMods == null || itemValue.CosmeticMods.Length == 0)
@@ -298,10 +305,11 @@ namespace WeaponAffixesProject
                 List<int> canUpgradeSlots = new List<int>();
                 for (int i = 0; i < itemValue.CosmeticMods.Length; i++)
                 {
-                    if (itemValue.CosmeticMods[i] == null) continue;
-                    string rarityString = itemValue.CosmeticMods[i].ItemClass.Name.Substring(itemValue.CosmeticMods[i].ItemClass.Name.Length - 1);
-                    if (int.TryParse(rarityString, out int rarity))
-                        if (rarity < maxUpgrade) canUpgradeSlots.Add(i);
+                    if (itemValue.CosmeticMods[i]?.ItemClass == null || !AffixUtils.IsAffixMod(itemValue.CosmeticMods[i].ItemClass))
+                        continue;
+
+                    if (AffixUtils.TryGetAffixTierIndex(itemValue.CosmeticMods[i].ItemClass.Name, out int tierIndex) && tierIndex + 1 < maxUpgrade)
+                        canUpgradeSlots.Add(i);
                 }
 
                 // If no slots can be upgraded, see if you can add a new one instead.

@@ -2272,6 +2272,26 @@
                 <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".KillStreakMaxHealth"/>
             </effect_group>
         </buff>
+        
+        <buff name="buffaffixModKillStreakMaxHP7" hidden="true">
+            <stack_type value="replace"/>
+            <duration value="30"/>
+
+            <effect_group>
+                <!-- Setup counter -->
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".KillStreakMaxHealth" operation="set" value="2"/>
+                <!-- Increase counter 1 -->
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".KillStreakMaxHealth" operation="add" value="2"/>
+                <!-- Increase HP and Max HP by counter -->
+                <passive_effect name="HealthMax" operation="base_add" value="@.KillStreakMaxHealth"/>
+
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="2"/>
+
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="add" value="2"/>
+                <!-- Reset counter -->
+                <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".KillStreakMaxHealth"/>
+            </effect_group>
+        </buff>
     </append>
 
     <!-- Kill Streak Bonus Damage Buff -->
@@ -2381,6 +2401,28 @@
                 <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay6" operation="multiply" value="100"/>
             </effect_group>
         </buff>
+        
+        <buff name="buffaffixModKillStreakDamage7" name_key="buffaffixModKillStreakDamage7Name" description_key="buffaffixModKillStreakDamage7Desc" showonhud="true" icon="ui_kill_count_icon" icon_color="0,0,0" icon_blink="true">
+            <stack_type value="replace"/>
+            <duration value="60"/>
+            <display_value value=".killStreakDamageDisplay6"/>
+		    <display_value_key value="+{0:0}%"/>
+
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamage7" operation="set" value=".05"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamage7" operation="add" value=".05">
+                    <requirement name="CVarCompare" cvar=".killStreakDamage7" operation="LT" value="2.99"/>
+                </triggered_effect>
+
+                <passive_effect name="EntityDamage" operation="perc_add" value="@.killStreakDamage7"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".killStreakDamage7"/>
+                <!-- Setup/update display -->
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay7" operation="set" value="@.killStreakDamage7"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".killStreakDamageDisplay7" operation="multiply" value="100"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay7" operation="set" value="@.killStreakDamage7"/>
+                <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".killStreakDamageDisplay7" operation="multiply" value="100"/>
+            </effect_group>
+        </buff>
     </append>
 
     <!-- Rapid Response Buff -->
@@ -2448,6 +2490,17 @@
                 <passive_effect name="WalkSpeed" operation="perc_add" value=".4"/>
                 <passive_effect name="RunSpeed" operation="perc_add" value=".4"/>
                 <passive_effect name="CrouchSpeed" operation="perc_add" value=".4"/>
+            </effect_group>
+        </buff>
+        
+        <buff name="buffaffixModRapidResponse7" name_key="buffaffixModRapidResponse7Name" description_key="buffaffixModRapidResponse7Desc" showonhud="true" icon="ui_rapid_response_icon" icon_color="0,0,0">
+            <stack_type value="effect"/>
+            <duration value="10"/>
+
+            <effect_group>
+                <passive_effect name="WalkSpeed" operation="perc_add" value=".6"/>
+                <passive_effect name="RunSpeed" operation="perc_add" value=".6"/>
+                <passive_effect name="CrouchSpeed" operation="perc_add" value=".6"/>
             </effect_group>
         </buff>
     </append>

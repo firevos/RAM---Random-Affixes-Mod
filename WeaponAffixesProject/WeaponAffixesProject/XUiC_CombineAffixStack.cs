@@ -37,6 +37,8 @@ public class XUiC_CombineAffixStack : XUiC_ItemStack
     {
         if (!HasAffix())
             return;
+        if (useItemB && IsGodlikeAffix())
+            return;
 
         XUiC_CombineWindowGroup group = GetCombineWindowGroup();
         if (group == null)
@@ -133,7 +135,7 @@ public class XUiC_CombineAffixStack : XUiC_ItemStack
 
         ItemValue newAffix = GetAffix();
         XUiC_CombineWindowGroup group = GetCombineWindowGroup();
-        if (newAffix == null || newAffix.IsEmpty())
+        if (newAffix == null || newAffix.IsEmpty() || useItemB && IsGodlikeAffix())
         {
             WeaponAffixesProject.CombineAffixSelectionState.ClearIfSelected(group, affixSlot, useItemB);
         }
@@ -180,6 +182,11 @@ public class XUiC_CombineAffixStack : XUiC_ItemStack
     {
         ItemValue affix = GetAffix();
         return affix != null && !affix.IsEmpty();
+    }
+
+    private bool IsGodlikeAffix()
+    {
+        return WeaponAffixesProject.CombineAffixSelectionState.IsGodlikeAffix(GetAffix());
     }
 
     private XUiC_CombineWindowGroup GetCombineWindowGroup()

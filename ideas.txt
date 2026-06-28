@@ -16,32 +16,7 @@ make a mod to make wildspawns gs based, walkersim compatible.
     - option to increase spawns
     - add all zombie types to any biome spawngroup
 
-Random Plus:
-    only simple affixes that fit on that weapon, no shock etc
-    basically just a stat randomizer, every stat on a weapon can roll between a range
-
-RAM Challenges, some are broken. (For sure first two)
-3.0 Ideas:
-Gamesettings:
-    - Max affixes on an item (default is 7, range from 1 to 10). DONE
-    - Affix abundance (default = 100%) lower, i.e. 66% would mean each affix has a 66% of actually spawning on the item when found. Higher % means theres a chance for additional affix (up till maximum). DONE
-    - Upgrade requirements (100 kills is default). Make it harder/easier to upgrade affixes on weapons. DONE
-    - Loot abundance for tokens.
-    - Affix Rarity increase/decrease (lowers/raises the odds for high rarity affixes)
-    - show/hide killcounter UI
-Combine System:
-    - A way to 'choose' which affixes to keep from each weapon, paying some token per affix you chose. DONE
-
-Ascension token 
-    - ascends a weapon
-    - need x amount of kills
-    - resets kills, gives some bonus
-    - maybe tiered, can do max 3 times, each time requires more kills, gives strong bonusses
-    - Chance to corrupt instead? 
-    - God tier Affixes, only get them through ascension. Can maybe upgrade 1 or 2 random mythics to god tier when ascending.
-
-Swap token
-    - replace the extraction token cost in combining bench
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Binding token
     - Puts an extracted affix into the affixes slots instead of a normal mod slot
@@ -50,18 +25,10 @@ TODO:
 check quality range for items (make sure its normalized to 1-6 for mods that increase it)
 check gameevents.xml for ideas for effects
 Some TI commands
-upgrade quality of item with legendary parts
-a way to 'combine' weapons to improve/reroll affixes
-nerf magic find, remove 1 item from loot
-legendary
-    upgrade any weapon 25 times
-    wear a full set of armor with 25+ total mythic affixes
-    tbd
 
 Unique Ideas:
     -   Fireaxe is fire based (100% to set on fire, (higher damage fire???)) chance to set self on fire on every swing.
     -   Nerd outfit: 'Teacher armor' increased skill xp, maybe something else school themed. Only found in lockers.
-    -   primitive armor set: Jack of all Trades: +1 to each attribute, -8 armor on each piece.      DONE
 
 Joke/unique affixes for uniques:
     chance to fall down when powerattacking
@@ -69,8 +36,6 @@ Joke/unique affixes for uniques:
     only allows headshot damage
     lucky 7, all stats are sevens (desert vulture)
     sprain arm chance when firing through scope on m60
-
-Rework towards digital rather than magical theme.
 
 rocket launcher unique from demo loot bag
 'Golden' zombies. like 0.001 odds of spawning, theyre infernals but recolered to gold. can base some of the legendary challenges on killing it, count as 50 kills, drop a lootbag that always contains a token etc etc
@@ -104,15 +69,14 @@ damage resist
 stealth bonus (check rogue outfit)
 fall damage
 
-pelletCount (shotgun)               ON HOLD (might need script)
 hipfireAccuracy (gun)               NOTSURE
-aimSpeed% (gun)                     NOTSURE
-lessStaminaAiming% (gun)            NOTSURE
 fasterCritHeal                      ONHOLD
 damageResistOnKill                  ONHOLD (maybe better for armor)
-ChanceToHealCritInjuryOnKill        ONHOLD
 hitStreak (more damage each hit until you miss or 1 minute passes) ONHOLD
-explosive bullets                   ONHOLD
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Rework towards digital rather than magical theme.
 
 workstation is a computer (can use a pc block thats already in game)
 can add servers and attach them to the computer (servers are also already in game)

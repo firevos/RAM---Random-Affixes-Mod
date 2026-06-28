@@ -25,6 +25,8 @@ namespace WeaponAffixesProject
 
             int totalChance = instances.Sum();
 
+            instances.Where(x => x == 7).ToList().ForEach(x => totalChance += 3);
+
             List<string> allDebuffs = BuffUtils.GetNegativeBuffs(__instance);
             if (allDebuffs.Count == 0)
                 return;

@@ -4,6 +4,13 @@ namespace WeaponAffixesProject
 {
     internal static class WeaponUpgrades
     {
+        internal const string KillsMetadataKey = "kills";
+        internal const string UpgradesMetadataKey = "upgrades";
+        internal const string TotalUpgradesMetadataKey = "totalUpgrades";
+        internal const string NextUpgradeMetadataKey = "nextUpgrade";
+        internal const string LastUpgradeMetadataKey = "lastUpgrade";
+        internal const string AscensionsMetadataKey = "ascensions";
+
         internal static void OnEntityDeathWeaponUpgrades(EntityAlive __instance, EntityPlayerLocal player, ItemValue heldItem)
         {
             int magicSlayerLvl = AffixUtils.GetProgressionLevel(player, "perkMagicSlayer");
@@ -54,20 +61,46 @@ namespace WeaponAffixesProject
                         GameManager.ShowTooltip(player, string.Format(Localization.Get("ttaffixunlock", false), upgrades + 1, killsToUpgrade * (upgrades + 2), affixName), string.Empty, "read_skillbook_final");
                     else
                         GameManager.ShowTooltip(player, string.Format(Localization.Get("ttaffixup", false), upgrades + 1, killsToUpgrade * (upgrades + 2), affixName), string.Empty, "read_skillbook_final");
-                    heldItem.SetMetadata("upgrades", upgrades + 1);
+                    RecordUpgrade(heldItem, upgrades);
                     heldItem.SetMetadata("nextUpgrade", nextUpgrade + killsToUpgrade * (upgrades + 2));
                     heldItem.SetMetadata("lastUpgrade", kills);
-                    if (upgrades + 1 >= 15)
-                    {
-                        // 15 upgrades on 1 weapon
-                        AffixUtils.ApplyQuestEventManagerUseItem("affixModEntityDamageBase3");
-                    }
                 }
             }
             catch (Exception e)
             {
                 Log.Out($"'{e}'");
             }
+        }
+
+        internal static void RecordUpgrade(ItemValue item, float currentCycleUpgrades)
+        {
+            if (!item.TryGetMetadata(TotalUpgradesMetadataKey, out float totalUpgrades))
+                totalUpgrades = currentCycleUpgrades;
+
+            float newTotalUpgrades = totalUpgrades + 1;
+            item.SetMetadata(UpgradesMetadataKey, currentCycleUpgrades + 1);
+            item.SetMetadata(TotalUpgradesMetadataKey, newTotalUpgrades);
+
+            if (newTotalUpgrades >= 15)
+                AffixUtils.ApplyQuestEventManagerUseItem("affixModEntityDamageBase3");
+        }
+
+        internal static float GetTotalUpgrades(ItemValue item)
+        {
+            if (item == null)
+                return 0;
+            if (item.TryGetMetadata(TotalUpgradesMetadataKey, out float totalUpgrades))
+                return totalUpgrades;
+            return item.TryGetMetadata(UpgradesMetadataKey, out float upgrades) ? upgrades : 0;
+        }
+
+        internal static void ResetUpgradeCycleForAscension(ItemValue item, EntityPlayer player)
+        {
+            item.SetMetadata(TotalUpgradesMetadataKey, GetTotalUpgrades(item));
+            item.SetMetadata(KillsMetadataKey, 0f);
+            item.SetMetadata(UpgradesMetadataKey, 0f);
+            item.SetMetadata(LastUpgradeMetadataKey, 0f);
+            item.SetMetadata(NextUpgradeMetadataKey, (float)AffixUtils.GetAdjustedKillsToUpgrade(AffixUtils.GetProgressionLevel(player, "perkMagicSlayer")));
         }
 
         internal static void SetYOffset(ref int _yOffset)

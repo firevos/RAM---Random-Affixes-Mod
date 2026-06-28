@@ -150,6 +150,47 @@
         </challenge>
 
         <!-- Legendary -->
+        <challenge name="SpendHundredTokens" title_key="challengeSpendHundredTokens" icon="ui_token_collection_icon" group="RAM Legendary"
+            short_description_key="challengeSpendHundredTokensShort" description_key="challengeSpendHundredTokensDesc"
+            reward_text_key="challenge_reward_10000xp" reward_event="challenge_reward_10000">
+            <objective type="UseItem" item="affixModEntityDamagePerc7" count="100"/>
+        </challenge>
+
+        <challenge name="WearTwentyFiveMythicAffixes" title_key="challengeWearTwentyFiveMythicAffixes" icon="ui_mythic_armor_icon" group="RAM Legendary"
+            short_description_key="challengeWearTwentyFiveMythicAffixesShort" description_key="challengeWearTwentyFiveMythicAffixesDesc"
+            reward_text_key="challenge_reward_10000xp" reward_event="challenge_reward_10000">
+            <objective type="UseItem" item="affixModEntityDamageBase7" count="1"/>
+        </challenge>
+
+        <challenge name="AscendWeapon" title_key="challengeAscendWeapon" icon="ui_ascend_weapon_icon" group="RAM Legendary"
+            short_description_key="challengeAscendWeaponShort" description_key="challengeAscendWeaponDesc"
+            reward_text_key="challenge_reward_10000xp" reward_event="challenge_reward_10000">
+            <objective type="UseItem" item="affixModGiantslayer7" count="1"/>
+        </challenge>
+
+        <challenge name="TransferFiveMythicAffixes" title_key="challengeTransferFiveMythicAffixes" icon="ui_mythic_swap_icon" group="RAM Legendary"
+            short_description_key="challengeTransferFiveMythicAffixesShort" description_key="challengeTransferFiveMythicAffixesDesc"
+            reward_text_key="challenge_reward_10000xp" reward_event="challenge_reward_10000">
+            <objective type="UseItem" item="affixModBonusKills7" count="5"/>
+        </challenge>
+
+        <challenge name="UnlockMythicWithToken" title_key="challengeUnlockMythicWithToken" icon="ui_mythic_affix_icon" group="RAM Legendary"
+            short_description_key="challengeUnlockMythicWithTokenShort" description_key="challengeUnlockMythicWithTokenDesc"
+            reward_text_key="challenge_reward_10000xp" reward_event="challenge_reward_10000">
+            <objective type="UseItem" item="affixModBringItDown7" count="1"/>
+        </challenge>
+
+        <challenge name="FindNaturalMythicAffixes" title_key="challengeFindNaturalMythicAffixes" icon="ui_mythic_affix_icon" group="RAM Legendary"
+            short_description_key="challengeFindNaturalMythicAffixesShort" description_key="challengeFindNaturalMythicAffixesDesc"
+            reward_text_key="challenge_reward_10000xp" reward_event="challenge_reward_10000">
+            <objective type="UseItem" item="affixModLevelDamage7" count="1"/>
+        </challenge>
+
+        <challenge name="AscendWeaponThreeTimes" title_key="challengeAscendWeaponThreeTimes" icon="ui_ascend_weapon_icon" group="RAM Legendary"
+            short_description_key="challengeAscendWeaponThreeTimesShort" description_key="challengeAscendWeaponThreeTimesDesc"
+            reward_text_key="challenge_reward_10000xp" reward_event="challenge_reward_10000">
+            <objective type="UseItem" item="affixModBuffDuration7" count="1"/>
+        </challenge>
     </insertAfter>
 </configs>
 

@@ -23,6 +23,8 @@ namespace WeaponAffixesProject
                     if (selectedClass == null || (!selectedClass.HasAnyTags(AffixUtils.WeaponTag) && !selectedClass.HasAnyTags(AffixUtils.ToolTag) && !selectedClass.HasAnyTags(AffixUtils.ArmorTag)) || selectedClass.HasAnyTags(FastTags<TagGroup.Global>.GetTag("noMods")) || selectedClass.HasAnyTags(AffixUtils.UniqueAffixTag)) return;
 
                     MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryUnlockAffix(itemController) });
+                    if (selectedClass.HasAnyTags(AffixUtils.WeaponTag))
+                        MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryAscendWeapon(itemController) });
 
                     return;
                 }
@@ -40,8 +42,11 @@ namespace WeaponAffixesProject
 
                     if (selectedClass == null || !selectedClass.Name.StartsWith("affixMod")) return;
 
-                    MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryRerollAffix(itemController) });
-                    MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryExtractAffix(itemController) });
+                    if (!AffixUtils.IsGodlikeAffix(selectedClass))
+                    {
+                        MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryRerollAffix(itemController) });
+                        MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryExtractAffix(itemController) });
+                    }
                     MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryUpgradeAffix(itemController) });
                     return;
                 }
@@ -51,6 +56,7 @@ namespace WeaponAffixesProject
                     var selectedClass2 = partController.ItemStack?.itemValue?.ItemClass;
 
                     if (selectedClass2 == null || !selectedClass2.Name.StartsWith("affixMod")) return;
+                    if (AffixUtils.IsGodlikeAffix(selectedClass2)) return;
 
                     MI_AddActionListEntry?.Invoke(__instance, new object[] { new ItemActionEntryExtractAffix(itemController) });
                     return;

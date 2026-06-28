@@ -28,11 +28,12 @@ namespace WeaponAffixesProject
             foreach (int value in giantslayers)
             {
                 int chance = (value == 6) ? 25 : value * 4;
+                if (value == 7) chance = 40;
                 if (AffixUtils.rng.Next(0, 100) < chance)
                     successCount++;
             }
 
-            float damage = (float)__instance.GetMaxHealth() / 100 * 6;
+            float damage = (float)__instance.GetMaxHealth() / 100 * 5;
             if (__instance.HasAnyTags(FastTags<TagGroup.Global>.GetTag("boss")))
                 damage /= 2;
 

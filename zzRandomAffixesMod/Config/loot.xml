@@ -79,6 +79,7 @@
         <lootgroup name="groupAffixTokens">
             <item name="affixRerollToken" count="1" loot_prob_template="high"/>
             <item name="affixExtractionToken" count="1" loot_prob_template="med"/>
+            <item name="affixSwapToken" count="1" loot_prob_template="med"/>
             <item name="affixUpgradeToken" count="1" loot_prob_template="low"/>
             <item name="affixUnlockToken" count="1" loot_prob_template="veryLow"/>
         </lootgroup>
@@ -157,11 +158,17 @@
         <lootgroup name="groupQuestT4Token" count="all">
             <item name="affixExtractionToken"/>
         </lootgroup>
+        <lootgroup name="groupQuestT4SwapToken" count="all">
+            <item name="affixSwapToken"/>
+        </lootgroup>
         <lootgroup name="groupQuestT5Token" count="all">
             <item name="affixUpgradeToken"/>
         </lootgroup>
         <lootgroup name="groupQuestT6Token" count="all">
             <item name="affixUnlockToken"/>
+        </lootgroup>
+        <lootgroup name="groupQuestT6AscensionToken" count="all">
+            <item name="affixAscensionToken"/>
         </lootgroup>
     </insertAfter>
 

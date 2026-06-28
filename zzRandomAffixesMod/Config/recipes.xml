@@ -23,6 +23,14 @@
             <ingredient name="resourceForgedSteel" count="50"/>
         </recipe>
 
+        <recipe name="affixSwapToken" count="1" craft_time="60" craft_exp_gain="0" craft_area="workbench" tags="workbenchCrafting">
+            <ingredient name="affixBlankToken" count="1"/>
+            <ingredient name="resourceGoldNugget" count="1"/>
+            <ingredient name="resourceAcid" count="1"/>
+            <ingredient name="resourceMechanicalParts" count="25"/>
+            <ingredient name="resourceForgedSteel" count="50"/>
+        </recipe>
+
         <recipe name="affixUpgradeToken" count="1" craft_time="60" craft_exp_gain="0" craft_area="workbench" tags="workbenchCrafting">
             <ingredient name="affixBlankToken" count="1"/>
             <ingredient name="resourceRawDiamond" count="1"/>
@@ -37,6 +45,14 @@
             <ingredient name="foodCropGraceCorn" count="5"/>
             <ingredient name="resourceArmorCraftingKit" count="1"/>
             <ingredient name="resourceForgedSteel" count="75"/>
+        </recipe>
+
+        <recipe name="affixAscensionToken" count="1" craft_time="300" craft_exp_gain="0" craft_area="workbench" tags="workbenchCrafting">
+            <ingredient name="affixRerollToken" count="10"/>
+            <ingredient name="affixExtractionToken" count="8"/>
+            <ingredient name="affixSwapToken" count="8"/>
+            <ingredient name="affixUpgradeToken" count="5"/>
+            <ingredient name="affixUnlockToken" count="2"/>
         </recipe>
     </insertAfter>
 </configs>
