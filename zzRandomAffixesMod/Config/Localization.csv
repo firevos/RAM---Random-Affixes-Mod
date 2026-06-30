@@ -1,6 +1,7 @@
 ﻿Key,File,Type,UsedInMainMenu,NoTranslate,english,Context
 
 xuiAffixes,UI,XUI,,,Affixes,,
+ramHeldWeaponKills,UI,XUI,,,Weapon Kills,,
 ramCombineInfoPanelText,UI,XUI,,,"RAM Combine Bench\n\nAll affixes and kills are copied from item A.\nYou can swap over an affix from Item B by selecting it in the Affix view on the right.\nIt will replace the affix in that slot.\nIt costs 1 swap token per swap and 5 weapon parts if the weapon is made of parts (steel melee weapons and any non-pipe gun).\nThe output slot is only a preview. Press Combine to pay the cost and create the result.",,
 lblContextActionRerollAffix,UI,Item Context Menu,,,Reroll,,
 ttaffixup,UI,Tooltip,,,You upgraded to the {2} affix! This weapon upgraded {0} times. You need {1} kills for the next upgrade.,,

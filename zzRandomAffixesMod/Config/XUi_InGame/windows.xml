@@ -35,6 +35,15 @@
         </rect>
     </insertBefore>
 
+    <append xpath="/windows/window[@name='CharacterFrameWindow']//rect[@controller='TabSelectorTab' and @tab_key='stats2']">
+        <rect name="ramHeldWeaponKills" pos="0,-510" width="327" height="30" controller="XUiC_ActiveItemKillsUpgrades,WeaponAffixesProject" visible="{kustatsvisible}">
+            <sprite depth="8" sprite="menu_empty3px" height="33" color="[black]" type="sliced" fillcenter="false" />
+            <sprite depth="1" color="[darkGrey]" type="sliced" />
+            <label depth="3" pos="10,-17" width="200" height="27" font_size="26" text_key="ramHeldWeaponKills" pivot="left" justify="left" color="[white]" />
+            <label depth="3" pos="320,-17" width="105" height="27" font_size="26" text="{kills}/{nextUpgrade}" justify="right" color="[selectedColor]" pivot="right" />
+        </rect>
+    </append>
+
     <append xpath="/windows">
         <window name="windowCombineAffixChooser" width="153" height="796" panel="Right" cursor_area="true" controller="XUiC_CombineAffixChooser,WeaponAffixesProject">
             <rect style="header.panel">

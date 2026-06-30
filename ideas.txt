@@ -46,6 +46,7 @@ i want more 'conditional' affixes. not just passive stat boost and not just rand
 DONE: 53 - 23 - 53 -    129
 
 New Affixes:
+item tier based affixes, e.g. primitive damage %
 increase chance to find tokens
 specific loot bonuses (increase ammo in loot etc)
 decrease smell distance

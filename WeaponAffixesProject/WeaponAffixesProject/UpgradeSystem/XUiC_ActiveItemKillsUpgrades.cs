@@ -75,6 +75,10 @@ public class XUiC_ActiveItemKillsUpgrades : XUiController
     {
         if (viewComponent == null) return;
 
+        // Only the HUD instance follows the ammo display. The character stats
+        // instance must remain aligned with the vanilla stat rows.
+        if (baseY != 55) return;
+
         int y = baseY;
         if (ammoHudVisible) y += 46;
 
@@ -95,6 +99,10 @@ public class XUiC_ActiveItemKillsUpgrades : XUiController
 
             case "kuvisible":
                 _value = (killcounterVisible && (hasKills || haslastKills)).ToString().ToLower();
+                return true;
+
+            case "kustatsvisible":
+                _value = (hasKills || haslastKills).ToString().ToLower();
                 return true;
         }
 
